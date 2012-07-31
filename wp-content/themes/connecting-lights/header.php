@@ -42,7 +42,7 @@
 			</div>
 
 			<div class="nav tier">
-				<?php wp_page_menu(); ?>
+				<?php wp_nav_menu( array('menu' => 'header_nav' )); ?>
 			</div>
 
 			<div class="overview tier">

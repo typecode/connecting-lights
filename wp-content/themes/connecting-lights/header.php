@@ -20,10 +20,18 @@
 		<div class="masthead">
 			<div class="top tier">
 				<div class="logo col x9">
-
+					<a href="<?php bloginfo("url"); ?>"></a>
 				</div>
-				<div class="">
-
+				<div class="date-info clearfix">
+					<div class="date">
+						<span class="month">Aug</span>
+						<span class="day">31</span>
+					</div>
+					<div class="sep">&amp;</div>
+					<div class="date">
+						<span class="month">Sept</span>
+						<span class="day">1</span>
+					</div>
 				</div>
 			</div>
 

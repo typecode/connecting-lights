@@ -1,7 +1,7 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<title><?php bloginfo("name"); ?> - <?php wp_title(); ?></title>
+	<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 	<meta charset="<?php bloginfo("charset"); ?>" />
 	<!--
 	<link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo("template_url"); ?>/img/favicon.ico" />

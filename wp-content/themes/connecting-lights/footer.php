@@ -3,9 +3,9 @@
 
 	<?php wp_footer(); ?>
 	<script>
-		jQuery(function() {
+		/*jQuery(function() {
 			new NI.App();
-		});
+		});*/
 	</script>
 </body>
 </html>

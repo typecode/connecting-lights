@@ -12,6 +12,12 @@
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
+	<script>
+		this.page = {
+			classes: {},
+			features: []
+		};
+	</script>
 </head>
 <body <?php body_class(); ?>>
 

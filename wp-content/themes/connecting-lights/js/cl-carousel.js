@@ -33,7 +33,7 @@ $(function() {
 					carousel.next();
 					autoNext();
 				}
-			}, 7000);
+			}, 6000);
 		}
 
 		nav.find("a").each(function(i) {

@@ -1,5 +1,3 @@
-	
-	</div><!-- end .page -->
 
 	<?php wp_footer(); ?>
 

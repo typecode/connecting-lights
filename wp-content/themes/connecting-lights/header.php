@@ -51,7 +51,7 @@
 
 	<header>
 
-		<h1><img src="<?php bloginfo("template_url"); ?>/img/logo.png" alt="Connecting Light" /></h1>
+		<h1><a href="<?php bloginfo("url"); ?>"><img src="<?php bloginfo("template_url"); ?>/img/logo.png" alt="Connecting Light" /></a></h1>
 		
 		<nav>
 			<?php wp_nav_menu( array("menu" => "header_nav", "container" => false )); ?>

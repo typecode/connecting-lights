@@ -57,7 +57,6 @@ body {
 
 
 .x(@unit) {
-	position: relative;
 	float: left;
 	width: 40px * @unit - 12px;
 	margin-left: 18px;
@@ -67,6 +66,7 @@ body {
 }
 
 .xFull { 
+	position: relative;
 	width: 972px;
 	margin: 0 auto;
 	.clear;
@@ -90,22 +90,38 @@ body > header {
 	text-align: center;
 	
 	.schedule {
-		float: left;
+		position: absolute;
+		top: -.4em;
+		left: 0;
+		
+		.date, .sep { float: left; }
 		
 		.date {
-			letter-spacing: 2px;
+			line-height: 1.6em;
+			letter-spacing: 3px;
 			font-weight: 500;
 			
-			.month {
-				.museo-slab;
-				font-size: 18px;
-				text-transform: uppercase;
+			span {
+				display: block;
+				
+				&.month {
+					.museo-slab;
+					font-size: 16px;
+					text-transform: uppercase;
+				}
+				
+				&.day {
+					font-size: 56px;
+				}
+				
 			}
 			
-			.day {
-				font-size: 56px;
-			}
-			
+		}
+		
+		.sep {
+			font-size: 40px;
+			line-height: 2.5em;
+			margin-left: .25em;
 		}
 		
 	}

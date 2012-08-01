@@ -1,0 +1,66 @@
+
+
+/*	Palette
+=============================================================================== */
+
+@base-bg: rgb(51,51,51);
+@offset: rgb(81,81,81);
+@accent: rgb(138,204,177);
+@white: rgb(255,255,255);
+@off-white: rgb(243,243,243);
+@shadow: rgb(178,178,178);
+@gray0: rgb(204,204,204);
+@gray1: rgb(153,153,153);
+@gray2: rgb(147,147,147);
+@gray3: rgb(133,133,133);
+
+
+/*  Type
+=============================================================================== */
+
+a { 
+	text-decoration: none;
+	color: inherit;
+}
+
+
+/*  Core
+=============================================================================== */
+
+body {
+	font-size: 21px;
+	line-height: 1.3em;
+}
+
+
+.clear {
+	&:before {
+		content: '';
+		display: table;
+	}
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+
+.x(@unit) {
+	float: left;
+	width: 28px * @unit - 12px;
+	margin-left: 12px;
+	&:first-child { margin-left: 0; }
+}
+.xFull { 
+	width: 972px;
+	margin: 0 auto;
+	.clear;
+}
+.x100 { 
+	width: 100%;
+}
+
+
+img { height: auto; }
+

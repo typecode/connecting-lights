@@ -7,11 +7,13 @@
 	<link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo("template_url"); ?>/img/favicon.ico" />
 	-->
 	<link rel="stylesheet" href="<?php bloginfo("stylesheet_url"); ?>" type="text/css"/>
+	<link rel="stylesheet/less" type="text/css" href="styles/main.less" />
 	<meta name="viewport" content="width=device-width; initial-scale=1" />
 	<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
+	<script src="<?php bloginfo('template_url'); ?>/js/mods/less-1.3.0.min.js"></script>
 	<script>
 		this.page = {
 			classes: {},

@@ -78,11 +78,50 @@ body {
 
 img { height: auto; }
 
-.splash { .y(1); }
-
 
 nav {
 	ul, li { display: inline; }
+}
+
+
+
+/*  Carousel
+=============================================================================== */
+
+.carousel { 
+	.y(1);
+	
+	.viewport,
+	.slide {
+		width: 972px;
+		height: 422px;
+	}
+	
+	.viewport { 
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.scroll {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 20000em;
+	}
+	
+	.slide { 
+		position: relative;
+		float: left;
+		overflow: hidden;
+		
+		img {
+			display: block;
+			width: 100%;
+			max-height: 422px;
+		}
+		
+	}
+
 }
 
 
@@ -254,6 +293,7 @@ body > header {
 		&:first-child { margin-left: 0; }
 	}
 }
+
 
 
 /*  Footer

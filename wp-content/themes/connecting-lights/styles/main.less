@@ -1,5 +1,6 @@
 
 
+
 /*	Palette
 =============================================================================== */
 
@@ -15,15 +16,19 @@
 @gray3: rgb(133,133,133);
 
 
+
 /*  Type
 =============================================================================== */
 
 .brandon-grotesque { font-family: "brandon-grotesque"; }
+.museo-slab { font-family: "museo-slab"; }
 
 a { 
 	text-decoration: none;
 	color: inherit;
+	&:hover { text-decoration: underline; }
 }
+
 
 
 /*  Core
@@ -52,10 +57,10 @@ body {
 
 
 .x(@unit) {
+	position: relative;
 	float: left;
-	width: 28px * @unit - 12px;
-	margin-left: 12px;
-	&:first-child { margin-left: 0; }
+	width: 40px * @unit - 12px;
+	margin-left: 18px;
 }
 .y(@unit) {
 	margin-top: 18px * @unit;
@@ -74,13 +79,63 @@ body {
 img { height: auto; }
 
 
+
 /*  Header
 =============================================================================== */
 
 body > header {
 	.xFull;
 	.y(2);
+	.clear;
+	text-align: center;
+	
+	.schedule {
+		float: left;
+		
+		.date {
+			letter-spacing: 2px;
+			font-weight: 500;
+			
+			.month {
+				.museo-slab;
+				font-size: 18px;
+				text-transform: uppercase;
+			}
+			
+			.day {
+				font-size: 56px;
+			}
+			
+		}
+		
+	}
+	
+	nav {
+		font-size: 17px;
+		text-transform: uppercase;
+		width: 454px;
+		margin: 9px auto;
+		padding-top: 9px;
+		border-top: 1px solid @offset;
+		color: @accent;
+		
+		ul, li { display: inline; }
+		
+		> ul {
+		
+			> li {
+				margin-left: 24px;
+				&:first-child { margin-left: 0; }
+			}
+			
+			ul { display: none; }
+			
+		}
+		
+	}
+	
 }
+
 
 
 /*  Overview
@@ -88,4 +143,17 @@ body > header {
 
 .overview {
 	.y(3);
+	
+	p {
+		.x(19);
+		&:first-child { color: @gray0; }
+	}
+	
+	.button {
+		.x(5);
+		text-align: right;
+	}
+	
 }
+
+

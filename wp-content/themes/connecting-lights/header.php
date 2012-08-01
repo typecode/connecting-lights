@@ -53,10 +53,10 @@
 		<h1><img src="<?php bloginfo("template_url"); ?>/img/logo.png" alt="Connecting Light" /></h1>
 		
 		<nav>
-			<?php wp_nav_menu( array("menu" => "header_nav" )); ?>
+			<?php wp_nav_menu( array("menu" => "header_nav", "container" => false )); ?>
 		</nav>
 		
-		<div class="date-info">
+		<div class="schedule">
 			<div class="date">
 				<span class="month">Aug</span>
 				<span class="day">31</span>

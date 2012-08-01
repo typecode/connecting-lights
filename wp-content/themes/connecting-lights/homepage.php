@@ -7,7 +7,7 @@ Template Name: Homepage
 get_header();
 ?>
 
-	<div class="wrap">
+	<div class="xFull">
 
 		<div class="overview">
 	

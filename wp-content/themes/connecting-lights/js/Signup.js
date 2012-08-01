@@ -25,7 +25,8 @@
 			first_step: "form",
 			steps: {
 				"form": {
-					selector: ".form",
+					selector: ".step.form",
+					next: "dispatch",
 					fields: {
 						"email": {
 							selector: "input[type=text]",
@@ -41,6 +42,9 @@
 							}
 						}
 					}
+				},
+				"dispatch": {
+					selector: ".step.dispatch"
 				}
 			}
 		});

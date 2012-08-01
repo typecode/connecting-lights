@@ -82,7 +82,7 @@ img { height: auto; }
 
 
 nav {
-	ul, li { display: inline; }
+	> ul > li { display: inline; }
 }
 
 
@@ -337,15 +337,34 @@ body > header {
 		padding-top: 9px;
 		border-top: 1px solid @offset;
 		color: @accent;
+
+		a {
+			display: block;
+			padding: 0 12px;
+		}
 		
 		> ul {
+			text-align: center;
 		
 			> li {
-				margin-left: 24px;
-				&:first-child { margin-left: 0; }
+				position: relative;
+				display: inline-block;
+
+				&:hover {
+					> .sub-menu {
+						display: block;
+					}
+				}
 			}
 			
-			ul { display: none; }
+			.sub-menu {
+				display: none;
+				position: absolute;
+				width: 100%;
+				top: 100%;
+				left: 0;
+				text-align: left;
+			}
 			
 		}
 		

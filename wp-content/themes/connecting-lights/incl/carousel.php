@@ -20,7 +20,7 @@
 
 ?>
 
-		<div class="carousel">
+		<div class="carousel autoscroll">
 			<div class="viewport">
 				<div class="scroll">
 				<?php
@@ -33,7 +33,7 @@
 						
 							$carousel_slide_count += 1;
 
-							echo "<div>". wp_get_attachment_image( $slide->ID, "full" ) ."</div>";
+							echo '<div class="slide">'. wp_get_attachment_image( $slide->ID, 'full' ) .'</div>';
 
 						}
 					
@@ -43,7 +43,7 @@
 				</div>
 			</div>
 			<div class="caption"></div>
-			<ul class="carousel-nav">
+			<ul class="nav">
 			<?php 
 
 				for ($i = 0; $i < $carousel_slide_count; $i += 1) { ?>

@@ -2,18 +2,19 @@ $(function() {
 
 	$(".carousel").each(function() {
 
-		var container, nav, carousel, arrows, timer;
+		var container, nav, carousel, caption, timer;
 
 		container = $(this);
-
-		nav = container.find(".carousel-nav");
+		nav = container.find(".nav");
+		caption = container.find(".caption");
 		
 		carousel = new NI.Carousel({
 			container: container,
 			panelClass: ".slide",
-			speed: 800,
+			speed: 400,
 			onBeforeMove: function(instance, info) {
 				nav.children("li:eq("+ info.index +")").addClass("state-active").siblings().removeClass("state-active");
+				caption.text(info.$current.next().find('img').attr('alt'));
 			}
 		});
 
@@ -32,7 +33,7 @@ $(function() {
 					carousel.next();
 					autoNext();
 				}
-			}, 4000);
+			}, 6000);
 		}
 
 		nav.find("a").each(function(i) {

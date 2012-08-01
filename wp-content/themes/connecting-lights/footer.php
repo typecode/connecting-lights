@@ -51,6 +51,7 @@
 	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/field/tc.field.hint.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/tc.merlin.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/merlin/tc.merlin.data.js"></script>
+	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/tc.carousel.js"></script>
 
 	<!-- app-specific -->
 	<script src="<?php bloginfo("template_url"); ?>/js/Signup.js"></script>
@@ -65,7 +66,8 @@
 		});
 	</script>
 	
-	<script src="<?php bloginfo("template_url"); ?>/styles/webfonts/ss-social.js"></script>
+	<!-- symbolset -->
+	<script src="<?php bloginfo("template_url"); ?>/css/webfonts/ss-social.js"></script>
 
 </body>
 </html>

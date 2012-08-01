@@ -3,7 +3,7 @@ get_header();
 ?>
 
 	<div class="inverted">
-		
+
 	</div>
 
 <?php

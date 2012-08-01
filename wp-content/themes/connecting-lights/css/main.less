@@ -213,9 +213,25 @@ nav {
 .inverted {
 	.xFull;
 	.clear;
-	padding-top: 36px;
+	padding: 40px 0;
 	margin-bottom: 18px;
 	background-color: @white;
+
+	> .inner {
+		padding-left: 52px;
+		padding-right: 52px;
+
+		> header {
+			border-bottom: 1px solid @accent;
+
+			h2 {
+				line-height: 1;
+				padding-bottom: 12px;
+				font-size: 72px;
+				text-transform: uppercase;
+			}
+		}
+	}
 }
 
 
@@ -354,7 +370,7 @@ body > header {
 	
 	nav {
 		width: 454px;
-		margin: 2px auto;
+		margin: 2px auto 11px;
 		padding-top: 9px;
 		font-size: 17px;
 		line-height: 1em;
@@ -454,6 +470,7 @@ body > header {
 footer {
 	.x100;
 	.clear;
+	padding-bottom: 36px;
 	position: relative;
 	font-size: 12px;
 	line-height: 18px;

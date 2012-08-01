@@ -1,0 +1,12 @@
+
+
+
+/* partner icon */
+
+#menu-posts-partner .wp-menu-image {
+	background: url(../img/admin/partners.png) no-repeat 6px -17px !important;
+}
+#menu-posts-partner:hover .wp-menu-image,
+#menu-posts-partner.wp-has-current-submenu .wp-menu-image {
+	background-position:6px 7px!important;
+}

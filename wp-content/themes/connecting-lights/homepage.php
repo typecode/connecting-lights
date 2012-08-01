@@ -36,68 +36,35 @@ get_header();
 			<a href=""><img src="<?php bloginfo("template_url"); ?>/img/biglink_findlocs.png" alt="Find Locations" /></a>
 		</div>
 		
-		<!--
+	</div>
+	
+	<div class="inverted">
+		<div class="xFull">
 		
-		<div class="display tier">
-		</div>
-	
-		<div class="widgets tier">
-	
-			<div class="col x4">
-				send a message
-			</div>
-	
-			<div class="col x4">
-				find locations
-			</div>
-	
-			<div class="col x4">
-				purchase tickets
-			</div>
-	
-		</div>
-	
-		<div class="tier">
-	
-			<div class="col x8">
-	
-				<h2>Latest Blog Posts</h2>
-	
-				<?php
+			<h2>Latest Blog Posts</h2>
+		
+			<?php
+
 				$posts = get_posts(array(
 					"numberposts" => 5
 				));
-	
-				if (count($posts) > 0) : ?>
-					<ul>
-					<?php foreach ($posts as $post) : setup_postdata($post); ?>
-						<li class="post">
-							<div class="col x2">
-	
-							</div>
-							<div class="col x6">
-								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-	
-								<div class="foot">
-									<a href="<?php the_permalink(); ?>">Read more</a>
-								</div>
-							</div>
-						</li>
-					<?php endforeach; ?>
-					</ul>
-				<?php endif; ?>
-	
-			</div>
 		
-			<div class="col x4">
-	
-			</div>
+				if (count($posts) > 0) : ?>
+
+			<ul>
+				<?php foreach ($posts as $post) : setup_postdata($post); ?>
+				<li class="post">
+					<?php the_post_thumbnail("thumb"); ?>
+					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+					<?php the_excerpt(); ?>
+				</li>
+				<?php endforeach; ?>
+			</ul>
+
+			<?php endif; ?>
 		
 		</div>
-		
-		-->
-	
-	</div><!-- end wrap -->
+	</div><!-- end inverted -->
 
 <?php
 get_footer();

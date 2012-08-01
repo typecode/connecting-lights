@@ -25,6 +25,7 @@
 	<script>try{Typekit.load();}catch(e){}</script>
 
 	<link rel="stylesheet" href="<?php bloginfo("stylesheet_url"); ?>" type="text/css"/>
+	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/styles/webfonts/ss-social.css" type="text/css"/>
 	<link rel="stylesheet/less" type="text/css" href="<?php bloginfo("template_url"); ?>/styles/main.less" />
 
 	<meta name="viewport" content="width=device-width; initial-scale=1" />
@@ -66,6 +67,13 @@
 				<span class="month">Sept</span>
 				<span class="day">1</span>
 			</div>
+		</div>
+		
+		<div class="connect">
+			<a href="" class="ss-icon">Facebook</a>
+			<a href="" class="ss-icon">Twitter</a>
+			<a href="" class="ss-icon">Tumblr</a>
+			<a href="" class="ss-icon">Pinterest</a>
 		</div>
 
 	</header><!-- end main header -->

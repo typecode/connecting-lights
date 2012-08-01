@@ -28,7 +28,7 @@ get_header();
 	
 		</div><!-- end overview -->
 		
-		<img src="<?php bloginfo("template_url"); ?>/img/splash.png" class="splash" />
+		<?php require_once(TEMPLATEPATH . "/incl/carousel.php"); ?>
 		
 		<div class="actions">
 			<a href=""><img src="<?php bloginfo("template_url"); ?>/img/biglink_sendamsg.png" alt="Send a Message" /></a>

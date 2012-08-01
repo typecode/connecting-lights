@@ -1,5 +1,7 @@
 <?php
 
+
+
 //^^^^^ media ^^^^^
 
 add_theme_support("post-thumbnails");
@@ -56,6 +58,31 @@ function cl_unregister_widgets() {
 	unregister_widget( 'WP_Widget_Meta' );
 }
 add_action( 'widgets_init', 'cl_unregister_widgets' );
+
+
+
+//^^^^^ meta ^^^^^
+	
+function cl_image_attachment_fields_to_edit($form_fields, $post) {
+	$checked = get_post_meta($post->ID, "_cl_is_slide", true) ? "CHECKED" : "";
+	$form_fields["cl_is_slide"] = array(
+		'label' => __("Slideshow Image"),
+		'input' => 'html',
+		'html'  => "<input type='checkbox' name='attachments[{$post->ID}][cl_is_slide]' id='attachments[{$post->ID}][cl_is_slide]' value='1' {$checked}/><br />"
+	);
+	return $form_fields;
+}
+add_filter("attachment_fields_to_edit", "cl_image_attachment_fields_to_edit", null, 2);
+
+function cl_image_attachment_fields_to_save($post, $attachment) {
+	if( isset($attachment['cl_is_slide']) ){
+		update_post_meta($post['ID'], '_cl_is_slide', $attachment['cl_is_slide']);
+	} else {
+		update_post_meta($post['ID'], '_cl_is_slide', 0);
+	}
+	return $post;
+}
+add_filter("attachment_fields_to_save", "cl_image_attachment_fields_to_save", null , 2);
 
 
 

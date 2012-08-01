@@ -1,15 +1,6 @@
 <!doctype html>
-<!--
-
-	Styleguide
-	----------
-	
-	Double quotes ("), not single quotes (').
-	
-	Thank you.
-
--->
 <html <?php language_attributes(); ?>>
+
 <head>
 
 	<title><?php wp_title("&laquo;", true, "right"); ?> <?php bloginfo("name"); ?></title>

@@ -42,13 +42,12 @@
 				?>
 				</div>
 			</div>
-			<div class="caption"></div>
 			<ul class="nav">
 			<?php 
 
 				for ($i = 0; $i < $carousel_slide_count; $i += 1) { ?>
 
-					<li><a href="#"><?php echo ($i+1); ?></a></li>
+					<li><a href="#"><?php echo ($i+1); ?></a> <span class="caption"></span></li>
 			
 			<?php } ?>
 			</ul>

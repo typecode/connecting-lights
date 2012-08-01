@@ -133,12 +133,14 @@ nav {
 		padding: 7px 0 0 8px;
 		
 		li {
+			position: relative;
 			float: left;
 			margin-left: 4px;
 			height: 18px;
 			&:first-child { margin-left: 0; }
 			
 			a { 
+				z-index: 3;
 				display: block;
 				width: 10px;
 				height: 16px;
@@ -154,20 +156,41 @@ nav {
 				
 			}
 			
-			&.state-active a {
-				height: 32px;
-				background: @accent;
+			.caption {
+				z-index: 2;
+				visibility: hidden;
+				opacity: 0;
+				position: absolute;
+				bottom: 0;
+				left: -608px;
+				font-size: 12px;
+				line-height: 1em;
+				width: 600px;
+				height: 1em;
+				text-align: right;
+				
+				-webkit-transition: opacity .5s, bottom .5s;
+				-moz-transition:    opacity .5s, bottom .5s;
+				-o-transition:      opacity .5s, bottom .5s;
+			}
+			
+			&.state-active {
+
+				a {
+					height: 32px;
+					background: @accent;
+				}
+
+				.caption {
+					visibility: visible;
+					bottom: -16px;
+					opacity: 1;
+				}
+
 			}
 			
 		}
 		
-	}
-	
-	.caption {
-		position: absolute;
-		bottom: -28px;
-		left: 18px;
-		font-size: 12px;
 	}
 
 }

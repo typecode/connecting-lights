@@ -62,6 +62,17 @@ add_action( 'widgets_init', 'cl_unregister_widgets' );
 
 
 
+//^^^^^ post types ^^^^^
+
+require_once(TEMPLATEPATH . "/incl/post-types.php");
+
+add_action("admin_head", "post_icons");
+function post_icons() { ?>
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_url' ); ?>/css/admin.css" />
+<?php }
+
+
+
 //^^^^^ meta ^^^^^
 	
 function cl_image_attachment_fields_to_edit($form_fields, $post) {

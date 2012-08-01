@@ -87,6 +87,31 @@ nav {
 
 
 
+/*  Forms
+=============================================================================== */
+
+input[type=text],
+input[type=password],
+textarea {
+	border: 1px solid @gray1;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.ca-button {
+	display: inline-block;
+	text-transform: uppercase;
+}
+
+.tc-field {
+	position: relative;
+	float: left;
+}
+
+
+
 /*  Header
 =============================================================================== */
 
@@ -261,6 +286,10 @@ footer {
 	p { 
 		.x(20);
 		.y(2);
+	}
+
+	.signup {
+		.y(3);
 	}
 	
 	.links {

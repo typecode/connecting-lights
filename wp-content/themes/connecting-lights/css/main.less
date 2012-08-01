@@ -93,17 +93,38 @@ nav {
 input[type=text],
 input[type=password],
 textarea {
-	padding: 5px;
-	border: 1px solid @gray1;
-
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	width: 100%;
+	display: inline-block;
+	padding: 5px;
+	border: 1px solid @gray1;
 }
 
 .ca-button {
 	display: inline-block;
+	line-height: 1;
+	padding: 5px;
 	text-transform: uppercase;
+
+	color: @white;
+
+	border: 1px solid #a7d0bf;
+	border-bottom-color: #81bca4;
+
+	background: #a7dbc8;
+	background: -moz-linear-gradient(top,  #a7dbc8 0%, #8accba 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7dbc8), color-stop(100%,#8accba));
+	background: -webkit-linear-gradient(top,  #a7dbc8 0%,#8accba 100%);
+	background: -o-linear-gradient(top,  #a7dbc8 0%,#8accba 100%);
+	background: -ms-linear-gradient(top,  #a7dbc8 0%,#8accba 100%);
+	background: linear-gradient(to bottom,  #a7dbc8 0%,#8accba 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7dbc8', endColorstr='#8accba',GradientType=0 );
+
+	&:hover {
+		text-decoration: none;
+	}
 }
 
 .tc-field {
@@ -291,11 +312,14 @@ footer {
 
 	.signup {
 		.y(3);
-		font-size: 20px;
+		font-size: 22px;
 
-		input[type=text] {
-			.x(15);
+		.signup-email {
+			.x(11);
+
+			+ div { .x(3); }
 		}
+
 	}
 	
 	.links {

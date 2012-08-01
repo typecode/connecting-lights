@@ -9,12 +9,14 @@
 					});
 				});
 			</script>
-			<div id="signup" class="signup">
+			<div id="signup" class="signup clear">
 				<div class="step form">
-					<div class="tc-field">
+					<div class="tc-field signup-email">
 						<input type="text">
 					</div>
-					<a href="#" class="ca-button next">Sign Up</a>
+					<div>
+						<a href="#" class="ca-button next">Sign Up!</a>
+					</div>
 				</div>
 			</div>
 		

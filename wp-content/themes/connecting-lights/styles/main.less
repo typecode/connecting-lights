@@ -4,19 +4,21 @@
 =============================================================================== */
 
 @base-bg: rgb(51,51,51);
+@copy-color: rgb(153,153,153);
 @offset: rgb(81,81,81);
 @accent: rgb(138,204,177);
 @white: rgb(255,255,255);
 @off-white: rgb(243,243,243);
 @shadow: rgb(178,178,178);
 @gray0: rgb(204,204,204);
-@gray1: rgb(153,153,153);
 @gray2: rgb(147,147,147);
 @gray3: rgb(133,133,133);
 
 
 /*  Type
 =============================================================================== */
+
+.brandon-grotesque { font-family: "brandon-grotesque"; }
 
 a { 
 	text-decoration: none;
@@ -28,8 +30,11 @@ a {
 =============================================================================== */
 
 body {
+	.brandon-grotesque;
 	font-size: 21px;
 	line-height: 1.3em;
+	color: @copy-color;
+	background: @base-bg;
 }
 
 
@@ -64,3 +69,10 @@ body {
 
 img { height: auto; }
 
+
+/*  Header
+=============================================================================== */
+
+body > header {
+	.xFull;
+}

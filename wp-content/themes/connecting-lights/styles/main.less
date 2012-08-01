@@ -25,7 +25,7 @@
 
 a { 
 	text-decoration: none;
-	color: inherit;
+	color: @accent;
 	&:hover { text-decoration: underline; }
 }
 
@@ -92,7 +92,7 @@ body > header {
 	.schedule {
 		position: absolute;
 		top: -.4em;
-		left: 0;
+		left: 18px;
 		
 		.date, .sep { float: left; }
 		
@@ -158,14 +158,23 @@ body > header {
 =============================================================================== */
 
 .overview {
-	.y(3);
+	.y(1);
+	.clear;
+	border-top: 3px solid @offset;
+	
+	> div { .x(19); }
 	
 	p {
-		.x(19);
-		&:first-child { color: @gray0; }
+		&:first-child { 
+			.y(1);
+			color: @gray0;
+		}
 	}
 	
+	.more { display: none; }
+	
 	.button {
+		.y(1);
 		.x(5);
 		text-align: right;
 	}

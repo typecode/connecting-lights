@@ -10,16 +10,20 @@ get_header();
 	<div class="xFull">
 
 		<div class="overview">
+			
+			<div>
 	
-			<p>Connecting Light is a digital art installation along Hadrian&rsquo;s Wall World Heritage Site.</p>
-			<p>The installation consists of hundreds of large-scale, light-filled balloons transmitting colors from one-to-another, creating a communication network spanning over one-hundred miles.</p>
-	
-			<div class="more">
-				<p>Audience members are invited to participate by sending personalized messages along the light- lined wall at a number of viewing locations or, this Web site and companion mobile app.</p>
-				<p>Connecting Light investigates borders, imagining them not as a line of division, but as a source of connection.</p>
-				<p>The installation is open to the public from Friday, August 31st to Saturday, September 1st.</p>
+				<p>Connecting Light is a digital art installation along Hadrian&rsquo;s Wall World Heritage Site.</p>
+				<p>The installation consists of hundreds of large-scale, light-filled balloons transmitting colors from one-to-another, creating a communication network spanning over one-hundred miles.</p>
+		
+				<div class="more">
+					<p>Audience members are invited to participate by sending personalized messages along the light- lined wall at a number of viewing locations or, this Web site and companion mobile app.</p>
+					<p>Connecting Light investigates borders, imagining them not as a line of division, but as a source of connection.</p>
+					<p>The installation is open to the public from Friday, August 31st to Saturday, September 1st.</p>
+				</div>
+			
 			</div>
-	
+
 			<a href="#" class="button">Learn More &raquo;</a>
 	
 		</div><!-- end overview -->

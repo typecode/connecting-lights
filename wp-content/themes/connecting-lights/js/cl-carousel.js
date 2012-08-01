@@ -2,11 +2,11 @@ $(function() {
 
 	$(".carousel").each(function() {
 
-		var container, nav, carousel, timer;
+		var container, nav, carousel, caption, timer;
 
 		container = $(this);
-
 		nav = container.find(".nav");
+		caption = container.find(".caption");
 		
 		carousel = new NI.Carousel({
 			container: container,
@@ -14,6 +14,7 @@ $(function() {
 			speed: 400,
 			onBeforeMove: function(instance, info) {
 				nav.children("li:eq("+ info.index +")").addClass("state-active").siblings().removeClass("state-active");
+				caption.text(info.$current.next().find('img').attr('alt'));
 			}
 		});
 

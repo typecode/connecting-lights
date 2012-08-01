@@ -8,6 +8,7 @@
 @copy-color: rgb(153,153,153);
 @offset: rgb(81,81,81);
 @accent: rgb(138,204,177);
+@dark-accent: rgb(79,100,91);
 @white: rgb(255,255,255);
 @off-white: rgb(243,243,243);
 @shadow: rgb(178,178,178);
@@ -88,8 +89,9 @@ nav {
 /*  Carousel
 =============================================================================== */
 
-.carousel { 
+.carousel {
 	.y(1);
+	position: relative;
 	
 	.viewport,
 	.slide {
@@ -120,6 +122,51 @@ nav {
 			max-height: 422px;
 		}
 		
+	}
+	
+	.nav {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background: @base-bg;
+		padding: 7px 0 0 8px;
+		
+		li {
+			float: left;
+			margin-left: 4px;
+			height: 18px;
+			&:first-child { margin-left: 0; }
+			
+			a { 
+				display: block;
+				width: 10px;
+				height: 16px;
+				background: @dark-accent;
+				border: 1px solid @accent;
+				overflow: hidden;
+				text-indent: 100%;
+				&:hover { background: @accent; }
+				
+				-webkit-transition: background .5s, height .5s;
+				-moz-transition:    background .5s, height .5s;
+				-o-transition:      background .5s, height .5s;
+				
+			}
+			
+			&.state-active a {
+				height: 32px;
+				background: @accent;
+			}
+			
+		}
+		
+	}
+	
+	.caption {
+		position: absolute;
+		bottom: -28px;
+		left: 18px;
+		font-size: 12px;
 	}
 
 }
@@ -284,7 +331,7 @@ body > header {
 }
 
 .actions {
-	.y(1.5);
+	.y(2);
 	padding-top: 18px;
 	border-top: 2px solid @offset;
 	

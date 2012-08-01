@@ -39,29 +39,35 @@ get_header();
 	</div>
 	
 	<div class="inverted">
-	
-		<h2>Latest Blog Posts</h2>
-	
-		<?php
 
-			$posts = get_posts(array(
-				"numberposts" => 5
-			));
-	
-			if (count($posts) > 0) : ?>
+		<div class="posts">
 
-		<ul>
-			<?php foreach ($posts as $post) : setup_postdata($post); ?>
-			<li class="post">
-				<?php the_post_thumbnail("thumb"); ?>
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<?php the_excerpt(); ?>
-			</li>
-			<?php endforeach; ?>
-		</ul>
+			<h2>Latest Blog Posts</h2>
+		
+			<?php
 
-		<?php endif; ?>
+				$posts = get_posts(array(
+					"numberposts" => 5
+				));
+		
+				if (count($posts) > 0) : ?>
 
+			<ul>
+				<?php foreach ($posts as $post) : setup_postdata($post); ?>
+				<li class="post">
+					<?php the_post_thumbnail("tmb"); ?>
+					<div>
+						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+						<?php the_excerpt(); ?>
+					</div>
+				</li>
+				<?php endforeach; ?>
+			</ul>
+
+			<?php endif; ?>
+		
+		</div>
+		
 	</div><!-- end inverted -->
 
 <?php

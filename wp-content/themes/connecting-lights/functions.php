@@ -5,6 +5,7 @@
 //^^^^^ media ^^^^^
 
 add_theme_support("post-thumbnails");
+add_image_size("tmb", 268, 268, true);
 
 
 

@@ -370,7 +370,7 @@ body > header {
 
 		a {
 			display: block;
-			padding: 0 12px;
+			padding: 9px 12px 0;
 		}
 		
 		> ul {
@@ -386,14 +386,24 @@ body > header {
 					}
 				}
 			}
+
+			li.current-menu-item > a {
+				color: @white;
+			}
 			
 			.sub-menu {
 				display: none;
 				position: absolute;
+				z-index: 1;
 				width: 100%;
 				top: 100%;
 				left: 0;
 				text-align: left;
+
+				a {
+					padding-top: 3px;
+					padding-bottom: 3px;
+				}
 			}
 			
 		}

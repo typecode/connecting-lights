@@ -37,14 +37,16 @@ h1 {
 }
 h2 {
 	.garaje;
-	font-size: 30px;
+	color: @base;
+	font-size: 36px;
+	line-height: 1em;
 	text-transform: uppercase;
-	font-weight: 600;
-	color: @gray3;
 }
 h3 {
 	.garaje;
-	font-size: 25px;
+	font-size: 28px;
+	line-height: 1em;
+	text-transform: uppercase;
 }
 h4 {
 	font-size: 65px;
@@ -347,9 +349,11 @@ nav {
 	
 	p { 
 		.y(1);
-		font-size: 18px;
-		line-height: 25px;
-		color: @base;
+		.museo-slab;
+		font-weight: 300;
+		color: @article-copy;
+		font-size: 14px;
+		line-height: 18px;
 	}
 	
 	ul { 
@@ -711,7 +715,7 @@ article {
 
 
 
-/*  Visit
+/*  Visit & Full Blog
 =============================================================================== */
 
 /* move some of these to .inverted section? */
@@ -738,7 +742,6 @@ article {
 			.museo-slab;
 			font-weight: 300;
 			color: @article-copy;
-			margin-bottom: 10px;
 			font-size: 14px;
 			line-height: 18px;
 		}

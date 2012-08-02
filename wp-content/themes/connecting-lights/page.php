@@ -23,7 +23,7 @@ get_header();
 			</header>
 		
 			<?php foreach( $subpages as $post ) : setup_postdata($post); ?>		
-			<div class="page">
+			<article>
 
 				<header>
 					<h2><?php the_title(); ?></h2>
@@ -33,7 +33,7 @@ get_header();
 					<?php the_content(); ?>
 				</div>
 				
-			</div>
+			</article>
 			<?php endforeach; ?>
 			<?php wp_reset_query(); ?>
 		</div>

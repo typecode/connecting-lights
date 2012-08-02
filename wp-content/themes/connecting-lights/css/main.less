@@ -108,6 +108,19 @@ img {
 	height: auto;
 }
 
+.alignleft {
+	float: left;
+	margin: 9px 18px 9px 0;
+}
+.alignright {
+	float: right;
+	margin: 9px 0 9px 18px;
+}
+.aligncenter {
+	display: block;
+	margin: 9px auto;
+}
+
 
 nav {
 	> ul > li { display: inline; }
@@ -501,12 +514,13 @@ article {
 	h1 { font-size: 30px; }
 	
 	h2 {
+		.y(1.5);
 		font-size: 24px;
 		font-weight: normal;
 		text-transform: none;
 	}
 	
-	h2, p, img { 
+	p, img { 
 		.y(1);
 		&:first-child { .y(.9); }
 	}

@@ -641,12 +641,12 @@ article {
 	.clear;
 	font-size: 14px;
 	line-height: 18px;
-	padding: 9px 0 132px;
+	padding: 18px 0 132px;
 	color: @article-copy;
 	border-top: 1px solid @accent;
 	
 	h1, h2 {
-		line-height: 36px;
+		line-height: 30px;
 		color: @accent;
 	}
 	
@@ -659,9 +659,14 @@ article {
 		text-transform: none;
 	}
 	
-	p, img { 
+	p { 
 		.y(1);
-		&:first-child { .y(.9); }
+		&:first-child { .y(0); }
+	}
+
+	img {
+		.y(1);
+		&:first-child { .y(.5); }
 	}
 
 	> header {

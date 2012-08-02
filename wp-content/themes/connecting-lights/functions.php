@@ -7,7 +7,7 @@
 add_theme_support("post-thumbnails");
 add_image_size("tin", 164, 164, true);
 add_image_size("tmb", 220, 220, true);
-add_image_size("partner", 242, 242, true);
+add_image_size("partner", 242, 100);
 
 
 

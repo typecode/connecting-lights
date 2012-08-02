@@ -58,7 +58,7 @@ get_header();
 				<ul>
 				<?php foreach ($posts as $post) : setup_postdata($post); ?>
 					<li class="post">
-						<?php the_post_thumbnail("tin"); ?>
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("tin"); ?></a>
 						<div>
 							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 							<?php the_excerpt(); ?>
@@ -71,7 +71,7 @@ get_header();
 			<div class="partners">
 				<h2>Official Partners</h2>
 				<ul>
-				<?php foreach ($partner as $post) : setup_postdata($post); ?>
+				<?php foreach ($partners as $post) : setup_postdata($post); ?>
 					<li><?php the_post_thumbnail("partner"); ?></li>
 				<?php endforeach; wp_reset_query(); ?>
 				</ul>

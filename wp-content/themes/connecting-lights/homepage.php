@@ -4,7 +4,23 @@
 Template Name: Homepage
 */
 
+global $post;
+
+$post_args = array(
+	'numberposts'     => 5
+);
+$posts = get_posts( $post_args );
+
+$partner_args = array(
+	'numberposts'     => 3,
+	'orderby'         => 'menu_order',
+	'order'           => 'ASC',
+	'post_type'       => 'partner'
+);
+$partners = get_posts( $partner_args );
+
 get_header();
+
 ?>
 
 	<div class="xFull">
@@ -35,35 +51,33 @@ get_header();
 	</div>
 	
 	<div class="inverted">
+		<div class="inner">
 
-		<div class="posts">
-
-			<h2>Latest Blog Posts</h2>
-		
-			<?php
-
-				$posts = get_posts(array(
-					"numberposts" => 5
-				));
-		
-				if (count($posts) > 0) : ?>
-
-			<ul>
+			<div class="posts">
+				<h2>Latest Blog Posts</h2>
+				<ul>
 				<?php foreach ($posts as $post) : setup_postdata($post); ?>
-				<li class="post">
-					<?php the_post_thumbnail("tmb"); ?>
-					<div>
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<?php the_excerpt(); ?>
-					</div>
-				</li>
-				<?php endforeach; ?>
-			</ul>
+					<li class="post">
+						<?php the_post_thumbnail("tin"); ?>
+						<div>
+							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							<?php the_excerpt(); ?>
+						</div>
+					</li>
+				<?php endforeach; wp_reset_query(); ?>
+				</ul>
+			</div>
+			
+			<div class="partners">
+				<h2>Official Partners</h2>
+				<ul>
+				<?php foreach ($partner as $post) : setup_postdata($post); ?>
+					<li><?php the_post_thumbnail("partner"); ?></li>
+				<?php endforeach; wp_reset_query(); ?>
+				</ul>
+			</div>
 
-			<?php endif; ?>
-		
 		</div>
-
 	</div><!-- end inverted -->
 
 <?php

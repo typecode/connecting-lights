@@ -25,6 +25,7 @@
 
 .brandon-grotesque { font-family: "brandon-grotesque"; }
 .museo-slab { font-family: "museo-slab"; }
+.garaje { font-family: "Garaje53UnicaseBlack"; }
 
 h1 {
 	font-size: 72px;
@@ -63,6 +64,7 @@ body {
 	line-height: 1.3em;
 	color: @copy-color;
 	background: @base;
+	-webkit-font-smoothing: antialiased;
 }
 
 
@@ -337,9 +339,13 @@ body > header {
 	.clear;
 	text-align: center;
 
+	h1 {
+		margin-top: -24px;
+	}
+
 	.schedule {
 		position: absolute;
-		top: -.4em;
+		top: -12px;
 		left: 18px;
 
 		.date, .sep { float: left; }
@@ -354,12 +360,15 @@ body > header {
 
 				&.month {
 					.museo-slab;
-					font-size: 16px;
-					text-transform: uppercase;
+					font-size: 18px;
+					text-transform: lowercase;
+					font-variant: small-caps;
 				}
 
 				&.day {
 					font-size: 56px;
+					font-weight: 900;
+					letter-spacing: -1px;
 				}
 
 			}
@@ -411,6 +420,7 @@ body > header {
 		width: 454px;
 		margin-left: auto;
 		margin-right: auto;
+		.garaje;
 		font-size: 17px;
 		line-height: 1em;
 		text-transform: uppercase;
@@ -419,7 +429,11 @@ body > header {
 
 		a {
 			display: block;
-			padding: 9px 12px 0;
+			padding: 9px 0 0 37px;
+			&:hover {
+				color: @white;
+				text-decoration:none;
+			}
 		}
 
 		> ul {
@@ -428,6 +442,10 @@ body > header {
 			> li {
 				position: relative;
 				display: inline-block;
+
+				&:first-child a {
+					padding-left: 0;
+				}
 
 				&:hover {
 					> .sub-menu {
@@ -474,18 +492,28 @@ body > header {
 	> div { .x(19); }
 
 	p {
+		.y(1);
 		&:first-child {
-			.y(1);
 			color: @gray1;
 		}
 	}
 
-	.more { display: none; }
+	.more {
+		display: none;
 
-	.button {
+		p:first-child {
+			color: inherit;
+		}
+	}
+
+	.toggle {
 		.y(1);
 		.x(5);
 		text-align: right;
+
+		.collapse {
+			display: none;
+		}
 	}
 
 }

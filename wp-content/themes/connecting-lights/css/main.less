@@ -263,9 +263,10 @@ nav {
 		padding-left: 52px;
 		padding-right: 52px;
 
-		> header {
-			padding-bottom: 9px;
-			border-bottom: 1px solid @accent;
+		> header { padding-bottom: 9px; }
+		
+		> .content {
+			border-top: 1px solid @accent;
 		}
 
 	}
@@ -510,6 +511,19 @@ body > header {
 	
 	}
 	
+	> .inner > .content {
+		padding: 18px 0 102px;
+		
+		p {
+			&:first-child { .y(0); }
+		}
+		
+		> div {
+			width: 573px;
+		}
+		
+	}
+	
 	.posts {
 		float: left;
 		width: 512px;
@@ -544,13 +558,9 @@ article {
 	.clear;
 	font-size: 14px;
 	line-height: 18px;
-	padding: 9px 0 142px;
+	padding: 9px 0 132px;
 	color: @article-copy;
 	border-top: 1px solid @accent;
-	
-	&:first-child { 
-		border-top: none;
-	}
 	
 	h1, h2 {
 		line-height: 36px;

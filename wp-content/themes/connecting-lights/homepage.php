@@ -28,10 +28,10 @@ get_header();
 		<script>
 			page.features.push(function(app) {
 				var $e = $("#overview"),
-				$more = $e.find(".more"),
-				$toggle = $e.find(".toggle"),
-				$expand = $toggle.find(".expand"),
-				$collapse = $toggle.find(".collapse");
+					$more = $e.find(".more"),
+					$toggle = $e.find(".toggle"),
+					$expand = $toggle.find(".expand"),
+					$collapse = $toggle.find(".collapse");
 
 				$toggle.click(function(e) {
 					e.preventDefault();

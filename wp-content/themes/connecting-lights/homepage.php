@@ -51,8 +51,8 @@ get_header();
 			
 			<div>
 	
-				<p>Connecting Light is a digital art installation along Hadrian&rsquo;s Wall World Heritage Site.</p>
-				<p>The installation consists of hundreds of large-scale, light-filled balloons transmitting colors from one-to-another, creating a communication network spanning over seventy miles.</p>
+				<p><span class="lighter">Connecting Light is a digital art installation along Hadrian&rsquo;s Wall World Heritage Site.</span><br />
+				The installation consists of hundreds of large-scale, light-filled balloons transmitting colors from one-to-another, creating a communication network spanning over seventy miles.</p>
 		
 				<div class="more">
 					<p>Audience members are invited to participate by sending personalized messages along the light-lined wall at a number of viewing locations or, this Web site and companion mobile app.</p>

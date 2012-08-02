@@ -1,5 +1,18 @@
 <?php
+
+global $post;
+
+$page_args = array(
+	'numberposts'     => -1,
+	'orderby'         => 'menu_order',
+	'order'           => 'ASC',
+	'post_type'       => 'page',
+	'post_parent'     => $post->ID
+);
+$subpages = get_posts( $page_args );
+
 get_header();
+
 ?>
 
 	<div class="inverted">

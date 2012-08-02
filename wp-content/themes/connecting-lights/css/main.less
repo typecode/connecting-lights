@@ -26,7 +26,10 @@
 .museo-slab { font-family: "museo-slab"; }
 
 h1 {
-
+	font-size: 72px;
+	line-height: 1em;
+	padding-bottom: 12px;
+	text-transform: uppercase;
 }
 h2 {
 	font-size: 30px;
@@ -104,6 +107,18 @@ img { height: auto; }
 
 nav {
 	> ul > li { display: inline; }
+}
+
+
+.actions {
+	.y(2);
+	padding-top: 18px;
+	border-top: 2px solid @offset;
+
+	a {
+		margin-left: 13px;
+		&:first-child { margin-left: 0; }
+	}
 }
 
 
@@ -233,15 +248,10 @@ nav {
 
 		> header {
 			border-bottom: 1px solid @accent;
-
-			h2 {
-				line-height: 1;
-				padding-bottom: 12px;
-				font-size: 72px;
-				text-transform: uppercase;
-			}
 		}
+
 	}
+
 }
 
 
@@ -461,16 +471,7 @@ body > header {
 
 }
 
-.actions {
-	.y(2);
-	padding-top: 18px;
-	border-top: 2px solid @offset;
 
-	a {
-		margin-left: 13px;
-		&:first-child { margin-left: 0; }
-	}
-}
 
 /*  Visit
 =============================================================================== */

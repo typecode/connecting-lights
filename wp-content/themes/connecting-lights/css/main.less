@@ -4,7 +4,7 @@
 /*	Palette
 =============================================================================== */
 
-@base-bg: rgb(51,51,51);
+@base: rgb(51,51,51);
 @copy-color: rgb(153,153,153);
 @article-copy: rgb(102,102,102);
 @offset: rgb(81,81,81);
@@ -62,7 +62,7 @@ body {
 	font-size: 21px;
 	line-height: 1.3em;
 	color: @copy-color;
-	background: @base-bg;
+	background: @base;
 }
 
 
@@ -182,7 +182,7 @@ nav {
 		position: absolute;
 		bottom: 0;
 		right: 0;
-		background: @base-bg;
+		background: @base;
 		padding: 7px 0 0 8px;
 
 		li {
@@ -487,6 +487,46 @@ body > header {
 		text-align: right;
 	}
 
+}
+
+.inverted {
+
+	h2 { 
+		font-size: 28px;
+		font-weight: 500;
+	}
+	
+	p { 
+		.y(1);
+		font-size: 18px;
+		line-height: 25px;
+		color: @base;
+	}
+	
+	ul { 
+		.y(2);
+	
+		li { .y(1); }
+	
+	}
+	
+	.posts {
+		float: left;
+		width: 512px;
+		
+		img {
+			float: left;
+			margin-right: 18px;
+		}
+		
+	}
+	
+	.partners {
+		float: left;
+		width: 274px;
+		margin-left: 82px;
+	}
+	
 }
 
 

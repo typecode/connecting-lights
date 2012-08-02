@@ -13,7 +13,7 @@ get_header();
 			<div class="inner">
 
 				<header>
-					<h2>VISIT</h2>
+					<h1>VISIT</h1>
 				</header>
 
 				<div class="detail-block">

@@ -282,6 +282,32 @@ nav {
 }
 
 
+
+/*  Overlay
+=============================================================================== */
+
+.overlay {
+	z-index: 1000;
+
+	.tier > .tier {
+		vertical-align: middle;
+	}
+
+	.pane {
+		padding: 20px 20px 40px;
+		background-color: #ffffff;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+	}
+}
+
+.mask {
+	z-index: 1000;
+	background-color: #000000;
+	opacity: 0.2;
+}
+
+
+
 /*  Inverted
 =============================================================================== */
 
@@ -782,7 +808,7 @@ footer {
 	> div { .xFull; }
 
 	p {
-		.x(20);
+		.x(18);
 		.y(2);
 	}
 
@@ -821,9 +847,9 @@ footer {
 		position: absolute;
 		right: 0;
 		bottom: 0;
-		width: 237px;
-		height: 370px;
-		background: url("../img/festivalbanner.png") no-repeat 0 0;
+		width: 300px;
+		height: 450px;
+		background: url("../img/festivalbanner3.png") no-repeat 0 0;
 	}
 
 }

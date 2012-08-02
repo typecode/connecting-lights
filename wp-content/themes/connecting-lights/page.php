@@ -21,21 +21,25 @@ get_header();
 			<header>
 				<h1><?php the_title(); ?></h1>
 			</header>
-		
-			<?php foreach( $subpages as $post ) : setup_postdata($post); ?>		
-			<article>
-
-				<header>
-					<h2><?php the_title(); ?></h2>
-				</header>
-	
-				<div class="page-content">
-					<?php the_content(); ?>
-				</div>
+			
+			<div>
+			<?php foreach( $subpages as $post ) : setup_postdata($post); ?>	
 				
-			</article>
+				<article>
+	
+					<header>
+						<h1><?php the_title(); ?></h1>
+					</header>
+		
+					<div class="content">
+						<?php the_content(); ?>
+					</div>
+					
+				</article>
+			
 			<?php endforeach; ?>
 			<?php wp_reset_query(); ?>
+			</div>
 		</div>
 	</div>
 

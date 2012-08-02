@@ -6,6 +6,7 @@
 
 @base-bg: rgb(51,51,51);
 @copy-color: rgb(153,153,153);
+@article-copy: rgb(102,102,102);
 @offset: rgb(81,81,81);
 @accent: rgb(138,204,177);
 @dark-accent: rgb(79,100,91);
@@ -28,6 +29,7 @@
 h1 {
 	font-size: 72px;
 	line-height: 1em;
+	letter-spacing: -1px;
 	text-transform: uppercase;
 }
 h2 {
@@ -101,7 +103,10 @@ body {
 }
 
 
-img { height: auto; }
+img { 
+	max-width: 100%;
+	height: auto;
+}
 
 
 nav {
@@ -246,6 +251,7 @@ nav {
 		padding-right: 52px;
 
 		> header {
+			padding-bottom: 9px;
 			border-bottom: 1px solid @accent;
 		}
 
@@ -472,6 +478,52 @@ body > header {
 
 
 
+/*  Article
+=============================================================================== */
+
+article {
+	.clear;
+	font-size: 14px;
+	line-height: 18px;
+	padding: 9px 0 142px;
+	color: @article-copy;
+	border-top: 1px solid @accent;
+	
+	&:first-child { 
+		border-top: none;
+	}
+	
+	h1, h2 {
+		line-height: 36px;
+		color: @accent;
+	}
+	
+	h1 { font-size: 30px; }
+	
+	h2 {
+		font-size: 24px;
+		font-weight: normal;
+		text-transform: none;
+	}
+	
+	h2, p, img { 
+		.y(1);
+		&:first-child { .y(.9); }
+	}
+
+	> header {
+		float: left;
+		width: 295px;
+	}
+	
+	.content {
+		margin-left: 295px;
+	}
+
+}
+
+
+
 /*  Visit
 =============================================================================== */
 
@@ -539,7 +591,6 @@ footer {
 	.y(3);
 	.x100;
 	.clear;
-	padding-bottom: 36px;
 	position: relative;
 	font-size: 12px;
 	line-height: 18px;

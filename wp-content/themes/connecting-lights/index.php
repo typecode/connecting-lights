@@ -9,20 +9,18 @@ get_header();
 				<h1>Blog</h1>
 			</header>
 			
-			<div>
+			<div class="detail-block">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 				
-				<article>
+				<!-- <article> -->
 	
-					<header>
-						<h1><?php the_title(); ?></h1>
-					</header>
+					<h3><?php the_title(); ?></h3>
 		
-					<div class="content">
+					<div class="details">
 						<?php the_content(); ?>
 					</div>
 					
-				</article>
+				<!-- </article> -->
 			
 			<?php endwhile; else: ?>
 			<?php endif; ?>

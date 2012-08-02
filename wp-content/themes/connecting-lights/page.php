@@ -17,21 +17,25 @@ get_header();
 
 	<div class="inverted">
 		<div class="inner">
+		
+			<header>
+				<h1><?php the_title(); ?></h1>
+			</header>
+		
+			<?php foreach( $subpages as $post ) : setup_postdata($post); ?>		
+			<div class="page">
 
-			<?php if (have_posts()) : ?>
-				<?php while (have_posts()) : the_post(); ?>
-
-					<header>
-						<h2><?php the_title(); ?></h2>
-					</header>
-
-					<div class="page-content">
-						<?php the_content(); ?>
-					</div>
-
-				<?php endwhile; ?>
-			<?php endif; ?>
-
+				<header>
+					<h2><?php the_title(); ?></h2>
+				</header>
+	
+				<div class="page-content">
+					<?php the_content(); ?>
+				</div>
+				
+			</div>
+			<?php endforeach; ?>
+			<?php wp_reset_query(); ?>
 		</div>
 	</div>
 

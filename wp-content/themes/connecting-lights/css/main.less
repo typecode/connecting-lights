@@ -93,6 +93,9 @@ body {
 .y(@unit) {
 	margin-top: 18px * @unit;
 }
+.yp(@unit) {
+	padding-top: 18px * @unit;
+}
 
 .xFull {
 	position: relative;
@@ -146,7 +149,7 @@ nav {
 =============================================================================== */
 
 .carousel {
-	.y(1);
+	.yp(1);
 	position: relative;
 
 	.viewport,
@@ -492,7 +495,7 @@ body > header {
 	> div { .x(19); }
 
 	p {
-		.y(1);
+		.yp(1);
 		&:first-child {
 			color: @gray1;
 		}
@@ -510,6 +513,15 @@ body > header {
 		.y(1);
 		display: block;
 		float: right;
+		margin-right: 18px;
+
+		&:hover {
+			text-decoration: none;
+
+			> span span:first-child {
+				text-decoration: underline;
+			}
+		}
 
 		.collapse {
 			display: none;

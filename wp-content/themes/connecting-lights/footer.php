@@ -29,7 +29,14 @@
 					<li><a href=""><img src="<?php bloginfo("template_url"); ?>/img/sponsors/sponsor2.png" /></a></li>
 					<li><a href=""><img src="<?php bloginfo("template_url"); ?>/img/sponsors/sponsor3.png" /></a></li>
 	
-					<li class="terms"><a href=""><img src="<?php bloginfo("template_url"); ?>/img/terms.png" /></a></li>
+					<li class="terms"><a href="<?php
+						$terms_page = get_page_by_title("Terms & Conditions");
+						if ($terms_page) {
+							echo get_permalink($terms_page->ID);
+						} else {
+							echo "#";
+						}
+					?>"><img src="<?php bloginfo("template_url"); ?>/img/terms.png" /></a></li>
 				</ul>
 			</nav>
 

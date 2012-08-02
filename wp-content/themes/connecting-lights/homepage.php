@@ -28,10 +28,10 @@ get_header();
 		<script>
 			page.features.push(function(app) {
 				var $e = $("#overview"),
-				$more = $e.find(".more"),
-				$toggle = $e.find(".toggle"),
-				$expand = $toggle.find(".expand"),
-				$collapse = $toggle.find(".collapse");
+					$more = $e.find(".more"),
+					$toggle = $e.find(".toggle"),
+					$expand = $toggle.find(".expand"),
+					$collapse = $toggle.find(".collapse");
 
 				$toggle.click(function(e) {
 					e.preventDefault();
@@ -63,8 +63,8 @@ get_header();
 			</div>
 
 			<a href="#" class="toggle">
-				<span class="expand">Learn More <span>&#9662;</span></span>
-				<span class="collapse">Less &#9652;</span>
+				<span class="expand"><span>Learn More</span> <span>&#9662;</span></span>
+				<span class="collapse"><span>Less</span> <span>&#9652;</span></span>
 			</a>
 	
 		</div><!-- end overview -->

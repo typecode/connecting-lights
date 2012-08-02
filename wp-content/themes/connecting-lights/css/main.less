@@ -93,6 +93,9 @@ body {
 .y(@unit) {
 	margin-top: 18px * @unit;
 }
+.yp(@unit) {
+	padding-top: 18px * @unit;
+}
 
 .xFull {
 	position: relative;
@@ -146,7 +149,7 @@ nav {
 =============================================================================== */
 
 .carousel {
-	.y(1);
+	.yp(1);
 	position: relative;
 
 	.viewport,
@@ -158,6 +161,13 @@ nav {
 	.viewport {
 		position: relative;
 		overflow: hidden;
+	}
+
+	.border {
+		position: absolute;
+		top: 0; left: 0; right: 0; bottom: 0;
+		border: 1px solid rgba(255,255,255,0.3);
+		z-index: 1;
 	}
 
 	.scroll {
@@ -186,6 +196,17 @@ nav {
 		right: 0;
 		background: @base;
 		padding: 7px 0 0 8px;
+		z-index: 3;
+
+		&:before {
+			position: absolute;
+			top: -1px; left: -1px; bottom: 0; right: 0;
+			content: '';
+			border: 1px solid rgba(255,255,255,0.3);
+			border-right: none;
+			border-bottom: none;
+			background: transparent;
+		}
 
 		li {
 			position: relative;
@@ -294,6 +315,8 @@ textarea {
 }
 
 .ca-button {
+	.garaje;
+
 	display: inline-block;
 	line-height: 1;
 	padding: 15px;
@@ -492,7 +515,7 @@ body > header {
 	> div { .x(19); }
 
 	p {
-		.y(1);
+		.yp(1);
 		&:first-child {
 			color: @gray1;
 		}
@@ -508,8 +531,17 @@ body > header {
 
 	.toggle {
 		.y(1);
-		.x(5);
-		text-align: right;
+		display: block;
+		float: right;
+		margin-right: 18px;
+
+		&:hover {
+			text-decoration: none;
+
+			> span span:first-child {
+				text-decoration: underline;
+			}
+		}
 
 		.collapse {
 			display: none;
@@ -724,6 +756,7 @@ footer {
 
 		.signup-email {
 			.x(11);
+			margin-left: 0;
 
 			.tc-field-hint {
 				margin: 18px 15px;

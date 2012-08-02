@@ -93,6 +93,9 @@ body {
 .y(@unit) {
 	margin-top: 18px * @unit;
 }
+.yp(@unit) {
+	padding-top: 18px * @unit;
+}
 
 .xFull {
 	position: relative;
@@ -146,7 +149,7 @@ nav {
 =============================================================================== */
 
 .carousel {
-	.y(1);
+	.yp(1);
 	position: relative;
 
 	.viewport,
@@ -512,18 +515,37 @@ body > header {
 	> div { .x(19); }
 
 	p {
+		.yp(1);
 		&:first-child {
-			.y(1);
 			color: @gray1;
 		}
 	}
 
-	.more { display: none; }
+	.more {
+		display: none;
 
-	.button {
+		p:first-child {
+			color: inherit;
+		}
+	}
+
+	.toggle {
 		.y(1);
-		.x(5);
-		text-align: right;
+		display: block;
+		float: right;
+		margin-right: 18px;
+
+		&:hover {
+			text-decoration: none;
+
+			> span span:first-child {
+				text-decoration: underline;
+			}
+		}
+
+		.collapse {
+			display: none;
+		}
 	}
 
 }

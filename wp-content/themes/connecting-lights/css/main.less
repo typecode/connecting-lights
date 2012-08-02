@@ -145,7 +145,7 @@ nav {
 .actions {
 	.y(2);
 	padding-top: 18px;
-	border-top: 2px solid @offset;
+	border-top: 1px solid @offset;
 
 	a {
 		margin-left: 13px;
@@ -176,7 +176,7 @@ nav {
 	.border {
 		position: absolute;
 		top: 0; left: 0; right: 0; bottom: 0;
-		border: 1px solid rgba(255,255,255,0.3);
+		border: 1px solid rgba(255,255,255,0.2);
 		z-index: 1;
 	}
 
@@ -212,7 +212,7 @@ nav {
 			position: absolute;
 			top: -1px; left: -1px; bottom: 0; right: 0;
 			content: '';
-			border: 1px solid rgba(255,255,255,0.3);
+			border: 1px solid rgba(255,255,255,0.2);
 			border-right: none;
 			border-bottom: none;
 			background: transparent;
@@ -540,10 +540,12 @@ body > header {
 						display: block;
 					}
 				}
+
 			}
 
 			li.current-menu-item > a {
 				color: @white;
+				cursor: default;
 			}
 
 			.sub-menu {
@@ -596,7 +598,7 @@ body > header {
 	}
 
 	.toggle {
-		.y(4);
+		.y(1);
 		display: block;
 		float: right;
 		margin-right: 18px;
@@ -605,7 +607,8 @@ body > header {
 			text-decoration: none;
 
 			> span span:first-child {
-				text-decoration: underline;
+				text-decoration: none;
+				color: @white;
 			}
 		}
 

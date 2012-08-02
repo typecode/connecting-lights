@@ -300,8 +300,37 @@ nav {
 		
 		> .content {
 			border-top: 1px solid @accent;
+			padding: 18px 0 102px;
+		
+			p {
+				&:first-child { .y(0); }
+			}
+			
+			> div {
+				width: 573px;
+			}
+			
 		}
 
+	}
+	
+	h2 { 
+		font-size: 28px;
+		font-weight: 500;
+	}
+	
+	p { 
+		.y(1);
+		font-size: 18px;
+		line-height: 25px;
+		color: @base;
+	}
+	
+	ul { 
+		.y(2);
+	
+		li { .y(1); }
+	
 	}
 
 }
@@ -561,47 +590,30 @@ body > header {
 
 }
 
-.inverted {
+.home .inverted {
 
-	h2 { 
-		font-size: 28px;
-		font-weight: 500;
-	}
-	
-	p { 
-		.y(1);
-		font-size: 18px;
-		line-height: 25px;
-		color: @base;
-	}
-	
-	ul { 
-		.y(2);
-	
-		li { .y(1); }
-	
-	}
-	
-	> .inner > .content {
-		padding: 18px 0 102px;
-		
-		p {
-			&:first-child { .y(0); }
-		}
-		
-		> div {
-			width: 573px;
-		}
-		
+	> .inner { 
+		.clear;
+		padding-bottom: 36px;
 	}
 	
 	.posts {
 		float: left;
 		width: 512px;
 		
-		img {
-			float: left;
-			margin-right: 18px;
+		.post {
+			.y(2);
+			.clear;
+			
+			img {
+				float: left;
+				margin-right: 18px;
+			}
+			
+			> div {
+				margin-left: 182px;
+			}
+			
 		}
 		
 	}

@@ -62,9 +62,11 @@
 	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/tc.merlin.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/merlin/tc.merlin.data.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/tc.carousel.js"></script>
+	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/tc.overlay.js"></script>
 
 	<!-- app-specific -->
 	<script src="<?php bloginfo("template_url"); ?>/js/Signup.js"></script>
+	<script src="<?php bloginfo("template_url"); ?>/js/SendMessage.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/cl-carousel.js"></script>
 
 	<!-- initialization -->

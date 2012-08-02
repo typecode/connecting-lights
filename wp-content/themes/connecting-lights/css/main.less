@@ -28,18 +28,22 @@
 .garaje { font-family: "Garaje53UnicaseBlack"; }
 
 h1 {
-	font-size: 72px;
+	.garaje;
+	color: @base;
+	font-size: 54px;
 	line-height: 1em;
 	letter-spacing: -1px;
 	text-transform: uppercase;
 }
 h2 {
+	.garaje;
 	font-size: 30px;
 	text-transform: uppercase;
 	font-weight: 600;
 	color: @gray3;
 }
 h3 {
+	.garaje;
 	font-size: 25px;
 }
 h4 {
@@ -89,6 +93,12 @@ body {
 	float: left;
 	width: 40px * @unit - 12px;
 	margin-left: 18px;
+}
+.xpl(@unit) {
+	padding-left: 40px * @unit;
+}
+.xpr(@unit) {
+	padding-right: 40px * @unit;
 }
 .y(@unit) {
 	margin-top: 18px * @unit;
@@ -544,8 +554,9 @@ body > header {
 	> div { .x(19); }
 
 	p {
-		.yp(1);
+		.yp(0.5);
 		&:first-child {
+			.yp(1);
 			color: @gray1;
 		}
 	}
@@ -559,7 +570,7 @@ body > header {
 	}
 
 	.toggle {
-		.y(1);
+		.y(4.5);
 		display: block;
 		float: right;
 		margin-right: 18px;
@@ -682,33 +693,43 @@ article {
 	padding-bottom: 60px;
 
 	h3 {
-		.x-first(8);
-		padding-top: 12px;
-		line-height: 1em;
-		font-size: 28px;
+		.x-first(7);
+		.xpr(1);
+		padding-top: 14px;
+		line-height: 36px;
+		font-size: 30px;
 		text-transform: uppercase;
 		color: @accent;
 	}
 
 	.details {
 		.x(13);
-		padding-top: 20px;
-
+		
 		p {
+			.museo-slab;
+			font-weight: 300;
+			color: @article-copy;
 			margin-bottom: 10px;
-			font-size: 17px;
-			line-height: 1.3em;
+			font-size: 14px;
+			line-height: 18px;
 		}
 
 		strong {
+			.brandon-grotesque;
 			color: @accent;
 			font-size: 24px;
 			line-height: 2em;
 		}
 
 		a {
-			color: black;
-			text-decoration: underline;
+			color: @base;
+			/*text-decoration: underline;*/
+			font-weight: 400;
+
+			&:hover {
+				color: @accent;
+				text-decoration: none;
+			}
 		}
 
 		#small-image {

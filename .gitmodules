@@ -3,4 +3,4 @@
 	url = https://github.com/typecode/typecode-js.git
 [submodule "hwBackend"]
 	path = hwBackend
-	url = https://LevKanter@github.com/ofZach/hwBackend.git
+	url = git@github.com:ofZach/hwBackend.git

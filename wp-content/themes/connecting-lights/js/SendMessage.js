@@ -6,14 +6,17 @@
 
 		o = $.extend({
 			app: null,
+			$e: null,
+			selector: "",
 			$tigger: null
 		}, options);
 
 		internal = {
 			name: "mod.SendMessage",
+			$e: (o.$e ? o.$e : $(o.selector)),
 			$trigger: o.$trigger,
 			overlay: new NI.Overlay({
-				closeBtn: true
+				autoflush: false
 			})
 		};
 
@@ -25,7 +28,7 @@
 			triggerClick: function(e, d) {
 				e.preventDefault();
 				internal.overlay.open({
-					bd: "[content will go here soon]"
+					bd: internal.$e
 				});
 			}
 		};

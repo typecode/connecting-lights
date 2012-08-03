@@ -64,6 +64,19 @@ a {
 /*  Core
 =============================================================================== */
 
+body, html, #wrap { height: 100%; }
+
+#wrap {
+	height: auto;
+	min-height: 100%;
+}
+
+#main { 
+	.clear;
+	padding-bottom: 374px;
+}
+
+
 body {
 	.brandon-grotesque;
 	font-size: 21px;
@@ -471,7 +484,7 @@ textarea {
 /*  Header
 =============================================================================== */
 
-body > header {
+#main > header {
 	.xFull;
 	.y(2);
 	.clear;
@@ -865,9 +878,10 @@ footer {
 	.x100;
 	.clear;
 	position: relative;
+	margin-top: -345px;
+	height: 345px;
 	font-size: 12px;
 	line-height: 18px;
-	padding-bottom: 54px;
 	color: @gray3;
 
 	background: #ebebeb;

@@ -84,6 +84,9 @@
 
 <body <?php body_class(); ?>>
 
+<div id="wrap">
+<div id="main">
+
 	<header>
 
 		<h1><a href="<?php bloginfo("url"); ?>"><img src="<?php bloginfo("template_url"); ?>/img/logo.png" alt="Connecting Light" /></a></h1>

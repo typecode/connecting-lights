@@ -18,10 +18,15 @@ get_header();
 				
 				<article>
 	
-					<header>
+					<header<?php if (! get_the_excerpt() && ! is_singular() ) { ?> class="full"<?php } ?>>
 						<a href="<?php the_permalink(); ?>">
 							<?php if (! is_singular() ) { ?><h1><?php the_title(); ?></h1><?php } ?>
-							<?php the_post_thumbnail("ptmb"); ?>
+							<?php if ( get_the_excerpt() ) { 
+									the_post_thumbnail("ptmb");
+								} else {
+									the_post_thumbnail("full");
+								} 
+							?>
 						</a>
 					</header>
 		

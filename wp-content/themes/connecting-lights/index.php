@@ -53,18 +53,14 @@ get_header();
 				<?php
 
 				} else {
-				
-					$prev_post = get_previous_post();
-					$next_post = get_next_post();
-					
-					if (! empty( $prev_post ) ) {
-						echo '<a class="alignleft" href="'. $prev_post->guid .'">&laquo; '. $prev_post->post_title .'</a>';
-					}
-					
-					if (! empty( $next_post ) ) {
-						echo '<a class="alignright" href="'. $next_post->guid .'">'. $next_post->post_title .' &raquo;</a>';
-					}
-					
+
+				?>
+
+					<div class="alignleft"><?php next_post_link( '%link', '&laquo; %title'); ?></div>
+					<div class="alignright"><?php previous_post_link( '%link', '%title &raquo;'); ?></div>
+
+				<?php
+
 				}
 				
 			?>

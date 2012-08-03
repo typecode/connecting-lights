@@ -15,7 +15,7 @@ get_header();
 			</header>
 
 			<div class="detail-block">
-				<h3>VIEW LOCATIONS & TICKETS</h3>
+				<h3>View Locations &amp; Tickets</h3>
 				<div class="details">
 					<p>Connecting Light is a public and free art installation consisting
 						of several viewing locations along Britain’s greatest Roman
@@ -41,7 +41,7 @@ get_header();
 			</div>
 
 			<div class="detail-block">
-				<h3>HADRIAN'S WALL COUNTRY</h3>
+				<h3>Hadrian's Wall Country</h3>
 				<div class="details">
 					<p>You can visit Hadrian’s Wall Country from almost any angle and by
 						almost any mode of transport. You’ll find we’re very well connected.

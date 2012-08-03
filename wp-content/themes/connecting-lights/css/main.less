@@ -774,17 +774,17 @@ article {
 	padding-bottom: 60px;
 
 	h3 {
-		.x-first(7);
+		.x-first(6);
 		.xpr(1);
-		padding-top: 16px;
 		line-height: 1em;
 		font-size: 27px;
-		text-transform: uppercase;
+		/* text-transform: uppercase; */
+		font-weight: 600;
 		color: @accent;
 	}
 
 	.details {
-		.x(13);
+		.x(14);
 
 		p {
 			.museo-slab;
@@ -794,14 +794,14 @@ article {
 			line-height: 27px;
 
 			&:first-child {
-				margin-top: 21px;
+				margin-top: 25px;
 			}
 		}
 
 		strong {
 			.brandon-grotesque;
 			font-weight: 500;
-			color: @accent;
+			color: @base;
 			font-size: 24px;
 			line-height: 27px;
 			margin-top: 1em;
@@ -809,13 +809,9 @@ article {
 		}
 
 		a {
-			color: @base;
-			/*text-decoration: underline;*/
-			font-weight: 600;
-
+			color: @accent;
 			&:hover {
-				color: @accent;
-				text-decoration: none;
+				text-decoration: underline;
 			}
 		}
 

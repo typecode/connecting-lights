@@ -30,7 +30,7 @@
 					<li><a href=""><img src="<?php bloginfo("template_url"); ?>/img/sponsors/sponsor3.png" /></a></li>
 	
 					<li class="terms"><a href="<?php
-						$terms_page = get_page_by_title("Terms & Conditions");
+						$terms_page = get_page_by_title("Terms and Conditions");
 						if ($terms_page) {
 							echo get_permalink($terms_page->ID);
 						} else {

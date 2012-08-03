@@ -7,7 +7,7 @@
 add_theme_support("post-thumbnails");
 add_image_size("tin", 164, 164, true);
 add_image_size("tmb", 220, 220, true);
-add_image_size("ptmb", 277, 9999);
+add_image_size("ptmb", 268, 222, true);
 add_image_size("partner", 242, 100);
 
 
@@ -98,6 +98,16 @@ function cl_image_attachment_fields_to_save($post, $attachment) {
 	return $post;
 }
 add_filter("attachment_fields_to_save", "cl_image_attachment_fields_to_save", null , 2);
+
+
+
+//^^^^^ excerpt ^^^^^
+
+function cl_excerpt_more($more) {
+	global $post;
+	return " <a class='more-link' href='". get_permalink($post->ID) . "'>Read More &raquo;</a>";
+}
+add_filter('excerpt_more', 'cl_excerpt_more');
 
 
 

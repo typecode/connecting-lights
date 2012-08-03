@@ -40,11 +40,11 @@
 				</ul>
 			</nav>
 
-			<p>Connecting Light is commissioned by the Local Organizing Committee of the Olympic Games, and funded by the Department of Culture Media and Support with support from Arts Council England. The Hadrian?s Wall Trust is the delivery partner for the installation. For more information contact <a href="">username@domain.com</a>.</p>
+		<p>Connecting Light is created by YesYesNo and commissioned by the London 2012 Festival and Hadrian's Wall Trust with support from Arts Council England. The Hadrian's Wall Trust is the delivery partner for the installation. For more information contact <a href="">username@domain.com</a>.</p>
 		
 		</div>
 		
-		<a href="" class="banner"></a>
+		<a href="http://festival.london2012.com/" class="banner"></a>
 		
 	</footer>
 

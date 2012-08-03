@@ -40,28 +40,27 @@
 	</script>
 	
 	<script>
-	
-		/*FB.init({appId: "395149550542429", status: true, cookie: true});
+		page.features.push(function(app) {
+			/*FB.init({appId: "395149550542429", status: true, cookie: true});
+			
+			function postToFeed() {
+			
+				// calling the API ...
+			  	var obj = {
+			    	method: 'feed',
+			    	link: 'http://connectinglight.info/',
+			    	picture: 'http://connectinglight.info/wp-content/themes/connecting-lights/img/logo.png',
+			    	name: 'Connecting Light',
+			    	caption: 'Connecting Light',
+			    	description: 'Connecting Light - a 70-mile long digital art installation along Hadrian\'s Wall.'
+				};
+			
+			 	function callback(response) {
+			  	}
+			
+			  	FB.ui(obj, callback);
+			}*/
 		
-		function postToFeed() {
-		
-			// calling the API ...
-		  	var obj = {
-		    	method: 'feed',
-		    	link: 'http://connectinglight.info/',
-		    	picture: 'http://connectinglight.info/wp-content/themes/connecting-lights/img/logo.png',
-		    	name: 'Connecting Light',
-		    	caption: 'Connecting Light',
-		    	description: 'Connecting Light - a 70-mile long digital art installation along Hadrian\'s Wall.'
-			};
-		
-		 	function callback(response) {
-		  	}
-		
-		  	FB.ui(obj, callback);
-		}*/
-	
-		$(document).ready(function() {
   			$('.popup').click(function(event) {
   			  var width  = 575,
   			      height = 400,
@@ -78,7 +77,8 @@
   			
   			  return false;
   			});
-  		});
+	  		
+	  	});
 	</script>
 
 </head>

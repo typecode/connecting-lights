@@ -7,9 +7,8 @@
 
 	<meta charset="<?php bloginfo("charset"); ?>" />
 
-	<!--
+	<link rel="icon" type="image/x-icon" href="<?php bloginfo("template_url"); ?>/img/favicon.ico" />
 	<link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo("template_url"); ?>/img/favicon.ico" />
-	-->
 	
 	<!-- TypeKit -->
 	<script src="//use.typekit.net/lla2izs.js"></script>

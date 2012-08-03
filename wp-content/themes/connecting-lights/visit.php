@@ -15,7 +15,7 @@ get_header();
 			</header>
 
 			<div class="detail-block">
-				<h3>VIEW LOCATIONS & TICKETS</h3>
+				<h3>View Locations &amp; Tickets</h3>
 				<div class="details">
 					<p>Connecting Light is a public and free art installation consisting
 						of several viewing locations along Britain’s greatest Roman
@@ -26,7 +26,7 @@ get_header();
 
 					<div style="width: 550px; height: 250px; background-color: whitesmoke; margin: 10px 0" ></div>
 
-					<p><strong>A note about viewing locations —</strong></p>
+					<p><strong>A note about viewing locations &mdash;</strong></p>
 
 					<p>Please be aware that visitors that travel off-site of designated
 						viewing areas do so at their own risk. As such, we urge people to
@@ -41,7 +41,7 @@ get_header();
 			</div>
 
 			<div class="detail-block">
-				<h3>HADRIAN'S WALL COUNTRY</h3>
+				<h3>Hadrian's Wall Country</h3>
 				<div class="details">
 					<p>You can visit Hadrian’s Wall Country from almost any angle and by
 						almost any mode of transport. You’ll find we’re very well connected.
@@ -51,7 +51,7 @@ get_header();
 						surprisingly easy. Just board the Hadrian’s Wall Country AD122 Bus
 						and off you go. Please <a href="#">click here</a> for further details.</p>
 
-					<p><strong>Where to stay -</strong></p>
+					<p><strong>Where to stay &mdash;</strong></p>
 
 					<p>As you may imagine, there’s a wide range of accommodation available
 						in Hadrian’s Wall Country. Planning for your break will be a lot less
@@ -63,7 +63,7 @@ get_header();
 						weekend by visiting <a href="http://www.ntopsearch.com/HadriansWall/">
 						Hadrian’s Wall Trust</a> destination page.</p>
 
-					<p><strong>What to see and do -</strong></p>
+					<p><strong>What to see and do &mdash;</strong></p>
 
 					<div id="small-image"></div>
 

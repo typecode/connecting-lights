@@ -3,17 +3,51 @@
 		app.runtime.sendMessage = new page.classes.SendMessage({
 			app: app,
 			$e: ($("#send-message").detach().show()),
-			$trigger: $("#send-message-trigger")
+			$trigger: $("#send-message-trigger"),
+			color_picker_src: "<?php bloginfo("template_url"); ?>/img/color-picker.png",
+			backend_url: "<?php bloginfo("url"); ?>/hwBackend/www/question/"
 		});
 	});
 </script>
 
-<div id="send-message" style="display: none;">
-	<p>Connecting Light will send your messages across Hadrian's Wall in the form of pulses of light. Prior to the event, we're collecting messages which will pre-populate the messaging system and the some of the first ones to be seen by the public.</p>
+<div id="send-message" class="send-message merlin" style="display: none;">
+	<div class="step send-message-info">
+		<h2>Your message will travel across Hadrian's Wall in the form of pulses of light.</h2>
 
-	<p>We've come up with some sentences about connection we'd love for you to fill out, or feel free to make the message your own.</p>
+		<p>Prior to the event, we're collecting messages which will pre-populate the messaging system and be some of the first ones to be seen by the public.</p>
 
-	<p>You can send any message you want, but we ask that you please think about making a message that you'd like to send across the country and for everyone of all ages to read and enjoy.</p>
+		<p>We've come up with some sentences about connection we'd love for you to fill out, or feel free to make the message your own.</p>
+
+		<p>You can send any message you want, but we ask that you please think about making a message that you'd like to send across the country and for everyone of all ages to read and enjoy.</p>
+
+		<div class="center">
+			<a class="ca-button next">Send a Message</a>
+		</div>
+	</div>
+	<div class="step send-message-submit">
+
+		<div class="prompt">I feel connected too&hellip;</div>
+		<div class="load-prompt"></div>
+
+		<div class="clear">
+			<div class="tc-field">
+				<textarea name="m">
+					Compose a message&hellip;
+				</textarea>
+				<span class="count"></span>
+			</div>
+		</div>
+
+		<div class="clear">
+			<div class="color-picker">
+				<canvas></canvas>
+			</div>
+			<a class="ca-button next">Send Your Message</a>
+		</div>
+	</div>
+	<div class="step dispatch">
+
+	</div>
 </div>
 
 <div class="actions">

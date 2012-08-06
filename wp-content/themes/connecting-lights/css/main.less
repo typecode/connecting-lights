@@ -150,6 +150,9 @@ img {
 	display: block;
 	margin: 9px auto;
 }
+.center {
+	text-align: center;
+}
 
 
 nav {
@@ -321,18 +324,50 @@ nav {
 
 	.tier > .tier {
 		/*vertical-align: middle;*/
-		padding: 300px 0;
-		vertical-align: middle;
+		padding: 130px 0;
+	}
+
+	.btn-close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 16px;
+		height: 16px;
+		background-image: url("../img/x.png");
+
+		span {
+			display: none;
+		}
 	}
  
 	.pane {
 		padding: 20px 20px 40px;
-		width: 800px;
-		background-color: #ffffff;
-		box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+		width: 530px;
+		background-color: #333333;
+		box-shadow: 0 2px 20px rgba(0, 0, 0, .75);
+
+		h2 {
+			color: @accent;
+		}
  
 		p {
 			.yp(1);
+		}
+
+		.ca-button {
+			.y(1);
+			.brandon-grotesque;
+			color: #000000;
+		}
+	}
+
+	&.merlin-overlay {
+		.pane {
+			padding: 0;
+
+			> .bd > .merlin > .step {
+				padding: 20px 20px 40px;
+			}
 		}
 	}
 }
@@ -340,7 +375,7 @@ nav {
 .mask {
 	z-index: 1000;
 	background-color: #000000;
-	opacity: 0.2;
+	opacity: 0.8;
 }
 
 
@@ -874,6 +909,21 @@ article {
 
 	}
 
+}
+
+
+
+/*  Send Message
+=============================================================================== */
+
+.color-picker {
+	float: left;
+
+	canvas {
+		display: block;
+		width: 142px;
+		height: 146px;
+	}
 }
 
 

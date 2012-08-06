@@ -10,6 +10,7 @@
 			selector: "",
 			$tigger: null,
 			color_picker_src: "",
+			prompts: page.prompts,
 			backend_url: ""
 		}, options);
 
@@ -29,13 +30,17 @@
 				}
 			}),
 			merlin: null,
-			color_picker: null
+			color_picker: null,
+			prompts: o.prompts
 		};
 
 		fn = {
 			init: function() {
 				internal.overlay.setBody(internal.$e.detach());
 				internal.$trigger.click(handlers.trigger_click);
+			},
+			get_random_prompt: function() {
+				return NI.fn.randomElement(internal.prompts);
 			}
 		};
 
@@ -64,7 +69,7 @@
 					uri: o.backend_url + "add.php",
 					data: {
 						m: "",
-						q: "dummy q",
+						q: "0",
 						r: "0",
 						g: "0",
 						b: "0"
@@ -103,6 +108,8 @@
 							$e: $e,
 							color_picker_src: o.color_picker_src
 						});
+
+						me.internal.current_step.fields["m"].component.set_val(fn.get_random_prompt());
 					},
 					finish: function(me) {
 						me.extensions.data.collect_fields(me);

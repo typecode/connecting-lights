@@ -33,7 +33,7 @@
 
 		<div class="tier">
 			<div class="tc-field">
-				<textarea name="m">Compose a message&hellip;</textarea>
+				<textarea name="m"></textarea>
 				<span class="count"></span>
 			</div>
 		</div>

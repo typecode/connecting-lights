@@ -5,7 +5,7 @@
 			$e: ($("#send-message").detach().show()),
 			$trigger: $("#send-message-trigger"),
 			color_picker_src: "<?php bloginfo("template_url"); ?>/img/color-picker.png",
-			backend_url: "<?php bloginfo("url"); ?>/hwBackend/"
+			backend_url: "<?php bloginfo("url"); ?>/hwBackend/api/"
 		});
 	});
 </script>

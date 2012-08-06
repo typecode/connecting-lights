@@ -26,19 +26,19 @@
 	</div>
 	<div class="step send-message-submit">
 
-		<div class="prompt">I feel connected too&hellip;</div>
-		<div class="load-prompt"></div>
+		<div class="tier">
+			<div class="prompt">I feel connected too&hellip;</div>
+			<div class="load-prompt"><a href="#">load a different prompt</a></div>
+		</div>
 
-		<div class="clear">
+		<div class="tier">
 			<div class="tc-field">
-				<textarea name="m">
-					Compose a message&hellip;
-				</textarea>
+				<textarea name="m">Compose a message&hellip;</textarea>
 				<span class="count"></span>
 			</div>
 		</div>
 
-		<div class="clear">
+		<div class="tier">
 			<div class="color-picker">
 				<canvas></canvas>
 			</div>

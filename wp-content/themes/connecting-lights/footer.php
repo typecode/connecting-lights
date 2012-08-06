@@ -69,6 +69,7 @@
 
 	<!-- app-specific -->
 	<script src="<?php bloginfo("template_url"); ?>/js/Signup.js"></script>
+	<script src="<?php bloginfo("template_url"); ?>/js/ColorPicker.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/SendMessage.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/cl-carousel.js"></script>
 

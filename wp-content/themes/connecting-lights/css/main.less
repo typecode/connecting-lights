@@ -154,6 +154,10 @@ img {
 	text-align: center;
 }
 
+.tier {
+	.clear;
+}
+
 
 nav {
 	> ul > li { display: inline; }
@@ -342,7 +346,7 @@ nav {
  
 	.pane {
 		padding: 20px 20px 40px;
-		width: 530px;
+		width: 580px;
 		background-color: #333333;
 		box-shadow: 0 2px 20px rgba(0, 0, 0, .75);
 
@@ -352,11 +356,14 @@ nav {
  
 		p {
 			.yp(1);
+			.museo-slab;
+			font-size: 16px;
 		}
 
 		.ca-button {
 			.y(1);
 			.brandon-grotesque;
+			font-size: 25px;
 			color: #000000;
 		}
 	}
@@ -472,6 +479,7 @@ textarea {
 	line-height: 1;
 	padding: 15px;
 	text-transform: uppercase;
+	cursor: pointer;
 
 	color: @white;
 
@@ -923,6 +931,49 @@ article {
 		display: block;
 		width: 142px;
 		height: 146px;
+	}
+}
+
+.send-message {
+
+	.tier {
+		.y(2);
+	}
+		
+	h2 {
+		font-size: 32px;
+		line-height: 1.4;
+	}
+
+	.prompt {
+		.museo-slab;
+		font-size: 30px;
+	}
+
+	.load-prompt {
+		padding: 10px 0 0;
+		font-size: 18px;
+
+		a {
+			color: @white;
+		}
+	}
+
+	.send-message-submit {
+
+		.tc-field {
+			float: none;
+
+			textarea {
+				background-color: rgba(255, 255, 255, 0.3);
+				border: 0;
+				border-radius: 5px;
+			}
+		}
+
+		.ca-button {
+			margin: 40px 0 0 35px;
+		}
 	}
 }
 

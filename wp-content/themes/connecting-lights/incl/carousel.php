@@ -22,6 +22,10 @@
 
 		<div class="carousel autoscroll">
 			<div class="viewport">
+				
+				<!-- <div class="border">
+				</div> -->
+
 				<div class="scroll">
 				<?php
 					

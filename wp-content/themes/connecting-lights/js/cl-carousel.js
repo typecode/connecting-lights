@@ -12,9 +12,10 @@ $(function() {
 			container: container,
 			panelClass: ".slide",
 			speed: 400,
+			keyboard: false,
 			onBeforeMove: function(instance, info) {
 				nav.children("li:eq("+ info.index +")").addClass("state-active").siblings().removeClass("state-active");
-				caption.text(info.$current.next().find('img').attr('alt'));
+				caption.text(info.$current.find('img').attr('alt'));
 			}
 		});
 

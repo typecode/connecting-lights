@@ -1,5 +1,7 @@
 (function(window, $, page) {
 
+	//TODO there's some magic numbers in here that need to get cleaned up
+
 	page.classes.ColorPicker = function(options) {
 
 		var o, internal, fn, handlers;

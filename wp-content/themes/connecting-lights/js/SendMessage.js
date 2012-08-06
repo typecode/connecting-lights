@@ -45,6 +45,10 @@
 				internal.overlay.open();
 			},
 			color_set: function(e, d) {
+				var merlin = internal.merlin;
+				merlin.set_val("r", d.r);
+				merlin.set_val("g", d.g);
+				merlin.set_val("b", d.b);
 				e.data.container.css("background-color", d.color);
 			}
 		};
@@ -54,6 +58,18 @@
 			$e: internal.$e,
 			controls: {
 				next: ".next"
+			},
+			extensions: {
+				data: new NI.MerlinData({
+					uri: o.backend_url + "add.php",
+					data: {
+						m: "",
+						q: "dummy q",
+						r: "0",
+						g: "0",
+						b: "0"
+					}
+				})
 			},
 			first_step: "info",
 			steps: {
@@ -68,12 +84,18 @@
 						"m": {
 							selector: "textarea[name=m]",
 							options: {
-
+								extensions: {
+									Validator: {
+										validators: ["required"]
+									}
+								}
 							}
 						}
 					},
 					init: function(me) {
 						var $e = me.internal.current_step.$e.find(".color-picker");
+
+						me.extensions.data.init(me);
 
 						$e.on("color:set", {container: me.internal.current_step.$e}, handlers.color_set);
 
@@ -81,10 +103,18 @@
 							$e: $e,
 							color_picker_src: o.color_picker_src
 						});
+					},
+					finish: function(me) {
+						me.extensions.data.collect_fields(me);
 					}
 				},
 				"dispatch": {
-					selector: ".step.dispatch"
+					selector: ".step.dispatch",
+					visible: function(me) {
+						me.extensions.data.post_data(function(d) {
+
+						});
+					}
 				}
 			}
 		});

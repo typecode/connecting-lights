@@ -5,7 +5,7 @@
 			$e: ($("#send-message").detach().show()),
 			$trigger: $("#send-message-trigger"),
 			color_picker_src: "<?php bloginfo("template_url"); ?>/img/color-picker.png",
-			backend_url: "<?php bloginfo("url"); ?>/hwBackend/api/"
+			service_dir: "<?php bloginfo("url"); ?>/hwBackend/api/"
 		});
 	});
 </script>
@@ -43,7 +43,9 @@
 		</div>
 	</div>
 	<div class="step dispatch">
-
+		<div class="spinner">
+			<img src="<?php bloginfo("template_url"); ?>/img/spinner.gif" alt="Loading">
+		</div>
 	</div>
 </div>
 

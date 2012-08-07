@@ -11,7 +11,7 @@
 			$tigger: null,
 			color_picker_src: "",
 			prompts: page.prompts,
-			backend_url: ""
+			service_dir: ""
 		}, options);
 
 		internal = {
@@ -71,7 +71,7 @@
 			},
 			extensions: {
 				data: new NI.MerlinData({
-					uri: o.backend_url + "add.php",
+					uri: o.service_dir + "add.php",
 					data: {
 						m: "",
 						q: "0",
@@ -130,7 +130,7 @@
 					selector: ".step.dispatch",
 					visible: function(me) {
 						me.extensions.data.post_data(function(d) {
-
+							internal.overlay.close();
 						});
 					}
 				}

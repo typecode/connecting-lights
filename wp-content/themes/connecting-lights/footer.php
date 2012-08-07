@@ -8,7 +8,8 @@
 			<script>
 				page.features.push(function(app) {
 					app.runtime.signup = new page.classes.Signup({
-						selector: "#signup"
+						selector: "#signup",
+						service_url: "<?php bloginfo("template_url"); ?>/api/signup.php"
 					});
 				});
 			</script>
@@ -22,7 +23,12 @@
 					</div>
 				</div>
 				<div class="step dispatch">
-
+					<div class="spinner">
+						<img src="<?php bloginfo("template_url"); ?>/img/spinner.gif" alt="Loading">
+					</div>
+				</div>
+				<div class="step thank-you">
+					Thank you!
 				</div>
 			</div>
 		

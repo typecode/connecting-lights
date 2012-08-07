@@ -7,6 +7,7 @@
 		o = $.extend({
 			$e: null,
 			selector: "",
+			service_url: "",
 			app: null
 		}, options);
 
@@ -21,6 +22,14 @@
 			$e: internal.$e,
 			controls: {
 				next: ".next"
+			},
+			extensions: {
+				data: new NI.MerlinData({
+					uri: o.service_url,
+					data: {
+						email: null
+					}
+				})
 			},
 			first_step: "form",
 			steps: {
@@ -41,10 +50,31 @@
 								}
 							}
 						}
+					},
+					init: function(me) {
+						me.extensions.data.init(me);
+					},
+					finish: function(me) {
+						me.extensions.data.collect_fields(me);
 					}
 				},
 				"dispatch": {
-					selector: ".step.dispatch"
+					selector: ".step.dispatch",
+					visible: function(me) {
+						me.extensions.data.post_data(function(d) {
+							if (d == "true") {
+								me.show_step("thank-you");
+							}
+						});
+					}
+				},
+				"thank-you": {
+					selector: ".step.thank-you",
+					visible: function(me) {
+						window.setTimeout(function() {
+							me.show_step("form");
+						}, 3000);
+					}
 				}
 			}
 		});

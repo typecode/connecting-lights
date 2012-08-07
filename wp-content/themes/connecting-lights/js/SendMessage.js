@@ -76,7 +76,9 @@
 				merlin.set_val("g", g);
 				merlin.set_val("b", b);
 
-				e.data.container.css("background-color", fn.get_bg_css(r, g, b));
+				e.data.container.css({
+					"background-color": fn.get_bg_css(r, g, b)
+				});
 			}
 		};
 

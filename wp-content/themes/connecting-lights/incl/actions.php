@@ -39,7 +39,7 @@
 				<div class="handle"></div>
 				<canvas></canvas>
 			</div>
-			<a class="ca-button next">Send Your Message</a>
+			<a class="ca-button ca-trans next">Send Your Message</a>
 		</div>
 	</div>
 	<div class="step dispatch">

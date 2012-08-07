@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/webfonts/ss-social.css" type="text/css"/>
 	<link rel="stylesheet/less" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.less" />
 
-	<meta name="viewport" content="width=device-width; initial-scale=1" />
+	<!--<meta name="viewport" content="width=device-width; initial-scale=1" />-->
 
 	<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>

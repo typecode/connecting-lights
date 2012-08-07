@@ -139,7 +139,7 @@
 
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
 
-						current_step.fields["m"].component.event_receiver.focus();
+						//current_step.fields["m"].component.event_receiver.focus();
 					},
 					visible: function(me) {
 						internal.colorpicker.reset();

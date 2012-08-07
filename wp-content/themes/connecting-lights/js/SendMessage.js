@@ -2,7 +2,7 @@
 
 	page.classes.SendMessage = function(options) {
 
-		var o, internal, fn, handlers;
+		var o, internal, fn, handlers, colorutil = page.classes.colorutil;
 
 		o = $.extend({
 			app: null,
@@ -10,7 +10,8 @@
 			selector: "",
 			$tigger: null,
 			color_picker_src: "",
-			prompts: $.isArray(page.prompts) ? page.prompts : [],
+			bg_desaturation: 0.6,
+			prompts: $.isArray(page.classes.prompts) ? page.classes.prompts : [],
 			service_dir: ""
 		}, options);
 
@@ -39,6 +40,18 @@
 			set_random_prompt: function() {
 				var prompt = NI.fn.randomElement(internal.prompts);
 				internal.merlin.internal.steps["submit"].fields["m"].component.set_val(prompt);
+			},
+			get_bg_css: function(r, g, b) {
+				var hsv;
+
+				// the background color is a desaturated version
+				// of the rgb color that the user has picked
+
+				hsv = colorutil.rgbToHSV(r, g, b);
+
+				hsv.s = hsv.s * o.bg_desaturation;
+
+				return colorutil.rgbToString(colorutil.hsvToRGB(hsv));
 			}
 		};
 
@@ -51,12 +64,19 @@
 				e.preventDefault();
 				fn.set_random_prompt();
 			},
-			color_set: function(e, d) {
-				var merlin = internal.merlin;
-				merlin.set_val("r", d.r);
-				merlin.set_val("g", d.g);
-				merlin.set_val("b", d.b);
-				e.data.container.css("background-color", d.color);
+			color_picked: function(e, d) {
+				var merlin, r, g, b;
+
+				merlin = internal.merlin;
+				r = d.r;
+				g = d.g;
+				b = d.b;
+
+				merlin.set_val("r", r);
+				merlin.set_val("g", g);
+				merlin.set_val("b", b);
+
+				e.data.container.css("background-color", fn.get_bg_css(r, g, b));
 			}
 		};
 
@@ -108,7 +128,7 @@
 
 						me.extensions.data.init(me);
 
-						$colorpicker.on("color:set", {container: current_step.$e}, handlers.color_set);
+						$colorpicker.on("color:picked", {container: current_step.$e}, handlers.color_picked);
 
 						internal.colorpicker = new page.classes.ColorPicker({
 							$e: $colorpicker,

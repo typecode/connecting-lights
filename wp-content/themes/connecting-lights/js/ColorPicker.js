@@ -32,7 +32,7 @@
 			offset: null,
 			context: null,
 
-			bg: new Image(),
+			bg: null,
 			pixels: null, //image data
 
 			width: null,
@@ -53,7 +53,9 @@
 			handleX: 0,
 			handleY: 0,
 
-			color: null
+			r: 0,
+			g: 0,
+			b: 0
 		};
 
 		fn = {
@@ -76,6 +78,7 @@
 				internal.canvas.width = internal.width;
 				internal.canvas.height = internal.height;
 
+				internal.bg = new Image();
 				internal.bg.onload = function() {
 					internal.context.drawImage(internal.bg, 0, 0);
 					internal.pixels = internal.context.getImageData(0, 0, internal.width, internal.height);
@@ -107,14 +110,15 @@
 				r = data[i];
 				g = data[i + 1];
 				b = data[i + 2];
-				
-				internal.color = "rgb(" + r + "," + g + "," + b + ")";
 
-				internal.$e.trigger("color:set", {
+				internal.r = r;
+				internal.g = g;
+				internal.b = b;
+
+				internal.$e.trigger("color:picked", {
 					r: r,
 					g: g,
-					b: b,
-					color: internal.color
+					b: b
 				});
 			},
 			set_random_color: function() {
@@ -123,10 +127,16 @@
 				fn.set_color_from_mouse();
 			},
 			update_handle: function() {
-				var R = internal.radius - internal.radius_offset,
-				mX = internal.mouseX - internal.half_width,
-				mY = internal.mouseY - internal.half_height,
+				var R, mX, mY, r;
+
+				R = internal.radius - internal.radius_offset;
+				mX = internal.mouseX - internal.half_width;
+				mY = internal.mouseY - internal.half_height;
 				r = Math.sqrt(mX*mX + mY*mY);
+
+				if (r > R) {
+					//console.warn("clicked outside circle");
+				}
 
 				internal.handleX = (R*(mX/r)) + internal.half_width;
 				internal.handleY = (R*(mY/r)) + internal.half_height;

@@ -10,25 +10,29 @@ get_header();
 		<div class="inner">
 		
 			<header>
-				<h1><?php wp_title(''); ?></h1>
+				<!-- <h1><?php wp_title(''); ?></h1> -->
+				<h1>Blog</h1>
 			</header>
 			
-			<div class="detail-block">
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-				
-				<!-- <article> -->
-	
-					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		
-					<div class="details">
-						<?php the_content(); ?>
-					</div>
-					
-				<!-- </article> -->
 			
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
+				<div class="detail-block">
+					<!-- <article> -->
+		
+						<h3>
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+							<span class="meta"><?php the_date(); ?> </span>
+						</h3>
+			
+						<div class="details">
+							<?php the_content(); ?>
+						</div>
+						
+					<!-- </article> -->
+				</div>
 			<?php endwhile; else: ?>
 			<?php endif; ?>
-			</div>
+			
 			
 			<div class="pagination">
 			<?php 

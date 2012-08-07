@@ -41,6 +41,9 @@ h2 {
 	color: @base;
 	font-size: 36px;
 	line-height: 1em;
+	&.lighter {
+		color: @gray1;
+	}
 }
 h3 {
 	.brandon-grotesque;
@@ -976,10 +979,21 @@ article {
 		/* text-transform: uppercase; */
 		font-weight: 600;
 		color: @accent;
+
+		.meta {
+			.museo-slab;
+			font-size: 14px;
+			line-height: 18px;
+			font-weight: 400;
+			display: block;
+			color: @gray1;
+			margin-top: 9px;
+		}
 	}
 
 	.details {
 		.x(14);
+		margin-top: 25px;
 
 		p {
 			.museo-slab;
@@ -989,7 +1003,7 @@ article {
 			line-height: 27px;
 
 			&:first-child {
-				margin-top: 25px;
+				margin-top: 0px;
 			}
 		}
 

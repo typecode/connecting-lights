@@ -94,7 +94,7 @@ get_header();
 			</div>
 			
 			<div class="partners">
-				<h2>Official Partners</h2>
+				<h2 class="lighter">Official Partners</h2>
 				<ul>
 				<?php foreach ($partners as $post) : setup_postdata($post); ?>
 					<li><?php the_post_thumbnail("partner"); ?></li>

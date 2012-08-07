@@ -1,10 +1,21 @@
 (function(window, $, page) {
 
-	//TODO there's some magic numbers in here that need to get cleaned up
+	// remove "px" from a string representing a css pixel dimension
+	// and cast as a Number (i.e. trimpx("10px") returns 10)
+	// Used to parse px dimension values from CSS properties,
+	// such as "width" and "height"
+	function trimPX(s) {
+		if (s) {
+			return Number(s.substring(0, s.length - 2));
+		}
+		return 0;
+	}
 
 	page.classes.ColorPicker = function(options) {
 
-		var o, internal, fn, handlers;
+		var self, o, internal, fn, handlers;
+
+		self = this;
 
 		o = $.extend({
 			$e: null,
@@ -21,7 +32,7 @@
 			context: null,
 
 			bg: new Image(),
-			pixels: null,
+			pixels: null, //image data
 
 			width: null,
 			height: null,
@@ -34,6 +45,9 @@
 			mouseY: 0,
 
 			$handle: null,
+			handle_width: null,
+			handle_height: null,
+
 			handleX: 0,
 			handleY: 0,
 
@@ -54,6 +68,8 @@
 				internal.offset = internal.$canvas.offset();
 
 				internal.$handle = internal.$e.find(".handle");
+				internal.handle_width = trimPX(internal.$handle.css("width"));
+				internal.handle_height = trimPX(internal.$handle.css("height"));
 
 				internal.canvas.width = internal.width;
 				internal.canvas.height = internal.height;
@@ -61,6 +77,7 @@
 				internal.bg.onload = function() {
 					internal.context.drawImage(internal.bg, 0, 0);
 					internal.pixels = internal.context.getImageData(0, 0, internal.width, internal.height);
+					self.reset();
 				};
 				internal.bg.src = o.src;
 
@@ -68,18 +85,25 @@
 				internal.$e.on("mousedown", handlers.mousedown);
 				internal.$e.on("mouseup", handlers.mouseup);
 				internal.$e.on("mouseleave", handlers.mouseleave);
-
 			},
 			set_color_from_mouse: function() {
-				var data = internal.pixels.data,
+				var data, x, y, i, r, g, b;
 
-				x = Math.floor(internal.handleX),
-				y = Math.floor(internal.handleY),
+				fn.update_handle();
 
-				i = 4*((internal.width*y) + x),
+				if (!internal.pixels) {
+					internal.pixels = internal.context.getImageData(0, 0, internal.width, internal.height);
+				}
 
-				r = data[i],
-				g = data[i + 1],
+				data = internal.pixels.data;
+
+				x = Math.floor(internal.handleX);
+				y = Math.floor(internal.handleY);
+
+				i = 4*((internal.width*y) + x);
+
+				r = data[i];
+				g = data[i + 1];
 				b = data[i + 2];
 				
 				internal.color = "rgb(" + r + "," + g + "," + b + ")";
@@ -90,6 +114,11 @@
 					b: b,
 					color: internal.color
 				});
+			},
+			set_random_color: function() {
+				internal.mouseX = NI.math.random(0, internal.width);
+				internal.mouseY = NI.math.random(0, internal.height);
+				fn.set_color_from_mouse();
 			},
 			update_handle: function() {
 				var mX = internal.mouseX - internal.half_width,
@@ -114,13 +143,11 @@
 				internal.mouseY = e.pageY - offset.top;
 
 				if (internal.mousePressed) {
-					fn.update_handle();
 					fn.set_color_from_mouse();
 				}
 			},
 			mousedown: function(e) {
 				internal.mousePressed = true;
-				fn.update_handle();
 				fn.set_color_from_mouse();
 			},
 			mouseup: function(e) {
@@ -132,7 +159,7 @@
 		};
 
 		this.reset = function() {
-			// TODO
+			fn.set_random_color();
 		};
 
 		fn.init();

@@ -934,17 +934,19 @@ article {
 
 
 
-/*  Send Message
+/*  Color picker
 =============================================================================== */
 
 .color-picker {
 	float: left;
 	position: relative;
+	.noselect;
 
 	canvas {
 		display: block;
 		width: 142px;
 		height: 146px;
+		.noselect;
 	}
 
 	.handle {
@@ -955,6 +957,11 @@ article {
 		background-image: url("../img/color-picker-handle.png");
 	}
 }
+
+
+
+/*  Send Message
+=============================================================================== */
 
 .send-message {
 

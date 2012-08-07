@@ -1,4 +1,4 @@
-this.page.prompts = [
+this.page.classes.prompts = [
 	
 	"Cities I have been to...",
 

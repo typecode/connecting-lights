@@ -39,6 +39,7 @@
 			half_width: null,
 			half_height: null,
 			radius: null,
+			radius_offset: 10,
 
 			mousePressed: false,
 			mouseX: 0,
@@ -64,7 +65,7 @@
 				internal.height = internal.$canvas.height();
 				internal.half_width = internal.width/2;
 				internal.half_height = internal.height/2;
-				internal.radius = internal.half_width - 10;
+				internal.radius = internal.half_width;
 				internal.offset = internal.$canvas.offset();
 
 				internal.$handle = internal.$e.find(".handle");
@@ -121,16 +122,17 @@
 				fn.set_color_from_mouse();
 			},
 			update_handle: function() {
-				var mX = internal.mouseX - internal.half_width,
+				var R = internal.radius - internal.radius_offset,
+				mX = internal.mouseX - internal.half_width,
 				mY = internal.mouseY - internal.half_height,
 				r = Math.sqrt(mX*mX + mY*mY);
 
-				internal.handleX = (internal.radius*(mX/r)) + internal.half_width;
-				internal.handleY = (internal.radius*(mY/r)) + internal.half_height;
+				internal.handleX = (R*(mX/r)) + internal.half_width;
+				internal.handleY = (R*(mY/r)) + internal.half_height;
 
 				internal.$handle.css({
-					left: internal.handleX - 20,
-					top: internal.handleY - 20
+					left: internal.handleX - (internal.handle_width/2),
+					top: internal.handleY - (internal.handle_height/2)
 				});
 			}
 		};

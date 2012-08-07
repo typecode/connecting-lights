@@ -29,6 +29,7 @@
 
 			$canvas: null,
 			canvas: null,
+			offset: null,
 			context: null,
 
 			bg: new Image(),

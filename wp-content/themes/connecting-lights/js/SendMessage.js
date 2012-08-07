@@ -10,7 +10,7 @@
 			selector: "",
 			$tigger: null,
 			color_picker_src: "",
-			prompts: page.prompts,
+			prompts: $.isArray(page.prompts) ? page.prompts : [],
 			service_dir: ""
 		}, options);
 
@@ -21,13 +21,7 @@
 			overlay: new NI.Overlay({
 				flavor: "merlin-overlay",
 				autoflush: false,
-				closeBtn: true,
-				onOpen: function() {
-
-				},
-				onClose: function() {
-
-				}
+				closeBtn: true
 			}),
 			merlin: null,
 			colorpicker: null,
@@ -38,6 +32,9 @@
 			init: function() {
 				internal.overlay.setBody(internal.$e.detach());
 				internal.$trigger.click(handlers.trigger_click);
+				if (!$.isArray(internal.prompts)) {
+					console.warn("Missing prompts for messages");
+				}
 			},
 			set_random_prompt: function() {
 				var prompt = NI.fn.randomElement(internal.prompts);
@@ -74,7 +71,7 @@
 					uri: o.service_dir + "add.php",
 					data: {
 						m: "",
-						//q: null,
+						//q: null, //question ID
 						r: null,
 						g: null,
 						b: null
@@ -119,6 +116,8 @@
 						});
 
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
+
+						current_step.fields["m"].component.event_receiver.focus();
 					},
 					visible: function(me) {
 						internal.colorpicker.reset();

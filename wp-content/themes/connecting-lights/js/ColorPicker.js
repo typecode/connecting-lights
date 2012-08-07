@@ -40,7 +40,7 @@
 			half_width: null,
 			half_height: null,
 			radius: null,
-			radius_offset: 10,
+			radius_offset: 9,
 
 			mousePressed: false,
 			mouseX: 0,

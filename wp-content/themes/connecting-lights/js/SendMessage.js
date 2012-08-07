@@ -76,7 +76,9 @@
 				merlin.set_val("g", g);
 				merlin.set_val("b", b);
 
-				e.data.container.css("background-color", fn.get_bg_css(r, g, b));
+				e.data.container.css({
+					"background-color": fn.get_bg_css(r, g, b)
+				});
 			}
 		};
 
@@ -137,7 +139,7 @@
 
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
 
-						current_step.fields["m"].component.event_receiver.focus();
+						//current_step.fields["m"].component.event_receiver.focus();
 					},
 					visible: function(me) {
 						internal.colorpicker.reset();

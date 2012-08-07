@@ -9,7 +9,7 @@
 		o = $.extend({
 			$e: null,
 			selector: "",
-			color_picker_src: ""
+			src: ""
 		}, options);
 
 		internal = {
@@ -62,7 +62,7 @@
 					internal.context.drawImage(internal.bg, 0, 0);
 					internal.pixels = internal.context.getImageData(0, 0, internal.width, internal.height);
 				};
-				internal.bg.src = o.color_picker_src;
+				internal.bg.src = o.src;
 
 				internal.$e.on("mousemove", handlers.mousemove);
 				internal.$e.on("mousedown", handlers.mousedown);

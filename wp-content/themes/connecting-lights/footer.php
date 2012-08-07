@@ -62,6 +62,7 @@
 	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/field/tc.field.std.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/field/tc.field.validator.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/field/tc.field.hint.js"></script>
+	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/field/tc.field.counter.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/tc.merlin.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/merlin/tc.merlin.data.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/tc.carousel.js"></script>

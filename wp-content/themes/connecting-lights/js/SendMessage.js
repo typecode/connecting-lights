@@ -39,8 +39,9 @@
 				internal.overlay.setBody(internal.$e.detach());
 				internal.$trigger.click(handlers.trigger_click);
 			},
-			get_random_prompt: function() {
-				return NI.fn.randomElement(internal.prompts);
+			set_random_prompt: function() {
+				var prompt = NI.fn.randomElement(internal.prompts);
+				internal.merlin.internal.steps["submit"].fields["m"].component.set_val(prompt);
 			}
 		};
 
@@ -48,6 +49,10 @@
 			trigger_click: function(e, d) {
 				e.preventDefault();
 				internal.overlay.open();
+			},
+			load_prompt_click: function(e, d) {
+				e.preventDefault();
+				fn.set_random_prompt();
 			},
 			color_set: function(e, d) {
 				var merlin = internal.merlin;
@@ -70,9 +75,9 @@
 					data: {
 						m: "",
 						q: "0",
-						r: "0",
-						g: "0",
-						b: "0"
+						r: null,
+						g: null,
+						b: null
 					}
 				})
 			},
@@ -91,25 +96,31 @@
 							options: {
 								extensions: {
 									Validator: {
-										validators: ["required"]
+										validators: ["required", "maxlen=100"]
+									},
+									Counter: {
+										max: 100
 									}
 								}
 							}
 						}
 					},
 					init: function(me) {
-						var $e = me.internal.current_step.$e.find(".color-picker");
+						var current_step = me.internal.current_step,
+						$colorpicker = current_step.$e.find(".color-picker");
 
 						me.extensions.data.init(me);
 
-						$e.on("color:set", {container: me.internal.current_step.$e}, handlers.color_set);
+						$colorpicker.on("color:set", {container: current_step.$e}, handlers.color_set);
 
 						internal.color_picker = new page.classes.ColorPicker({
-							$e: $e,
-							color_picker_src: o.color_picker_src
+							$e: $colorpicker,
+							src: o.color_picker_src
 						});
 
-						me.internal.current_step.fields["m"].component.set_val(fn.get_random_prompt());
+						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
+
+						fn.set_random_prompt();
 					},
 					finish: function(me) {
 						me.extensions.data.collect_fields(me);

@@ -11,6 +11,7 @@
 @accent: rgb(138,204,177);
 @dark-accent: rgb(79,100,91);
 @white: rgb(255,255,255);
+@white-trans: rgba(255, 255, 255, .55);
 @off-white: rgb(243,243,243);
 @shadow: rgb(178,178,178);
 @gray1: rgb(204,204,204);
@@ -86,6 +87,14 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 
 .clear {
 	&:before {
@@ -935,6 +944,7 @@ article {
 	}
 
 	.handle {
+		.noselect;
 		position: absolute;
 		width: 39px;
 		height: 39px;
@@ -953,17 +963,18 @@ article {
 		line-height: 1.4;
 	}
 
-	.prompt {
-		.museo-slab;
-		font-size: 30px;
-	}
-
 	.load-prompt {
-		padding: 10px 0 0;
+		float: left;
 		font-size: 18px;
 
 		a {
-			color: @white;
+			display: block;
+			padding: 5px 0 5px 25px;
+			background-repeat: no-repeat;
+			background-image: url("../img/refresh.png");
+			background-size: 16px 16px;
+			background-position: left 50%;
+			color: @white-trans;
 		}
 	}
 
@@ -973,9 +984,17 @@ article {
 			float: none;
 
 			textarea {
+				.museo-slab;
 				background-color: rgba(255, 255, 255, 0.3);
 				border: 0;
 				border-radius: 5px;
+			}
+
+			.count {
+				display: block;
+				float: right;
+				padding: 5px 0 0;
+				font-size: 18px;
 			}
 		}
 

@@ -23,34 +23,28 @@ get_header();
 			</header>
 			
 			<?php if (have_posts()) : while (have_posts()) : the_post(); if ($post->post_content != "") : ?>
-			<div class="content">
-				<?php if ( has_post_thumbnail() ) : ?>
-				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
-				<?php endif; ?>
-				<div>
-					<?php the_content(); ?>
-				</div>
-			</div>
-			<?php endif; endwhile; endif; wp_reset_query(); ?>
-			
-			<div>
-			<?php foreach( $subpages as $post ) : setup_postdata($post); ?>	
-				
-				<article>
-	
-					<header>
-						<h1><?php the_title(); ?></h1>
-					</header>
-		
-					<div class="content">
+				<div class="detail-block no-rules">			
+					<h3><!--<?php the_title(); ?>--></h3>
+					<div class="details">
+						<?php if ( has_post_thumbnail() ) : ?>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("full"); ?></a>
+						<?php endif; ?>
 						<?php the_content(); ?>
 					</div>
-					
-				</article>
+				</div>
+			<?php endif; endwhile; endif; wp_reset_query(); ?>
 			
+			<?php foreach( $subpages as $post ) : setup_postdata($post); ?>	
+				<div class="detail-block">			
+					<h3><?php the_title(); ?></h3>
+					<div class="details">
+						<?php the_content(); ?>
+					</div>
+				</div>
 			<?php endforeach; ?>
+
 			<?php wp_reset_query(); ?>
-			</div>
+
 		</div>
 	</div>
 

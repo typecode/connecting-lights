@@ -21,7 +21,7 @@
 		<p>You can send any message you want, but we ask that you please think about making a message that you'd like to send across the country and for everyone of all ages to read and enjoy.</p>
 
 		<div class="center">
-			<a class="ca-button next">Send a Message</a>
+			<a class="ca-button alt next"><span>Send a Message</span></a>
 		</div>
 	</div>
 	<div class="step send-message-submit">
@@ -39,7 +39,7 @@
 				<div class="handle"></div>
 				<canvas></canvas>
 			</div>
-			<a class="ca-button ca-trans next">Send Your Message</a>
+			<a class="ca-button alt ca-trans next"><span>Send Your Message</span></a>
 		</div>
 	</div>
 	<div class="step dispatch">
@@ -48,7 +48,9 @@
 		</div>
 	</div>
 	<div class="step thank-you">
-		Thank you!
+		<h2>Thank you!</h2>
+
+		<p>You may now close this window.</p>
 	</div>
 </div>
 

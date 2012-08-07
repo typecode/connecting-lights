@@ -82,8 +82,8 @@ get_header();
 				<h2>Latest Blog Posts</h2>
 				<ul>
 				<?php foreach ($posts as $post) : setup_postdata($post); ?>
-					<li class="post">
-						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail("tin"); ?></a>
+					<li class="post clearfix">
+						<a class="thumblink" href="<?php the_permalink(); ?>"><?php the_post_thumbnail("tin"); ?></a>
 						<div>
 							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 							<?php the_excerpt(); ?>
@@ -94,7 +94,7 @@ get_header();
 			</div>
 			
 			<div class="partners">
-				<h2>Official Partners</h2>
+				<h2 class="lighter">Official Partners</h2>
 				<ul>
 				<?php foreach ($partners as $post) : setup_postdata($post); ?>
 					<li><?php the_post_thumbnail("partner"); ?></li>

@@ -11,6 +11,7 @@
 @accent: rgb(138,204,177);
 @dark-accent: rgb(79,100,91);
 @white: rgb(255,255,255);
+@white-trans: rgba(255, 255, 255, .55);
 @off-white: rgb(243,243,243);
 @shadow: rgb(178,178,178);
 @gray1: rgb(204,204,204);
@@ -40,6 +41,9 @@ h2 {
 	color: @base;
 	font-size: 36px;
 	line-height: 1em;
+	&.lighter {
+		color: @gray1;
+	}
 }
 h3 {
 	.brandon-grotesque;
@@ -86,6 +90,14 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 
 .clear {
 	&:before {
@@ -186,7 +198,62 @@ nav {
 
 	a {
 		margin-left: 13px;
-		&:first-child { margin-left: 0; }
+		width: 312px;
+		height: 144px;
+		position: relative;
+		display: inline-block;
+		color: @base;
+		text-shadow: -1px -1px 0px rgba(138,204,177,0.4);
+		-webkit-transition: text-shadow 250ms ease-in-out, color 100ms ease-in-out; 
+		-moz-transition: text-shadow 250ms ease-in-out, color 100ms ease-in-out; 
+		-o-transition: text-shadow 250ms ease-in-out, color 100ms ease-in-out; 
+		transition: text-shadow 250ms ease-in-out, color 100ms ease-in-out;
+
+		&:first-child { 
+			margin-left: 0; 
+		}
+
+		&:hover {
+			text-shadow: -1px -1px 16px rgba(138,204,177,1);
+			color: @white;
+		}
+
+		> div {
+			.brandon-grotesque;
+			position: absolute;
+			padding-top: 40px;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			text-align: center;
+			font-size: 42px;
+			line-height: 1;
+			font-weight: 600;
+			-webkit-transition: background 250ms ease-in-out; 
+			-moz-transition: background 250ms ease-in-out;
+			-o-transition: background 250ms ease-in-out;
+			transition: background 250ms ease-in-out;
+		}
+
+		&:hover > div {
+			background: rgba(138,204,177,0.4);
+		}
+
+		> div small {
+			.museo-slab;
+			text-transform: lowercase;
+			font-variant: small-caps;
+			font-weight: 400;
+			letter-spacing: 3px;
+			font-size: 18px;
+			display: block;
+		}
+		> div small:before,
+		> div small:after {
+			content: '\00a0\2013\00a0';
+			font-size: 14px;
+		}
 	}
 }
 
@@ -376,6 +443,10 @@ nav {
 				padding: 20px 20px 40px;
 			}
 		}
+
+		.spinner {
+			text-align: center;
+		}
 	}
 }
 
@@ -472,6 +543,10 @@ textarea {
 	}
 }
 
+textarea {
+	resize: none;
+}
+
 .ca-button {
 	.garaje;
 
@@ -517,6 +592,19 @@ textarea {
 		background: -ms-linear-gradient(top,  #7dbca8 0%,#a7dbc8 100%);
 		background: linear-gradient(to bottom,  #7dbca8 0%,#a7dbc8 100%);
 	}
+
+	span { 
+		position:relative;
+	}
+	&:active span {
+		top: 1px;
+		left: 1px;
+		color: rgba(255,255,255,0.85);
+	}
+}
+
+.ca-button.ca-trans {
+	background: rgba(255, 255, 255, .5);
 }
 
 .tc-field {
@@ -617,7 +705,6 @@ textarea {
 				background: linear-gradient(to bottom,  #686868 0%,#555555 100%);
 			}
 			&:active {
-				color: @gray3;
 				box-shadow: inset 1px 1px 8px rgba(0,0,0,0.5);
 				background: #222222;
 				background: -moz-linear-gradient(top,  #222222 0%, #383838 100%);
@@ -626,6 +713,15 @@ textarea {
 				background: -o-linear-gradient(top,  #222222 0%,#383838 100%);
 				background: -ms-linear-gradient(top,  #222222 0%,#383838 100%);
 				background: linear-gradient(to bottom,  #222222 0%,#383838 100%);
+			}
+
+			span {
+				position: relative;
+			}
+			&:active span {
+				top: 1px;
+				left: 1px;
+				color: rgba(255,255,255,0.6);
 			}
 		}
 
@@ -761,6 +857,14 @@ textarea {
 			.y(2);
 			.clear;
 
+			a.thumblink {
+				width: 164px;
+				height: 164px;
+				background: #eee;
+				display: block;
+				float: left;
+			}
+
 			img {
 				float: left;
 				margin-right: 18px;
@@ -768,6 +872,15 @@ textarea {
 
 			> div {
 				margin-left: 182px;
+			}
+
+			p {
+				font-size: 12px; 
+				line-height: 18px;
+			}
+
+			h3 {
+				margin-top: 0;
 			}
 
 		}
@@ -866,10 +979,21 @@ article {
 		/* text-transform: uppercase; */
 		font-weight: 600;
 		color: @accent;
+
+		.meta {
+			.museo-slab;
+			font-size: 14px;
+			line-height: 18px;
+			font-weight: 400;
+			display: block;
+			color: @gray1;
+			margin-top: 9px;
+		}
 	}
 
 	.details {
 		.x(14);
+		margin-top: 25px;
 
 		p {
 			.museo-slab;
@@ -879,7 +1003,7 @@ article {
 			line-height: 27px;
 
 			&:first-child {
-				margin-top: 25px;
+				margin-top: 0px;
 			}
 		}
 
@@ -921,18 +1045,34 @@ article {
 
 
 
-/*  Send Message
+/*  Color picker
 =============================================================================== */
 
 .color-picker {
 	float: left;
+	position: relative;
+	.noselect;
 
 	canvas {
 		display: block;
 		width: 142px;
 		height: 146px;
+		.noselect;
+	}
+
+	.handle {
+		.noselect;
+		position: absolute;
+		width: 39px;
+		height: 39px;
+		background-image: url("../img/color-picker-handle.png");
 	}
 }
+
+
+
+/*  Send Message
+=============================================================================== */
 
 .send-message {
 
@@ -945,17 +1085,18 @@ article {
 		line-height: 1.4;
 	}
 
-	.prompt {
-		.museo-slab;
-		font-size: 30px;
-	}
-
 	.load-prompt {
-		padding: 10px 0 0;
+		float: left;
 		font-size: 18px;
 
 		a {
-			color: @white;
+			display: block;
+			padding: 5px 0 5px 25px;
+			background-repeat: no-repeat;
+			background-image: url("../img/refresh.png");
+			background-size: 16px 16px;
+			background-position: left 50%;
+			color: @white-trans;
 		}
 	}
 
@@ -965,9 +1106,19 @@ article {
 			float: none;
 
 			textarea {
+				height: 200px;
+				.museo-slab;
 				background-color: rgba(255, 255, 255, 0.3);
 				border: 0;
 				border-radius: 5px;
+			}
+
+			.count {
+				display: block;
+				float: right;
+				padding: 5px 0 0;
+				font-size: 18px;
+				color: @white-trans;
 			}
 		}
 

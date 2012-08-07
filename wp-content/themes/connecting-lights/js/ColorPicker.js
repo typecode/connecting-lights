@@ -131,6 +131,10 @@
 			}
 		};
 
+		this.reset = function() {
+			// TODO
+		};
+
 		fn.init();
 		console.log(internal);
 	};

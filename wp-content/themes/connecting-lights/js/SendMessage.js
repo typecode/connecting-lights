@@ -30,7 +30,7 @@
 				}
 			}),
 			merlin: null,
-			color_picker: null,
+			colorpicker: null,
 			prompts: o.prompts
 		};
 
@@ -113,13 +113,15 @@
 
 						$colorpicker.on("color:set", {container: current_step.$e}, handlers.color_set);
 
-						internal.color_picker = new page.classes.ColorPicker({
+						internal.colorpicker = new page.classes.ColorPicker({
 							$e: $colorpicker,
 							src: o.color_picker_src
 						});
 
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
-
+					},
+					visible: function(me) {
+						internal.colorpicker.reset();
 						fn.set_random_prompt();
 					},
 					finish: function(me) {
@@ -130,8 +132,17 @@
 					selector: ".step.dispatch",
 					visible: function(me) {
 						me.extensions.data.post_data(function(d) {
-							internal.overlay.close();
+							me.show_step("thank-you");
 						});
+					}
+				},
+				"thank-you": {
+					selector: ".step.thank-you",
+					visible: function(me) {
+						window.setTimeout(function() {
+							internal.overlay.close();
+							me.show_step("submit");
+						}, 3000);
 					}
 				}
 			}

@@ -47,6 +47,9 @@
 			<img src="<?php bloginfo("template_url"); ?>/img/spinner.gif" alt="Loading">
 		</div>
 	</div>
+	<div class="step thank-you">
+		Thank you!
+	</div>
 </div>
 
 <div class="actions">

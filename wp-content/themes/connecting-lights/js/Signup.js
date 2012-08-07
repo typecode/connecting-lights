@@ -54,6 +54,9 @@
 					init: function(me) {
 						me.extensions.data.init(me);
 					},
+					visible: function(me) {
+						me.internal.current_step.fields["email"].component.reset();
+					},
 					finish: function(me) {
 						me.extensions.data.collect_fields(me);
 					}

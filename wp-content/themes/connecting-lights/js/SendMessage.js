@@ -74,7 +74,7 @@
 					uri: o.service_dir + "add.php",
 					data: {
 						m: "",
-						q: "0",
+						//q: null,
 						r: null,
 						g: null,
 						b: null

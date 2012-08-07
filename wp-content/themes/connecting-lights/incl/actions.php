@@ -53,7 +53,12 @@
 </div>
 
 <div class="actions">
-	<a href="#" id="send-message-trigger"><img src="<?php bloginfo("template_url"); ?>/img/biglink_sendamsg.png" alt="Send a Message" /></a>
+	<a href="#" id="send-message-trigger">
+		<img src="<?php bloginfo("template_url"); ?>/img/biglink_1.png" alt="Send a Message" />
+		<div>
+			<small>send a</small> message
+		</div>
+	</a>
 
 	<?php
 		$visit_page = get_page_by_title("Visit");
@@ -64,6 +69,16 @@
 			$visit_url = "#";
 		}
 	?>
-	<a href="<?php echo $visit_url; ?>"><img src="<?php bloginfo("template_url"); ?>/img/biglink_purchasetix.png" alt="Purchase Tickets" /></a>
-	<a href="<?php echo $visit_url; ?>"><img src="<?php bloginfo("template_url"); ?>/img/biglink_findlocs.png" alt="Find Locations" /></a>
+	<a href="<?php echo $visit_url; ?>">
+		<img src="<?php bloginfo("template_url"); ?>/img/biglink_2.png" alt="Purchase Tickets" />
+		<div>
+			<small>help</small> volunteer
+		</div>
+	</a>
+	<a href="<?php echo $visit_url; ?>">
+		<img src="<?php bloginfo("template_url"); ?>/img/biglink_3.png" alt="Find Locations" />
+		<div>
+			<small>find</small> locations
+		</div>
+	</a>
 </div>

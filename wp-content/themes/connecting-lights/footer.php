@@ -19,7 +19,7 @@
 						<input type="text">
 					</div>
 					<div>
-						<a href="#" class="ca-button next">Sign Up!</a>
+						<a href="#" class="ca-button next"><span>Sign Up!</span></a>
 					</div>
 				</div>
 				<div class="step dispatch">

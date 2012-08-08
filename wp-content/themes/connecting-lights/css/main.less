@@ -204,7 +204,7 @@ nav {
 		position: relative;
 		display: inline-block;
 		color: @base;
-		text-shadow: -1px -1px 0px rgba(138,204,177,0.4);
+		text-shadow: 1px 1px 0px rgba(138,204,177,0.4);
 		-webkit-transition: text-shadow 250ms ease-in-out, color 100ms ease-in-out; 
 		-moz-transition: text-shadow 250ms ease-in-out, color 100ms ease-in-out; 
 		-o-transition: text-shadow 250ms ease-in-out, color 100ms ease-in-out; 
@@ -215,7 +215,7 @@ nav {
 		}
 
 		&:hover {
-			text-shadow: -1px -1px 16px rgba(138,204,177,1);
+			text-shadow: 1px 1px 16px rgba(138,204,177,1);
 			color: @white;
 		}
 
@@ -395,8 +395,9 @@ nav {
 	z-index: 1000;
 
 	.tier > .tier {
-		/*vertical-align: middle;*/
-		padding: 130px 0;
+		vertical-align: middle;
+		padding: 0;
+		/*padding: 130px 0;*/
 	}
 
 	.btn-close {
@@ -416,7 +417,7 @@ nav {
 		padding: 20px 20px 40px;
 		width: 580px;
 		background-color: #333333;
-		box-shadow: 0 2px 20px rgba(0, 0, 0, .75);
+		box-shadow: 0 2px 54px rgba(0, 0, 0, .75);
 
 		h2 {
 			color: @accent;

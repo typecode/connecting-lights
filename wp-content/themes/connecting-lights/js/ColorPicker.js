@@ -89,7 +89,6 @@
 				internal.$e.on("mousemove", handlers.mousemove);
 				internal.$e.on("mousedown", handlers.mousedown);
 				internal.$e.on("mouseup", handlers.mouseup);
-				internal.$e.on("mouseleave", handlers.mouseleave);
 			},
 			set_color_from_mouse: function() {
 				var data, x, y, i, r, g, b;
@@ -150,7 +149,8 @@
 
 		handlers = {
 			mousemove: function(e) {
-				var offset = internal.offset;
+				//var offset = internal.offset;
+				var offset = internal.$canvas.offset();
 
 				internal.mouseX = e.pageX - offset.left;
 				internal.mouseY = e.pageY - offset.top;
@@ -161,12 +161,11 @@
 			},
 			mousedown: function(e) {
 				internal.mousePressed = true;
-				fn.set_color_from_mouse();
+				if (internal.mouseX && internal.mouseY) {
+					fn.set_color_from_mouse();
+				}
 			},
 			mouseup: function(e) {
-				internal.mousePressed = false;
-			},
-			mouseleave: function(e) {
 				internal.mousePressed = false;
 			}
 		};

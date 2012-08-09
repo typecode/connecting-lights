@@ -18,6 +18,7 @@
 	<script src='http://connect.facebook.net/en_US/all.js'></script>
 
 	<link rel="stylesheet" href="<?php bloginfo("stylesheet_url"); ?>" type="text/css"/>
+	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/mobile/style.css" type="text/css"/>
 	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/webfonts/ss-social.css" type="text/css"/>
 	<link rel="stylesheet/less" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.less" />
 

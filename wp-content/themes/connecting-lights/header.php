@@ -6,12 +6,20 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 
 	if ( preg_match($mobile_agents, $_SERVER['HTTP_USER_AGENT']) ) {
 	
-		$mobile_id = get_page_by_title("mobile")->ID;
-
-		header("Location: ". get_permalink( $mobile_id ));
+		define("CL_MOBILE", true);
 		
-		exit;
+		$mobile_id = get_page_by_title("mobile")->ID;
+		
+		if (! is_page($mobile_id) ) {
 
+			header("Location: ". get_permalink( $mobile_id ));
+		
+		}
+
+	} else {
+		
+		define("CL_MOBILE", false);
+		
 	}
 
 }
@@ -76,6 +84,8 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 			
 			  	FB.ui(obj, callback);
 			}*/
+			
+			<?php if (! CL_MOBILE ) { ?>
 		
   			$('.popup').click(function(event) {
   			  var width  = 575,
@@ -93,6 +103,8 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
   			
   			  return false;
   			});
+  			
+  			<?php } ?>
 	  		
 	  	});
 	</script>
@@ -100,8 +112,9 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 </head>
 
 <body <?php body_class(); ?>>
+<?php if (! CL_MOBILE ) { ?>
 <div id="wrap">
-<div id="main">
+	<div id="main">
 
 	<header>
 
@@ -155,3 +168,4 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 		</div>
 
 	</header><!-- end main header -->
+<?php } ?>

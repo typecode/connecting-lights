@@ -1,7 +1,7 @@
 <?php if (! CL_MOBILE ) { ?>
 
-</div>
-</div>
+		</div>
+	</div>
 
 	<footer>
 
@@ -59,9 +59,9 @@
 		
 	</footer>
 
-	<?php wp_footer(); ?>
-
 <?php } ?>
+
+	<?php wp_footer(); ?>
 
 	<!-- typecode-js -->
 	<script src="<?php bloginfo("template_url"); ?>/js/lib/lib/tc.seed.js"></script>

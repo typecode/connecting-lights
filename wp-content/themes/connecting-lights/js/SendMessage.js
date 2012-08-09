@@ -18,10 +18,10 @@
 
 		internal = {
 			name: "mod.SendMessage",
-			is_mobile: o.is_mobile,
 			$e: (o.$e ? o.$e : $(o.selector)),
 			$trigger: o.$trigger,
-			is_touch: null,
+			is_mobile: o.is_mobile, // refers to phones only
+			is_touch: null, // refers to any touch device (including tablets)
 			overlay: null,
 			merlin: null,
 			colorpicker: null,
@@ -180,9 +180,10 @@
 				},
 				"geo": {
 					selector: ".send-message-geo",
+					prev: "compose",
 					next: "dispatch",
 					init: function(me) {
-						
+
 					}
 				},
 				"dispatch": {

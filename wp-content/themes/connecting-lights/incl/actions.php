@@ -35,19 +35,42 @@
 			</div>
 		</div>
 
-		<div class="tier">
-			<div class="color-picker">
-				<div class="handle"></div>
-				<canvas></canvas>
+		<?php if (CL_MOBILE) { ?>
+
+			<div class="tier control-bar">
+				<a class="ca-button alt ca-trans cancel"><span>Cancel</span></a>
+				<div class="color-picker">
+					<div class="handle"></div>
+					<canvas></canvas>
+				</div>
+				<a class="ca-button alt ca-trans next"><span>Next</span></a>
 			</div>
-			<a class="ca-button alt ca-trans next"><span>Send Your Message</span></a>
-		</div>
+
+		<?php } else { ?>
+
+			<div class="tier">
+				<div class="color-picker">
+					<div class="handle"></div>
+					<canvas></canvas>
+				</div>
+				<a class="ca-button alt ca-trans next"><span>Send Your Message</span></a>
+			</div>
+
+		<?php } ?>
 	</div>
 	<?php if (CL_MOBILE) { ?>
 		<div class="step send-message-geo">
+			<div class="map">
+				<!-- placeholder for map container -->
+			</div>
 
-			<div>
+			<div class="tip">
 				You can specify where on Hadrian's Wall you would like your message to start. It will then travel as pulses of light along the wall, to one of the coasts.
+			</div>
+
+			<div class="control-bar">
+				<a class="ca-button alt ca-trans prev"><span>Back</span></a>
+				<a class="ca-button alt ca-trans next"><span>Send</span></a>
 			</div>
 		</div>
 	<?php } ?>

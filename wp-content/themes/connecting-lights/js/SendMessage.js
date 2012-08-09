@@ -22,7 +22,10 @@
 			overlay: new NI.Overlay({
 				flavor: "merlin-overlay",
 				autoflush: false,
-				closeBtn: true
+				closeBtn: true,
+				isTouchDevice: (function() {
+					return (("ontouchstart" in window) || (window.DocumentTouch && document instanceof DocumentTouch));
+				}())
 			}),
 			merlin: null,
 			colorpicker: null,

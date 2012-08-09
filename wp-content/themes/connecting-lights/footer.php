@@ -86,7 +86,7 @@
 	<!-- initialization -->
 	<script>
 		jQuery(function() {
-			new NI.App({
+			var app = new NI.App({
 				page: page
 			});
 		});

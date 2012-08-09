@@ -21,7 +21,7 @@
 		<p>You can send any message you want, but we ask that you please think about making a message that you'd like to send across the country and for everyone of all ages to read and enjoy.</p>
 
 		<div class="center">
-			<a class="ca-button next">Send a Message</a>
+			<a class="ca-button alt next"><span>Send a Message</span></a>
 		</div>
 	</div>
 	<div class="step send-message-submit">
@@ -39,7 +39,7 @@
 				<div class="handle"></div>
 				<canvas></canvas>
 			</div>
-			<a class="ca-button next">Send Your Message</a>
+			<a class="ca-button alt ca-trans next"><span>Send Your Message</span></a>
 		</div>
 	</div>
 	<div class="step dispatch">
@@ -48,12 +48,19 @@
 		</div>
 	</div>
 	<div class="step thank-you">
-		Thank you!
+		<h2>Thank you!</h2>
+
+		<p>You may now close this window.</p>
 	</div>
 </div>
 
 <div class="actions">
-	<a href="#" id="send-message-trigger"><img src="<?php bloginfo("template_url"); ?>/img/biglink_sendamsg.png" alt="Send a Message" /></a>
+	<a href="#" id="send-message-trigger">
+		<img src="<?php bloginfo("template_url"); ?>/img/biglink_1.png" alt="Send a Message" />
+		<div>
+			<small>send a</small> message
+		</div>
+	</a>
 
 	<?php
 		$visit_page = get_page_by_title("Visit");
@@ -64,6 +71,16 @@
 			$visit_url = "#";
 		}
 	?>
-	<a href="<?php echo $visit_url; ?>"><img src="<?php bloginfo("template_url"); ?>/img/biglink_purchasetix.png" alt="Purchase Tickets" /></a>
-	<a href="<?php echo $visit_url; ?>"><img src="<?php bloginfo("template_url"); ?>/img/biglink_findlocs.png" alt="Find Locations" /></a>
+	<a href="<?php echo $visit_url; ?>">
+		<img src="<?php bloginfo("template_url"); ?>/img/biglink_2.png" alt="Purchase Tickets" />
+		<div>
+			<small>help</small> volunteer
+		</div>
+	</a>
+	<a href="<?php echo $visit_url; ?>">
+		<img src="<?php bloginfo("template_url"); ?>/img/biglink_3.png" alt="Find Locations" />
+		<div>
+			<small>find</small> locations
+		</div>
+	</a>
 </div>

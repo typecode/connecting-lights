@@ -19,16 +19,16 @@
 						<input type="text">
 					</div>
 					<div>
-						<a href="#" class="ca-button next">Sign Up!</a>
+						<a href="#" class="ca-button next"><span>Sign Up!</span></a>
 					</div>
 				</div>
 				<div class="step dispatch">
 					<div class="spinner">
-						<img src="<?php bloginfo("template_url"); ?>/img/spinner.gif" alt="Loading">
+						<img src="<?php bloginfo("template_url"); ?>/img/spinner-bgEBEBEB.gif" alt="Loading">
 					</div>
 				</div>
 				<div class="step thank-you">
-					Thank you!
+					Thank you for signing up!
 				</div>
 			</div>
 		
@@ -76,10 +76,12 @@
 
 	<!-- app-specific -->
 	<script src="<?php bloginfo("template_url"); ?>/js/Signup.js"></script>
+	<script src="<?php bloginfo("template_url"); ?>/js/colorutil.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/ColorPicker.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/prompts.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/SendMessage.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/cl-carousel.js"></script>
+	<!--<script src="<?php bloginfo("template_url"); ?>/js/jquery.easing.1.3.js"></script>-->
 
 	<!-- initialization -->
 	<script>

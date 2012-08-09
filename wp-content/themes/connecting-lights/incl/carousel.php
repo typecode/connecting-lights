@@ -18,9 +18,19 @@
 			
 		$carousel_slides = get_posts( $carousel_args );
 
-?>
+		$carousel_id = uniqid("carousel_");
 
-		<div class="carousel autoscroll">
+?>
+	
+		<script>
+				page.features.push(function(app) {
+					app.runtime.<?php echo $carousel_id; ?> = new page.classes.Carousel({
+						app: app,
+						selector: "#<?php echo $carousel_id ?>"
+					});
+				});
+			</script>
+		<div id="<?php echo $carousel_id; ?>" class="carousel autoscroll">
 			<div class="viewport">
 				
 				<!-- <div class="border">

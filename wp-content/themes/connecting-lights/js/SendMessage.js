@@ -8,7 +8,7 @@
 			app: null,
 			$e: null,
 			selector: "",
-			$tigger: null,
+			$trigger: null,
 			color_picker_src: "",
 			bg_desaturation: 0.6,
 			prompts: $.isArray(page.classes.prompts) ? page.classes.prompts : [],
@@ -25,7 +25,13 @@
 				closeBtn: true,
 				isTouchDevice: (function() {
 					return (("ontouchstart" in window) || (window.DocumentTouch && document instanceof DocumentTouch));
-				}())
+				}()),
+				onOpen: function() {
+					o.app.events.trigger("overlay:opened");
+				},
+				onClose: function() {
+					o.app.events.trigger("overlay:closed");
+				}
 			}),
 			merlin: null,
 			colorpicker: null,

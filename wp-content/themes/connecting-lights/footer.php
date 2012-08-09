@@ -83,7 +83,7 @@
 	<script src="<?php bloginfo("template_url"); ?>/js/ColorPicker.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/prompts.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/SendMessage.js"></script>
-	<script src="<?php bloginfo("template_url"); ?>/js/cl-carousel.js"></script>
+	<script src="<?php bloginfo("template_url"); ?>/js/Carousel.js"></script>
 	<!--<script src="<?php bloginfo("template_url"); ?>/js/jquery.easing.1.3.js"></script>-->
 
 	<!-- initialization -->

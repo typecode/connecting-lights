@@ -123,6 +123,16 @@
 									Counter: {
 										max: 100
 									}
+								},
+								handlers: {
+									focus: function(e) {
+										var field, val;
+										field = e.data.me;
+										val = field.get_val();
+										if (val.substring(val.length - 3) === "...") {
+											field.set_val(val.substring(0, val.length - 3) + " ");
+										}
+									}
 								}
 							}
 						}

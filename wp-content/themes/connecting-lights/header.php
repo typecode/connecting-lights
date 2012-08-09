@@ -115,7 +115,7 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 
 </head>
 
-<body <?php body_class(); if (CL_MOBILE) { echo " mobile"; } ?>>
+<body <?php body_class(); ?>>
 
 <?php if (! CL_MOBILE ) { ?>
 
@@ -155,23 +155,23 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	  					caption=Connecting%20Light&
 	  					description=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site.&
 	  					redirect_uri=http://connectinglight.info" 
-					class="ss-icon"><span>Facebook</span></a>
+					class="ss-icon" target="_blank"><span>Facebook</span></a>
 					
 				<a 	title="Share on Twitter" 
 					class="popup ss-icon" 
 					href="http://twitter.com/share?text=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site." 
-					data-site-name="twitter"><span>Twitter</span></a>
+					data-site-name="twitter" target="_blank"><span>Twitter</span></a>
 					
 				<a title="Share on Tumblr" 
 					href="http://www.tumblr.com/share/photo?
 						source=http://connectinglight.info/wp-content/uploads/2012/08/wall_illustration-small-2.jpeg&
 						caption=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site.&
 						click_thru=http://connectinglight.info"
-					class="ss-icon"><span>Tumblr</span></a>
+					class="ss-icon" target="_blank"><span>Tumblr</span></a>
 					
 				<a 	title="Share on Pinterest" 
 					href="javascript:void((function()%7Bvar%20e=document.createElement(&apos;script&apos;);e.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);e.setAttribute(&apos;charset&apos;,&apos;UTF-8&apos;);e.setAttribute(&apos;src&apos;,&apos;http://assets.pinterest.com/js/pinmarklet.js?r=&apos;+Math.random()*99999999);document.body.appendChild(e)%7D)());"
-					class="ss-icon"><span>Pinterest</span></a>
+					class="ss-icon" target="_blank"><span>Pinterest</span></a>
 					
 			</div>
 	

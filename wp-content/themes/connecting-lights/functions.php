@@ -39,6 +39,23 @@ register_nav_menus(
 
 
 
+//^^^^^ body class ^^^^^
+
+function cl_body_class($classes) {
+
+	if ( CL_MOBILE ) {
+	
+		$classes[] = 'mobile';
+	
+	}
+
+	return $classes;
+
+}
+add_filter('body_class', 'cl_body_class');
+
+
+
 //^^^^^ homepage / post pages ^^^^^
 
 $front = get_page_by_title( 'Homepage' );

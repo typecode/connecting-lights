@@ -2,6 +2,7 @@
 	page.features.push(function(app) {
 		app.runtime.sendMessage = new page.classes.SendMessage({
 			app: app,
+			is_mobile: <?php if (CL_MOBILE) { echo "true"; } else { echo "false"; } ?>,
 			$e: ($("#send-message").detach().show()),
 			$trigger: $("#send-message-trigger"),
 			color_picker_src: "<?php bloginfo("template_url"); ?>/img/color-picker.png",
@@ -24,7 +25,7 @@
 			<a class="ca-button alt next"><span>Send a Message</span></a>
 		</div>
 	</div>
-	<div class="step send-message-submit">
+	<div class="step send-message-compose">
 
 		<div class="tier">
 			<div class="tc-field">
@@ -42,6 +43,14 @@
 			<a class="ca-button alt ca-trans next"><span>Send Your Message</span></a>
 		</div>
 	</div>
+	<?php if (CL_MOBILE) { ?>
+		<div class="step send-message-geo">
+
+			<div>
+				You can specify where on Hadrian's Wall you would like your message to start. It will then travel as pulses of light along the wall, to one of the coasts.
+			</div>
+		</div>
+	<?php } ?>
 	<div class="step dispatch">
 		<div class="spinner">
 			<img src="<?php bloginfo("template_url"); ?>/img/spinner.gif" alt="Loading">

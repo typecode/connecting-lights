@@ -6,6 +6,7 @@
 
 		o = $.extend({
 			app: null,
+			is_mobile: false,
 			$e: null,
 			selector: "",
 			$trigger: null,
@@ -17,6 +18,7 @@
 
 		internal = {
 			name: "mod.SendMessage",
+			is_mobile: o.is_mobile,
 			$e: (o.$e ? o.$e : $(o.selector)),
 			$trigger: o.$trigger,
 			is_touch: null,
@@ -57,7 +59,7 @@
 			},
 			set_random_prompt: function() {
 				var prompt = NI.fn.randomElement(internal.prompts);
-				internal.merlin.internal.steps["submit"].fields["m"].component.set_val(prompt);
+				internal.merlin.internal.steps["compose"].fields["m"].component.set_val(prompt);
 			},
 			get_bg_css: function(r, g, b) {
 				var hsv;
@@ -104,6 +106,7 @@
 			name: internal.name + " Merlin",
 			$e: internal.$e,
 			controls: {
+				prev: ".prev",
 				next: ".next"
 			},
 			extensions: {
@@ -122,11 +125,11 @@
 			steps: {
 				"info": {
 					selector: ".send-message-info",
-					next: "submit"
+					next: "compose"
 				},
-				"submit": {
-					selector: ".send-message-submit",
-					next: "dispatch",
+				"compose": {
+					selector: ".send-message-compose",
+					next: internal.is_mobile ? "geo" : "dispatch",
 					fields: {
 						"m": {
 							selector: "textarea[name=m]",
@@ -175,6 +178,13 @@
 						me.extensions.data.collect_fields(me);
 					}
 				},
+				"geo": {
+					selector: ".send-message-geo",
+					next: "dispatch",
+					init: function(me) {
+						
+					}
+				},
 				"dispatch": {
 					selector: ".step.dispatch",
 					visible: function(me) {
@@ -188,7 +198,7 @@
 					visible: function(me) {
 						window.setTimeout(function() {
 							internal.overlay.close();
-							me.show_step("submit");
+							me.show_step("compose");
 						}, 3000);
 					}
 				}

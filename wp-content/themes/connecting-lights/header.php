@@ -1,3 +1,20 @@
+<?php
+
+if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
+
+	$mobile_agents = '!(tablet|pad|mobile|phone|symbian|android|ipod|ios|blackberry|webos)!i';
+
+	if ( preg_match($mobile_agents, $_SERVER['HTTP_USER_AGENT']) ) {
+
+		header("Location: ". get_bloginfo("url") ."/mobile");
+		
+		exit;
+
+	}
+
+}
+
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 
@@ -20,8 +37,6 @@
 	<link rel="stylesheet" href="<?php bloginfo("stylesheet_url"); ?>" type="text/css"/>
 	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/webfonts/ss-social.css" type="text/css"/>
 	<link rel="stylesheet/less" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.less" />
-
-	<!--<meta name="viewport" content="width=device-width; initial-scale=1" />-->
 
 	<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>

@@ -19,20 +19,8 @@
 			name: "mod.SendMessage",
 			$e: (o.$e ? o.$e : $(o.selector)),
 			$trigger: o.$trigger,
-			overlay: new NI.Overlay({
-				flavor: "merlin-overlay",
-				autoflush: false,
-				closeBtn: true,
-				isTouchDevice: (function() {
-					return (("ontouchstart" in window) || (window.DocumentTouch && document instanceof DocumentTouch));
-				}()),
-				onOpen: function() {
-					o.app.events.trigger("overlay:opened");
-				},
-				onClose: function() {
-					o.app.events.trigger("overlay:closed");
-				}
-			}),
+			is_touch: null,
+			overlay: null,
 			merlin: null,
 			colorpicker: null,
 			prompts: o.prompts
@@ -40,8 +28,29 @@
 
 		fn = {
 			init: function() {
+
+				internal.is_touch = (("ontouchstart" in window) || (window.DocumentTouch && document instanceof DocumentTouch));
+
+				internal.overlay = new NI.Overlay({
+					flavor: "merlin-overlay",
+					autoflush: false,
+					closeBtn: true,
+					isTouchDevice: internal.is_touch,
+					onOpen: function() {
+						if (internal.is_touch) {
+							window.scroll(0, 0);
+						}
+						o.app.events.trigger("overlay:opened");
+					},
+					onClose: function() {
+						o.app.events.trigger("overlay:closed");
+					}
+				});
+
 				internal.overlay.setBody(internal.$e.detach());
+
 				internal.$trigger.click(handlers.trigger_click);
+
 				if (!$.isArray(internal.prompts)) {
 					console.warn("Missing prompts for messages");
 				}
@@ -157,8 +166,6 @@
 						});
 
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
-
-						//current_step.fields["m"].component.event_receiver.focus();
 					},
 					visible: function(me) {
 						internal.colorpicker.reset();

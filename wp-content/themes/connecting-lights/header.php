@@ -33,6 +33,10 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	<title><?php wp_title("&laquo;", true, "right"); ?> <?php bloginfo("name"); ?></title>
 
 	<meta charset="<?php bloginfo("charset"); ?>" />
+	
+	<?php if (CL_MOBILE ) { ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<?php } ?>
 
 	<link rel="icon" type="image/x-icon" href="<?php bloginfo("template_url"); ?>/img/favicon.ico" />
 	<link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo("template_url"); ?>/img/favicon.ico" />
@@ -111,61 +115,64 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); if (CL_MOBILE) { echo " mobile"; } ?>>
+
 <?php if (! CL_MOBILE ) { ?>
-<div id="wrap">
-	<div id="main">
 
-	<header>
+	<div id="wrap">
+		<div id="main">
 
-		<h1><a href="<?php bloginfo("url"); ?>"><img src="<?php bloginfo("template_url"); ?>/img/logo.png" alt="Connecting Light" /></a></h1>
-		
-		<nav>
-			<?php wp_nav_menu( array("menu" => "header_nav", "container" => false )); ?>
-		</nav>
-		
-		<div class="schedule">
-			<div class="date">
-				<span class="month">Aug</span>
-				<span class="day">31</span>
-			</div>
-			<div class="sep">+</div>
-			<div class="date">
-				<span class="month">Sept</span>
-				<span class="day">1</span>
-			</div>
-		</div>
-		
-		<div class="connect">
-		
-			<a 	title="Share on Facebook"
-				href="https://www.facebook.com/dialog/feed?
-  					app_id=395149550542429&
-  					link=http://connectinglight.info&
-					picture=http://connectinglight.info/wp-content/uploads/2012/08/wall_illustration-small-2.jpeg&
-  					name=Connecting%20Light&
-  					caption=Connecting%20Light&
-  					description=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site.&
-  					redirect_uri=http://connectinglight.info" 
-				class="ss-icon"><span>Facebook</span></a>
-				
-			<a 	title="Share on Twitter" 
-				class="popup ss-icon" 
-				href="http://twitter.com/share?text=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site." 
-				data-site-name="twitter"><span>Twitter</span></a>
-				
-			<a title="Share on Tumblr" 
-				href="http://www.tumblr.com/share/photo?
-					source=http://connectinglight.info/wp-content/uploads/2012/08/wall_illustration-small-2.jpeg&
-					caption=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site.&
-					click_thru=http://connectinglight.info"
-				class="ss-icon"><span>Tumblr</span></a>
-				
-			<a 	title="Share on Pinterest" 
-				href="javascript:void((function()%7Bvar%20e=document.createElement(&apos;script&apos;);e.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);e.setAttribute(&apos;charset&apos;,&apos;UTF-8&apos;);e.setAttribute(&apos;src&apos;,&apos;http://assets.pinterest.com/js/pinmarklet.js?r=&apos;+Math.random()*99999999);document.body.appendChild(e)%7D)());"
-				class="ss-icon"><span>Pinterest</span></a>
-				
-		</div>
-
-	</header><!-- end main header -->
 <?php } ?>
+
+		<header>
+	
+			<h1><a href="<?php bloginfo("url"); ?>"><img src="<?php bloginfo("template_url"); ?>/img/logo.png" alt="Connecting Light" /></a></h1>
+			
+			<nav>
+				<?php wp_nav_menu( array("menu" => "header_nav", "container" => false )); ?>
+			</nav>
+			
+			<div class="schedule">
+				<div class="date">
+					<span class="month">Aug</span>
+					<span class="day">31</span>
+				</div>
+				<div class="sep">+</div>
+				<div class="date">
+					<span class="month">Sept</span>
+					<span class="day">1</span>
+				</div>
+			</div>
+			
+			<div class="connect">
+			
+				<a 	title="Share on Facebook"
+					href="https://www.facebook.com/dialog/feed?
+	  					app_id=395149550542429&
+	  					link=http://connectinglight.info&
+						picture=http://connectinglight.info/wp-content/uploads/2012/08/wall_illustration-small-2.jpeg&
+	  					name=Connecting%20Light&
+	  					caption=Connecting%20Light&
+	  					description=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site.&
+	  					redirect_uri=http://connectinglight.info" 
+					class="ss-icon"><span>Facebook</span></a>
+					
+				<a 	title="Share on Twitter" 
+					class="popup ss-icon" 
+					href="http://twitter.com/share?text=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site." 
+					data-site-name="twitter"><span>Twitter</span></a>
+					
+				<a title="Share on Tumblr" 
+					href="http://www.tumblr.com/share/photo?
+						source=http://connectinglight.info/wp-content/uploads/2012/08/wall_illustration-small-2.jpeg&
+						caption=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site.&
+						click_thru=http://connectinglight.info"
+					class="ss-icon"><span>Tumblr</span></a>
+					
+				<a 	title="Share on Pinterest" 
+					href="javascript:void((function()%7Bvar%20e=document.createElement(&apos;script&apos;);e.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);e.setAttribute(&apos;charset&apos;,&apos;UTF-8&apos;);e.setAttribute(&apos;src&apos;,&apos;http://assets.pinterest.com/js/pinmarklet.js?r=&apos;+Math.random()*99999999);document.body.appendChild(e)%7D)());"
+					class="ss-icon"><span>Pinterest</span></a>
+					
+			</div>
+	
+		</header><!-- end main header -->

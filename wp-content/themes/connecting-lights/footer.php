@@ -1,7 +1,7 @@
 <?php if (! CL_MOBILE ) { ?>
 
-</div>
-</div>
+		</div>
+	</div>
 
 	<footer>
 

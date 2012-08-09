@@ -2,7 +2,7 @@
 
 if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 
-	$mobile_agents = '!(mobile|phone|symbian|android|ipod|ios|blackberry)!i';
+	$mobile_agents = '!(phone|ipod)!i';
 
 	if ( preg_match($mobile_agents, $_SERVER['HTTP_USER_AGENT']) ) {
 	

@@ -2,11 +2,13 @@
 
 if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 
-	$mobile_agents = '!(tablet|pad|mobile|phone|symbian|android|ipod|ios|blackberry|webos)!i';
+	$mobile_agents = '!(mobile|phone|symbian|android|ipod|ios|blackberry)!i';
 
 	if ( preg_match($mobile_agents, $_SERVER['HTTP_USER_AGENT']) ) {
+	
+		$mobile_id = get_page_by_title("mobile")->ID;
 
-		header("Location: ". get_bloginfo("url") ."/mobile");
+		header("Location: ". get_permalink( $mobile_id ));
 		
 		exit;
 

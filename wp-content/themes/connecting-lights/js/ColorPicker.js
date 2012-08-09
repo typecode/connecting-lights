@@ -80,6 +80,8 @@
 					.on("mousedown", handlers.mousedown)
 					.on("mouseup", handlers.mouseup);
 
+				// using raw DOM for attaching touch events, to avoid jQuery
+				// normalizing the event object that gets passed in to the handlers
 				element = internal.$e[0];
 				element.addEventListener("touchmove", handlers.touchmove, false);
 				element.addEventListener("touchstart", handlers.touchstart, false);

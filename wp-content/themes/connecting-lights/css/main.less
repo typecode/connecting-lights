@@ -25,9 +25,10 @@
 /*  Type
 =============================================================================== */
 
-.brandon-grotesque { font-family: "brandon-grotesque"; }
-.museo-slab { font-family: "museo-slab"; }
-.garaje { font-family: "Garaje53UnicaseBlack"; }
+.brandon-grotesque { font-family: "brandon-grotesque", sans-serif; }
+.museo-slab { font-family: "museo-slab", serif; }
+.dagny { font-family: "ff-dagny-web-pro", sans-serif; }
+.garaje { font-family: "Garaje53UnicaseBlack", sans-serif; }
 
 h1 {
 	.garaje;
@@ -223,14 +224,14 @@ nav {
 		> div {
 			.brandon-grotesque;
 			position: absolute;
-			padding-top: 40px;
+			padding-top: 42px;
 			top: 0;
 			left: 0;
 			right: 0;
 			bottom: 0;
 			text-align: center;
 			font-size: 42px;
-			line-height: 1;
+			line-height: 0.95;
 			font-weight: 600;
 			-webkit-transition: background 250ms ease-in-out; 
 			-moz-transition: background 250ms ease-in-out;
@@ -243,11 +244,12 @@ nav {
 		}
 
 		> div small {
-			.museo-slab;
+			//.museo-slab;
+			.dagny;
 			text-transform: lowercase;
 			font-variant: small-caps;
 			font-weight: 400;
-			letter-spacing: 3px;
+			letter-spacing: 4px;
 			font-size: 18px;
 			display: block;
 		}
@@ -349,6 +351,7 @@ nav {
 			}
 
 			.caption {
+				.dagny;
 				z-index: 2;
 				visibility: hidden;
 				opacity: 0;
@@ -426,8 +429,9 @@ nav {
  
 		p {
 			.yp(1);
-			.museo-slab;
+			.dagny;
 			font-size: 16px;
+			line-height: 27px;
 		}
 
 		.ca-button {
@@ -510,10 +514,10 @@ nav {
 
 	p {
 		.y(1);
-		.museo-slab;
+		.dagny;
 		font-weight: 500;
 		color: @article-copy;
-		font-size: 15px;
+		font-size: 16px;
 		line-height: 27px;
 	}
 
@@ -714,17 +718,19 @@ textarea {
 
 		.date {
 			line-height: 1.6em;
-			letter-spacing: 3px;
 			font-weight: 500;
 
 			span {
 				display: block;
 
 				&.month {
-					.museo-slab;
-					font-size: 18px;
+					//.museo-slab;
+					.dagny;
+					font-size: 16px;
+					padding-left: 2px;
 					text-transform: lowercase;
 					font-variant: small-caps;
+					letter-spacing: 3px;
 				}
 
 				&.day {
@@ -1054,8 +1060,8 @@ article {
 		color: @accent;
 
 		.meta {
-			.museo-slab;
-			font-size: 14px;
+			.dagny;
+			font-size: 13px;
 			line-height: 18px;
 			font-weight: 400;
 			display: block;
@@ -1073,10 +1079,10 @@ article {
 		margin-top: 25px;
 
 		p {
-			.museo-slab;
-			font-weight: 500;
+			.dagny;
+			font-weight: 400;
 			color: @article-copy;
-			font-size: 15px;
+			font-size: 16px;
 			line-height: 27px;
 
 			&:first-child {
@@ -1185,7 +1191,7 @@ article {
 
 			textarea {
 				height: 200px;
-				.museo-slab;
+				.dagny;
 				background-color: rgba(255, 255, 255, 0.3);
 				border: 0;
 				border-radius: 5px;
@@ -1307,6 +1313,23 @@ footer {
 		background: url("../img/festivalbanner3.png") no-repeat 0 0;
 	}
 
+}
+
+
+/*  Style overrides for WP Plugin defaults
+=============================================================================== */
+
+.ngg-galleryoverview {
+	margin-top: 0 !important;
+}
+#ngg-slideshow-26-403-1 {
+	height: 225px !important;
+}
+.slideshowlink {
+	font-size: 13px;
+	font-family: "ff-dagny-web-pro";
+	font-weight: bold;
+	line-height: 27px;
 }
 
 

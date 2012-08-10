@@ -1,16 +1,5 @@
 (function(window, $, page) {
 
-	// remove "px" from a string representing a css pixel dimension
-	// and cast as a Number (i.e. trimpx("10px") returns 10)
-	// Used to parse px dimension values from CSS properties,
-	// such as "width" and "height"
-	function trimPX(s) {
-		if (s) {
-			return Number(s.substring(0, s.length - 2));
-		}
-		return 0;
-	}
-
 	page.classes.ColorPicker = function(options) {
 
 		var self, o, internal, fn, handlers;
@@ -20,7 +9,7 @@
 		o = $.extend({
 			$e: null,
 			selector: "",
-			src: ""
+			src: "" //path to image of the color wheel
 		}, options);
 
 		internal = {
@@ -29,7 +18,6 @@
 
 			$canvas: null,
 			canvas: null,
-			offset: null,
 			context: null,
 
 			bg: null,
@@ -42,9 +30,9 @@
 			radius: null,
 			radius_offset: 9,
 
-			mousePressed: false,
-			mouseX: 0,
-			mouseY: 0,
+			dragging: false,
+			cursorX: 0,
+			cursorY: 0,
 
 			$handle: null,
 			handle_width: null,
@@ -60,6 +48,8 @@
 
 		fn = {
 			init: function() {
+				var element;
+
 				internal.$canvas = internal.$e.find("canvas");
 				internal.canvas = internal.$canvas[0];
 				internal.context = internal.canvas.getContext("2d");
@@ -69,11 +59,10 @@
 				internal.half_width = internal.width/2;
 				internal.half_height = internal.height/2;
 				internal.radius = internal.half_width;
-				internal.offset = internal.$canvas.offset();
 
 				internal.$handle = internal.$e.find(".handle");
-				internal.handle_width = trimPX(internal.$handle.css("width"));
-				internal.handle_height = trimPX(internal.$handle.css("height"));
+				internal.handle_width = parseInt(internal.$handle.css("width"), 10);
+				internal.handle_height = parseInt(internal.$handle.css("height"), 10);
 
 				internal.canvas.width = internal.width;
 				internal.canvas.height = internal.height;
@@ -86,11 +75,19 @@
 				};
 				internal.bg.src = o.src;
 
-				internal.$e.on("mousemove", handlers.mousemove);
-				internal.$e.on("mousedown", handlers.mousedown);
-				internal.$e.on("mouseup", handlers.mouseup);
+				internal.$e
+					.on("mousemove", handlers.mousemove)
+					.on("mousedown", handlers.mousedown)
+					.on("mouseup", handlers.mouseup);
+
+				// using raw DOM for attaching touch events, to avoid jQuery
+				// normalizing the event object that gets passed in to the handlers
+				element = internal.$e[0];
+				element.addEventListener("touchmove", handlers.touchmove, false);
+				element.addEventListener("touchstart", handlers.touchstart, false);
+				element.addEventListener("touchend", handlers.touchend, false);
 			},
-			set_color_from_mouse: function() {
+			set_color_from_pos: function() {
 				var data, x, y, i, r, g, b;
 
 				fn.update_handle();
@@ -121,24 +118,20 @@
 				});
 			},
 			set_random_color: function() {
-				internal.mouseX = NI.math.random(0, internal.width);
-				internal.mouseY = NI.math.random(0, internal.height);
-				fn.set_color_from_mouse();
+				internal.cursorX = NI.math.random(0, internal.width);
+				internal.cursorY = NI.math.random(0, internal.height);
+				fn.set_color_from_pos();
 			},
 			update_handle: function() {
-				var R, mX, mY, r;
+				var R, x, y, r;
 
 				R = internal.radius - internal.radius_offset;
-				mX = internal.mouseX - internal.half_width;
-				mY = internal.mouseY - internal.half_height;
-				r = Math.sqrt(mX*mX + mY*mY);
+				x = internal.cursorX - internal.half_width;
+				y = internal.cursorY - internal.half_height;
+				r = Math.sqrt(x*x + y*y);
 
-				if (r > R) {
-					//console.warn("clicked outside circle");
-				}
-
-				internal.handleX = (R*(mX/r)) + internal.half_width;
-				internal.handleY = (R*(mY/r)) + internal.half_height;
+				internal.handleX = (R*(x/r)) + internal.half_width;
+				internal.handleY = (R*(y/r)) + internal.half_height;
 
 				internal.$handle.css({
 					left: internal.handleX - (internal.handle_width/2),
@@ -149,24 +142,44 @@
 
 		handlers = {
 			mousemove: function(e) {
-				//var offset = internal.offset;
 				var offset = internal.$canvas.offset();
 
-				internal.mouseX = e.pageX - offset.left;
-				internal.mouseY = e.pageY - offset.top;
+				internal.cursorX = e.pageX - offset.left;
+				internal.cursorY = e.pageY - offset.top;
 
-				if (internal.mousePressed) {
-					fn.set_color_from_mouse();
+				if (internal.dragging) {
+					fn.set_color_from_pos();
 				}
 			},
 			mousedown: function(e) {
-				internal.mousePressed = true;
-				if (internal.mouseX && internal.mouseY) {
-					fn.set_color_from_mouse();
+				internal.dragging = true;
+				if (internal.cursorX && internal.cursorY) {
+					fn.set_color_from_pos();
 				}
 			},
 			mouseup: function(e) {
-				internal.mousePressed = false;
+				internal.dragging = false;
+			},
+			touchmove: function(e) {
+				var touch, offset;
+
+				touch = e.targetTouches[0];
+				offset = internal.$canvas.offset();
+
+				internal.cursorX = touch.pageX - offset.left;
+				internal.cursorY = touch.pageY - offset.top;
+
+				if (internal.dragging) {
+					fn.set_color_from_pos();
+				}
+
+				e.preventDefault();
+			},
+			touchstart: function(e) {
+				internal.dragging = true;
+			},
+			touchend: function(e) {
+				internal.dragging = false;
 			}
 		};
 

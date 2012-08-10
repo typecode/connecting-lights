@@ -2,6 +2,7 @@
 	page.features.push(function(app) {
 		app.runtime.sendMessage = new page.classes.SendMessage({
 			app: app,
+			is_mobile: <?php if (CL_MOBILE) { echo "true"; } else { echo "false"; } ?>,
 			$e: ($("#send-message").detach().show()),
 			$trigger: $("#send-message-trigger"),
 			color_picker_src: "<?php bloginfo("template_url"); ?>/img/color-picker.png",
@@ -24,7 +25,7 @@
 			<a class="ca-button alt next"><span>Send a Message</span></a>
 		</div>
 	</div>
-	<div class="step send-message-submit">
+	<div class="step send-message-compose">
 
 		<div class="tier">
 			<div class="tc-field">
@@ -34,14 +35,45 @@
 			</div>
 		</div>
 
-		<div class="tier">
-			<div class="color-picker">
-				<div class="handle"></div>
-				<canvas></canvas>
+		<?php if (CL_MOBILE) { ?>
+
+			<div class="tier control-bar">
+				<a class="ca-button alt ca-trans cancel"><span>Cancel</span></a>
+				<div class="color-picker">
+					<div class="handle"></div>
+					<canvas></canvas>
+				</div>
+				<a class="ca-button alt ca-trans next"><span>Next</span></a>
 			</div>
-			<a class="ca-button alt ca-trans next"><span>Send Your Message</span></a>
-		</div>
+
+		<?php } else { ?>
+
+			<div class="tier">
+				<div class="color-picker">
+					<div class="handle"></div>
+					<canvas></canvas>
+				</div>
+				<a class="ca-button alt ca-trans next"><span>Send Your Message</span></a>
+			</div>
+
+		<?php } ?>
 	</div>
+	<?php if (CL_MOBILE) { ?>
+		<div class="step send-message-geo">
+			<div class="map">
+				<!-- placeholder for map container -->
+			</div>
+
+			<div class="tip">
+				You can specify where on Hadrian's Wall you would like your message to start. It will then travel as pulses of light along the wall, to one of the coasts.
+			</div>
+
+			<div class="control-bar">
+				<a class="ca-button alt ca-trans prev"><span>Back</span></a>
+				<a class="ca-button alt ca-trans next"><span>Send</span></a>
+			</div>
+		</div>
+	<?php } ?>
 	<div class="step dispatch">
 		<div class="spinner">
 			<img src="<?php bloginfo("template_url"); ?>/img/spinner.gif" alt="Loading">

@@ -6,9 +6,10 @@
 
 		o = $.extend({
 			app: null,
+			is_mobile: false,
 			$e: null,
 			selector: "",
-			$tigger: null,
+			$trigger: null,
 			color_picker_src: "",
 			bg_desaturation: 0.6,
 			prompts: $.isArray(page.classes.prompts) ? page.classes.prompts : [],
@@ -19,11 +20,9 @@
 			name: "mod.SendMessage",
 			$e: (o.$e ? o.$e : $(o.selector)),
 			$trigger: o.$trigger,
-			overlay: new NI.Overlay({
-				flavor: "merlin-overlay",
-				autoflush: false,
-				closeBtn: true
-			}),
+			is_mobile: o.is_mobile, // refers to phones only
+			is_touch: null, // refers to any touch device (including tablets)
+			overlay: null,
 			merlin: null,
 			colorpicker: null,
 			prompts: o.prompts
@@ -31,15 +30,36 @@
 
 		fn = {
 			init: function() {
+
+				internal.is_touch = (("ontouchstart" in window) || (window.DocumentTouch && document instanceof DocumentTouch));
+
+				internal.overlay = new NI.Overlay({
+					flavor: "merlin-overlay",
+					autoflush: false,
+					closeBtn: true,
+					isTouchDevice: internal.is_touch,
+					onOpen: function() {
+						if (internal.is_touch) {
+							window.scroll(0, 0);
+						}
+						o.app.events.trigger("overlay:opened");
+					},
+					onClose: function() {
+						o.app.events.trigger("overlay:closed");
+					}
+				});
+
 				internal.overlay.setBody(internal.$e.detach());
+
 				internal.$trigger.click(handlers.trigger_click);
+
 				if (!$.isArray(internal.prompts)) {
 					console.warn("Missing prompts for messages");
 				}
 			},
 			set_random_prompt: function() {
 				var prompt = NI.fn.randomElement(internal.prompts);
-				internal.merlin.internal.steps["submit"].fields["m"].component.set_val(prompt);
+				internal.merlin.internal.steps["compose"].fields["m"].component.set_val(prompt);
 			},
 			get_bg_css: function(r, g, b) {
 				var hsv;
@@ -86,6 +106,7 @@
 			name: internal.name + " Merlin",
 			$e: internal.$e,
 			controls: {
+				prev: ".prev",
 				next: ".next"
 			},
 			extensions: {
@@ -104,11 +125,11 @@
 			steps: {
 				"info": {
 					selector: ".send-message-info",
-					next: "submit"
+					next: "compose"
 				},
-				"submit": {
-					selector: ".send-message-submit",
-					next: "dispatch",
+				"compose": {
+					selector: ".send-message-compose",
+					next: internal.is_mobile ? "geo" : "dispatch",
 					fields: {
 						"m": {
 							selector: "textarea[name=m]",
@@ -119,6 +140,16 @@
 									},
 									Counter: {
 										max: 100
+									}
+								},
+								handlers: {
+									focus: function(e) {
+										var field, val;
+										field = e.data.me;
+										val = field.get_val();
+										if (val.substring(val.length - 3) === "...") {
+											field.set_val(val.substring(0, val.length - 3) + " ");
+										}
 									}
 								}
 							}
@@ -138,8 +169,6 @@
 						});
 
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
-
-						//current_step.fields["m"].component.event_receiver.focus();
 					},
 					visible: function(me) {
 						internal.colorpicker.reset();
@@ -147,6 +176,14 @@
 					},
 					finish: function(me) {
 						me.extensions.data.collect_fields(me);
+					}
+				},
+				"geo": {
+					selector: ".send-message-geo",
+					prev: "compose",
+					next: "dispatch",
+					init: function(me) {
+
 					}
 				},
 				"dispatch": {
@@ -162,7 +199,7 @@
 					visible: function(me) {
 						window.setTimeout(function() {
 							internal.overlay.close();
-							me.show_step("submit");
+							me.show_step("compose");
 						}, 3000);
 					}
 				}

@@ -92,6 +92,7 @@ body {
 }
 
 .noselect {
+	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -1177,7 +1178,7 @@ article {
 		}
 	}
 
-	.send-message-submit {
+	.send-message-compose {
 
 		.tc-field {
 			float: none;
@@ -1202,6 +1203,11 @@ article {
 		.ca-button {
 			margin: 40px 0 0 35px;
 		}
+	}
+
+	.send-message-geo {
+		position: relative;
+		
 	}
 
 	.thank-you {
@@ -1304,3 +1310,22 @@ footer {
 }
 
 
+/*  Mobile
+=============================================================================== */
+
+body.mobile {
+	font-size: 16px;
+	line-height: 1.75em;
+
+	> header {
+		position: fixed;
+		width: 100%;
+		padding: 12px 0;
+		height: 54px;
+		background: @base;
+	
+		.connect { display: none; }
+	
+	}
+	
+}

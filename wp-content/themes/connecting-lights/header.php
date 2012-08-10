@@ -1,3 +1,30 @@
+<?php
+
+if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
+
+	$mobile_agents = '!(phone|ipod)!i';
+
+	if ( preg_match($mobile_agents, $_SERVER['HTTP_USER_AGENT']) ) {
+	
+		define("CL_MOBILE", true);
+		
+		$mobile_id = get_page_by_title("mobile")->ID;
+		
+		if (! is_page($mobile_id) ) {
+
+			header("Location: ". get_permalink( $mobile_id ));
+		
+		}
+
+	} else {
+		
+		define("CL_MOBILE", false);
+		
+	}
+
+}
+
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 
@@ -6,6 +33,10 @@
 	<title><?php wp_title("&laquo;", true, "right"); ?> <?php bloginfo("name"); ?></title>
 
 	<meta charset="<?php bloginfo("charset"); ?>" />
+	
+	<?php if (CL_MOBILE ) { ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<?php } ?>
 
 	<link rel="icon" type="image/x-icon" href="<?php bloginfo("template_url"); ?>/img/favicon.ico" />
 	<link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo("template_url"); ?>/img/favicon.ico" />
@@ -20,8 +51,6 @@
 	<link rel="stylesheet" href="<?php bloginfo("stylesheet_url"); ?>" type="text/css"/>
 	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/webfonts/ss-social.css" type="text/css"/>
 	<link rel="stylesheet/less" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.less" />
-
-	<!--<meta name="viewport" content="width=device-width; initial-scale=1" />-->
 
 	<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -59,6 +88,8 @@
 			
 			  	FB.ui(obj, callback);
 			}*/
+			
+			<?php if (! CL_MOBILE ) { ?>
 		
   			$('.popup').click(function(event) {
   			  var width  = 575,
@@ -76,6 +107,8 @@
   			
   			  return false;
   			});
+  			
+  			<?php } ?>
 	  		
 	  	});
 	</script>
@@ -83,58 +116,63 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="wrap">
-<div id="main">
 
-	<header>
+<?php if (! CL_MOBILE ) { ?>
 
-		<h1><a href="<?php bloginfo("url"); ?>"><img src="<?php bloginfo("template_url"); ?>/img/logo.png" alt="Connecting Light" /></a></h1>
-		
-		<nav>
-			<?php wp_nav_menu( array("menu" => "header_nav", "container" => false )); ?>
-		</nav>
-		
-		<div class="schedule">
-			<div class="date">
-				<span class="month">Aug</span>
-				<span class="day">31</span>
+	<div id="wrap">
+		<div id="main">
+
+<?php } ?>
+
+		<header>
+	
+			<h1><a href="<?php bloginfo("url"); ?>"><img src="<?php bloginfo("template_url"); ?>/img/logo.png" alt="Connecting Light" /></a></h1>
+			
+			<nav>
+				<?php wp_nav_menu( array("menu" => "header_nav", "container" => false )); ?>
+			</nav>
+			
+			<div class="schedule">
+				<div class="date">
+					<span class="month">Aug</span>
+					<span class="day">31</span>
+				</div>
+				<div class="sep">+</div>
+				<div class="date">
+					<span class="month">Sept</span>
+					<span class="day">1</span>
+				</div>
 			</div>
-			<div class="sep">+</div>
-			<div class="date">
-				<span class="month">Sept</span>
-				<span class="day">1</span>
+			
+			<div class="connect">
+			
+				<a 	title="Share on Facebook"
+					href="https://www.facebook.com/dialog/feed?
+	  					app_id=395149550542429&
+	  					link=http://connectinglight.info&
+						picture=http://connectinglight.info/wp-content/uploads/2012/08/wall_illustration-small-2.jpeg&
+	  					name=Connecting%20Light&
+	  					caption=Connecting%20Light&
+	  					description=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site.&
+	  					redirect_uri=http://connectinglight.info" 
+					class="ss-icon" target="_blank"><span>Facebook</span></a>
+					
+				<a 	title="Share on Twitter" 
+					class="popup ss-icon" 
+					href="http://twitter.com/share?text=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site." 
+					data-site-name="twitter" target="_blank"><span>Twitter</span></a>
+					
+				<a title="Share on Tumblr" 
+					href="http://www.tumblr.com/share/photo?
+						source=http://connectinglight.info/wp-content/uploads/2012/08/wall_illustration-small-2.jpeg&
+						caption=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site.&
+						click_thru=http://connectinglight.info"
+					class="ss-icon" target="_blank"><span>Tumblr</span></a>
+					
+				<a 	title="Share on Pinterest" 
+					href="javascript:void((function()%7Bvar%20e=document.createElement(&apos;script&apos;);e.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);e.setAttribute(&apos;charset&apos;,&apos;UTF-8&apos;);e.setAttribute(&apos;src&apos;,&apos;http://assets.pinterest.com/js/pinmarklet.js?r=&apos;+Math.random()*99999999);document.body.appendChild(e)%7D)());"
+					class="ss-icon" target="_blank"><span>Pinterest</span></a>
+					
 			</div>
-		</div>
-		
-		<div class="connect">
-		
-			<a 	title="Share on Facebook"
-				href="https://www.facebook.com/dialog/feed?
-  					app_id=395149550542429&
-  					link=http://connectinglight.info&
-					picture=http://connectinglight.info/wp-content/uploads/2012/08/wall_illustration-small-2.jpeg&
-  					name=Connecting%20Light&
-  					caption=Connecting%20Light&
-  					description=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site.&
-  					redirect_uri=http://connectinglight.info" 
-				class="ss-icon"><span>Facebook</span></a>
-				
-			<a 	title="Share on Twitter" 
-				class="popup ss-icon" 
-				href="http://twitter.com/share?text=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site." 
-				data-site-name="twitter"><span>Twitter</span></a>
-				
-			<a title="Share on Tumblr" 
-				href="http://www.tumblr.com/share/photo?
-					source=http://connectinglight.info/wp-content/uploads/2012/08/wall_illustration-small-2.jpeg&
-					caption=Connecting%20Light%20-%20a%20seventy%20mile%20long%20digital%20art%20installation%20along%20Hadrian's%20Wall%20World%20Heritage%20Site.&
-					click_thru=http://connectinglight.info"
-				class="ss-icon"><span>Tumblr</span></a>
-				
-			<a 	title="Share on Pinterest" 
-				href="javascript:void((function()%7Bvar%20e=document.createElement(&apos;script&apos;);e.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);e.setAttribute(&apos;charset&apos;,&apos;UTF-8&apos;);e.setAttribute(&apos;src&apos;,&apos;http://assets.pinterest.com/js/pinmarklet.js?r=&apos;+Math.random()*99999999);document.body.appendChild(e)%7D)());"
-				class="ss-icon"><span>Pinterest</span></a>
-				
-		</div>
-
-	</header><!-- end main header -->
+	
+		</header><!-- end main header -->

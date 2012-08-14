@@ -39,9 +39,6 @@
 					closeBtn: true,
 					isTouchDevice: internal.is_touch,
 					onOpen: function() {
-						if (internal.is_touch) {
-							window.scroll(0, 0);
-						}
 						o.app.events.trigger("overlay:opened");
 					},
 					onClose: function() {
@@ -78,7 +75,9 @@
 		handlers = {
 			trigger_click: function(e, d) {
 				e.preventDefault();
-				internal.overlay.open();
+				if (! internal.is_touch ) {
+					internal.overlay.open();
+				}
 			},
 			load_prompt_click: function(e, d) {
 				e.preventDefault();

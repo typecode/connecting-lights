@@ -33,7 +33,6 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	<title><?php wp_title("&laquo;", true, "right"); ?> <?php bloginfo("name"); ?></title>
 
 	<meta charset="<?php bloginfo("charset"); ?>" />
-	
 	<?php if (CL_MOBILE ) { ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<?php } ?>
@@ -51,7 +50,7 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.css" />
 
 	<!--[if lt IE 9]>
-		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script type="text/javascript" src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
 	<?php wp_head(); ?>

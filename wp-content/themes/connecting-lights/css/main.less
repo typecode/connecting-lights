@@ -1406,7 +1406,7 @@ body.mobile {
 	}
 
 	header,
-	footer { z-index: 999; }
+	footer { z-index: 1001; }
 
 	#main > header {
 		.y(0);
@@ -1495,6 +1495,132 @@ body.mobile {
 	}
 
 	.actions { display: none; }
+	
+	/* Send Message */
+	
+	.overlay {
+	
+		.btn-close { display: none; }
+	 
+		.pane {
+			padding: 0;
+			width: auto;
+			background-color: #333333;
+			box-shadow: none;
+	 
+			p {
+				.yp(1);
+				font-size: 14px;
+				line-height: 18px;
+			}
+	
+			.ca-button {
+				.y(2);
+				box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+	
+				&:hover {
+					box-shadow: 2px 2px 14px rgba(0,0,0,0.3);
+				}
+				&:active {
+					box-shadow: inset 1px 1px 12px rgba(0,0,0,0.15);
+				}
+			}
+		}
+	
+		&.merlin-overlay {
+			.pane {
+				padding: 0;
+	
+				> .bd > .merlin > .step {
+					padding: 20px 12px 40px;
+				}
+			}
+	
+			.spinner {
+				text-align: center;
+			}
+		}
+	}
+	
+	.mask {
+		z-index: 1000;
+		background-color: inherit;
+		background: none;
+		opacity: 1;
+	}
+	
+	.send-message {
+		width: 100%;
+	
+		.tier {
+			.y(2);
+		}
+			
+		h2 {
+			font-size: 19px;
+			line-height: 28px;
+		}
+	
+		.load-prompt {
+			float: left;
+			font-size: 18px;
+	
+			a {
+				display: block;
+				padding: 5px 0 5px 25px;
+				background-repeat: no-repeat;
+				background-image: url("../img/refresh.png");
+				background-size: 16px 16px;
+				background-position: left 50%;
+				color: @white-trans;
+			}
+		}
+	
+		.send-message-compose {
+	
+			.tc-field {
+				float: none;
+	
+				textarea {
+					height: 200px;
+					.dagny;
+					background-color: rgba(255, 255, 255, 0.3);
+					border: 0;
+					border-radius: 5px;
+				}
+	
+				.count {
+					display: block;
+					float: right;
+					padding: 5px 0 0;
+					font-size: 18px;
+					color: @white-trans;
+				}
+			}
+	
+			.ca-button {
+				margin: 40px 0 0 35px;
+			}
+		}
+	
+		.send-message-geo {
+			position: relative;
+			
+		}
+	
+		.thank-you {
+			h2 {
+				text-align: center; 
+				font-weight: 600px; 
+				font-size: 72px;
+			}
+	
+			p { 
+				text-align: center;
+			}
+		}
+	}
+
 	
 	footer {
 		margin-top: -58px;

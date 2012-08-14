@@ -17,7 +17,11 @@ get_header();
 					$more = $e.find(".more"),
 					$toggle = $e.find(".toggle"),
 					$expand = $toggle.find(".expand"),
-					$collapse = $toggle.find(".collapse");
+					$collapse = $toggle.find(".collapse"),
+					$splash = $(".splash"),
+					$footer = $("footer"),
+					$modal = $("#send-message"),
+					$msgtrigger = $("#send-message-trigger");
 
 				$toggle.click(function(e) {
 					e.preventDefault();
@@ -31,10 +35,22 @@ get_header();
 						$collapse.show();
 					}
 				});
+				
+				$msgtrigger.click(function(e) {
+					e.preventDefault();
+					// $("html, body").animate({ scrollTop: 0 }, "slow");
+					$splash.fadeOut();
+					$footer.fadeOut();
+					$e.fadeOut("slow", function() {
+						$(this).empty().html($modal)	
+					}).fadeIn("slow", function() {
+						$("html, body").animate({ scrollTop: 0 }, "slow");
+					});
+				});
 			});
 		</script>
 
-		<div class="xFull">
+		<div class="xFull mobile-content">
 			<div class="inner">
 			
 				<div class="overview" id="overview">

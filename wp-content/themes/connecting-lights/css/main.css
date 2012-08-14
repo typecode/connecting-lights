@@ -2,9 +2,6 @@
 =============================================================================== */
 /*  Type
 =============================================================================== */
-.brandon-grotesque {
-  font-family: "brandon-grotesque", sans-serif;
-}
 .dagny {
   font-family: "ff-dagny-web-pro", sans-serif;
 }
@@ -554,7 +551,7 @@ textarea {
   background: -ms-linear-gradient(top, #a7dbc8 0%, #8accba 100%);
   background: linear-gradient(to bottom, #a7dbc8 0%, #8accba 100%);
   /*&.alt { // used in modals
-		.brandon-grotesque;
+		.dagny;
 		font-size: 24px;
 		line-height: 1;
 		font-weight: 600;
@@ -1052,15 +1049,6 @@ article .content {
 }
 .detail-block .details p:first-child {
   margin-top: 0px;
-}
-.detail-block .details strong {
-  font-family: "brandon-grotesque", sans-serif;
-  font-weight: 500;
-  color: #333333;
-  font-size: 24px;
-  line-height: 27px;
-  margin-top: 1em;
-  display: block;
 }
 .detail-block .details a {
   color: #8accb1;

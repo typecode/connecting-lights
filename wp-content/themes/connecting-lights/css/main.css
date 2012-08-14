@@ -1283,6 +1283,8 @@ body.mobile {
   font-size: 17px;
   line-height: 21px;
   background: #222222;
+  /* Send Message */
+
 }
 body.mobile .xFull {
   width: 100%;
@@ -1298,7 +1300,7 @@ body.mobile #main {
 }
 body.mobile header,
 body.mobile footer {
-  z-index: 999;
+  z-index: 1001;
 }
 body.mobile #main > header {
   margin-top: 0px;
@@ -1383,6 +1385,99 @@ body.mobile #overview .toggle .collapse {
 }
 body.mobile .actions {
   display: none;
+}
+body.mobile .overlay .btn-close {
+  display: none;
+}
+body.mobile .overlay .pane {
+  padding: 0;
+  width: auto;
+  background-color: #333333;
+  box-shadow: none;
+}
+body.mobile .overlay .pane p {
+  padding-top: 18px;
+  font-size: 14px;
+  line-height: 18px;
+}
+body.mobile .overlay .pane .ca-button {
+  margin-top: 36px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+body.mobile .overlay .pane .ca-button:hover {
+  box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.3);
+}
+body.mobile .overlay .pane .ca-button:active {
+  box-shadow: inset 1px 1px 12px rgba(0, 0, 0, 0.15);
+}
+body.mobile .overlay.merlin-overlay .pane {
+  padding: 0;
+}
+body.mobile .overlay.merlin-overlay .pane > .bd > .merlin > .step {
+  padding: 20px 12px 40px;
+}
+body.mobile .overlay.merlin-overlay .spinner {
+  text-align: center;
+}
+body.mobile .mask {
+  z-index: 1000;
+  background-color: inherit;
+  background: none;
+  opacity: 1;
+}
+body.mobile .send-message {
+  width: 100%;
+}
+body.mobile .send-message .tier {
+  margin-top: 36px;
+}
+body.mobile .send-message h2 {
+  font-size: 19px;
+  line-height: 28px;
+}
+body.mobile .send-message .load-prompt {
+  float: left;
+  font-size: 18px;
+}
+body.mobile .send-message .load-prompt a {
+  display: block;
+  padding: 5px 0 5px 25px;
+  background-repeat: no-repeat;
+  background-image: url("../img/refresh.png");
+  background-size: 16px 16px;
+  background-position: left 50%;
+  color: rgba(255, 255, 255, 0.55);
+}
+body.mobile .send-message .send-message-compose .tc-field {
+  float: none;
+}
+body.mobile .send-message .send-message-compose .tc-field textarea {
+  height: 200px;
+  font-family: "ff-dagny-web-pro", sans-serif;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 0;
+  border-radius: 5px;
+}
+body.mobile .send-message .send-message-compose .tc-field .count {
+  display: block;
+  float: right;
+  padding: 5px 0 0;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.55);
+}
+body.mobile .send-message .send-message-compose .ca-button {
+  margin: 40px 0 0 35px;
+}
+body.mobile .send-message .send-message-geo {
+  position: relative;
+}
+body.mobile .send-message .thank-you h2 {
+  text-align: center;
+  font-weight: 600px;
+  font-size: 72px;
+}
+body.mobile .send-message .thank-you p {
+  text-align: center;
 }
 body.mobile footer {
   margin-top: -58px;

@@ -92,6 +92,8 @@
 
 	<!-- initialization -->
 	<script>
+		this.console = NI.app.getConsole();
+		
 		jQuery(function() {
 			var app = new NI.App({
 				page: page

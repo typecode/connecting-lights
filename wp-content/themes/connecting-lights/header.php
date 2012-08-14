@@ -33,7 +33,6 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	<title><?php wp_title("&laquo;", true, "right"); ?> <?php bloginfo("name"); ?></title>
 
 	<meta charset="<?php bloginfo("charset"); ?>" />
-	
 	<?php if (CL_MOBILE ) { ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<?php } ?>
@@ -47,15 +46,17 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 
 	<link rel="stylesheet" href="<?php bloginfo("stylesheet_url"); ?>" type="text/css"/>
 	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/webfonts/ss-social.css" type="text/css"/>
-	<link rel="stylesheet/less" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.less" />
+	<!-- <link rel="stylesheet/less" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.less" /> -->
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.css" />
 
 	<!--[if lt IE 9]>
-		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script type="text/javascript" src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/excanvas.js"></script>
 	<![endif]-->
 
 	<?php wp_head(); ?>
 
-	<script src="<?php bloginfo("template_url"); ?>/js/mods/less-1.3.0.min.js"></script>
+	<!--<script src="<?php bloginfo("template_url"); ?>/js/mods/less-1.3.0.min.js"></script> -->
 
 	<script>
 		this.page = {

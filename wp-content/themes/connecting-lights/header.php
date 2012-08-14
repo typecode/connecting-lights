@@ -89,8 +89,7 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 			  	FB.ui(obj, callback);
 			}*/
 			
-			<?php if (! CL_MOBILE ) { ?>
-		
+			<?php if (! CL_MOBILE ) { ?>	
   			$('.popup').click(function(event) {
   			  var width  = 575,
   			      height = 400,
@@ -107,7 +106,6 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
   			
   			  return false;
   			});
-  			
   			<?php } ?>
 	  		
 	  	});
@@ -117,12 +115,8 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 
 <body <?php body_class(); ?>>
 
-<?php if (! CL_MOBILE ) { ?>
-
 	<div id="wrap">
 		<div id="main">
-
-<?php } ?>
 
 		<header>
 	
@@ -133,10 +127,13 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 			</nav>
 			
 			<?php if ( CL_MOBILE ) { ?>
-			<ul class='mobile-nav'>
-				<li><a href=''>About</a></li>
-				<li><a href=''>Participate</a></li>
-			</ul>
+			<div class="mobile-nav">
+				<div class="small-toggle"></div>
+				<ul>
+					<li><a href=''>About</a></li>
+					<li><a href=''>Participate</a></li>
+				</ul>
+			</div>
 			<?php } ?>
 			
 			<div class="schedule">

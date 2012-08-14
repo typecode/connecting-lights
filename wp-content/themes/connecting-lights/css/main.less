@@ -5,6 +5,7 @@
 =============================================================================== */
 
 @base: rgb(51,51,51);
+@alt-base: rgb(34,34,34);
 @copy-color: rgb(153,153,153);
 @article-copy: rgb(102,102,102);
 @offset: rgb(81,81,81);
@@ -67,6 +68,9 @@ a {
 	color: @accent;
 	&:hover { text-decoration: underline; }
 }
+
+strong { font-weight: bold; }
+em { font-style: italic; }
 
 ::-moz-selection { background-color: @accent; color: #fff; }
 ::selection { background-color: @accent; color: #fff; }
@@ -571,6 +575,36 @@ textarea {
 	resize: none;
 }
 
+.small-button {
+	padding: 6px 9px;
+	background: rgb(93,93,93);
+	background: -moz-linear-gradient(top, rgb(93,93,93) 0%, rgb(80,80,80) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(93,93,93)), color-stop(100%,rgb(80,80,80)));
+	background: linear-gradient(to bottom, rgb(93,93,93) 0%, rgb(80,80,80) 100%);
+	border-bottom: 1px solid rgb(124,124,124);
+	
+	-webkit-box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, .1), -1px 2px 0px rgba(0, 0, 0, .2);
+	box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, .1), -1px 2px 0px rgba(0, 0, 0, .2);
+	
+	a {
+		color: #000;		
+		text-shadow: 0px 1px 0px rgba(255,255,255,.25);
+	}
+
+}
+.small-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 30px;
+	height: 100%;
+	background: url("../img/small-button_toggle.png") no-repeat center center;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: rgb(85,85,85);
+	border-left-color: rgba(0,0,0,.1);
+}
+
 .ca-button {
 	.garaje;
 	color: @white;
@@ -592,7 +626,6 @@ textarea {
 	background: -o-linear-gradient(top,  #a7dbc8 0%,#8accba 100%);
 	background: -ms-linear-gradient(top,  #a7dbc8 0%,#8accba 100%);
 	background: linear-gradient(to bottom,  #a7dbc8 0%,#8accba 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7dbc8', endColorstr='#8accba',GradientType=0 );
 
 	&:hover {
 		text-decoration: none;
@@ -1356,14 +1389,35 @@ footer {
 body.mobile {
 	font-size: 17px;
 	line-height: 21px;
+	background: @alt-base;
+	
+	.xFull {
+		width: 100%;
+	
+		> .inner { padding: 14px; }
+	
+	}
+	
+	.ca-button {
+		&.alt { font-size: 18px; }
+	}
+	
+	#main { 
+		padding: 51px 0 58px;
+	}
 
-	> header {
+	header,
+	footer { z-index: 999; }
+
+	#main > header {
+		.y(0);
 		position: fixed;
 		top: 0;
 		left: 0;
 		background: @base;
 		width: 100%;
 		padding: 12px 0;
+		text-align: left;
 		
 		-webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .3);
 		box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .3);
@@ -1385,32 +1439,80 @@ body.mobile {
 		nav { display: none; }
 	
 		.mobile-nav {
-			display: block;
+			position: relative;
 			float: left;
 			width: 124px;
-			height: 27px;
+			height: 28px;
 			font-size: 15px;
 			line-height: 1em;
-			border-bottom: 1px solid rgb(124,124,124);
 			overflow: hidden;
 			
-			> li {
-				padding: 6px 9px;
-				background: rgb(93,93,93);
-				background: -moz-linear-gradient(top,  rgb(93,93,93) 0%, rgb(80,80,80) 100%);
-				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(93,93,93)), color-stop(100%,rgb(80,80,80)));
-				background: linear-gradient(to bottom,  rgb(93,93,93) 0%,rgb(80,80,80) 100%);
+			ul {
 				
-				a {
-					color: #000;
-					
-					text-shadow: 1px 1px 0px rgba(255,255,255,.25);
+				> li {
+					.small-button;
 				}
-				
+			
 			}
 				
 		}
 	
+	}
+	
+	.splash { border-bottom: 1px solid rgb(0,0,0); }
+	
+	#overview {
+		.y(0);
+		border-top: 1px solid @offset;
+		color: @off-white;
+		
+		> div {
+			float: none;
+			width: auto;
+			margin-left: 0;
+		}
+
+		p {
+			.yp(.5);
+	
+			.lighter {
+				color: @gray1;
+			}
+		}
+	
+		.toggle {
+			.y(0);
+			color: @accent;
+			font-weight: bold;
+			margin-right: 0;
+			margin-bottom: 10px;
+	
+			&:hover { > span span:first-child { color: @accent; } }
+	
+			.collapse {
+				display: none;
+			}
+		}
+	}
+
+	.actions { display: none; }
+	
+	footer {
+		margin-top: -58px;
+		height: 34px;
+		padding: 12px 0;
+		background: @base;
+	
+		-webkit-box-shadow:  0px 0px 6px 1px rgba(0, 0, 0, .4);
+		box-shadow:  0px 0px 6px 1px rgba(0, 0, 0, .4);
+		
+		.ca-button {
+			display: block;
+			text-align: center;
+			margin: 0 14px;
+			padding: .4em 0;
+		}
+		
 	}
 	
 }

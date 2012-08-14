@@ -895,7 +895,8 @@ textarea {
 }
 .home .inverted .posts .post a.thumblink {
   width: 164px;
-  height: 164px;
+  height: 108px;
+  overflow: hidden;
   background: #eee;
   display: block;
   float: left;
@@ -903,6 +904,7 @@ textarea {
 .home .inverted .posts .post img {
   float: left;
   margin-right: 18px;
+  margin-top: -28px;
 }
 .home .inverted .posts .post > div {
   margin-left: 182px;
@@ -919,8 +921,8 @@ textarea {
 }
 .home .inverted .partners {
   float: left;
-  width: 274px;
-  margin-left: 82px;
+  width: 262px;
+  margin-left: 94px;
 }
 .home .inverted .partners li {
   padding: 18px 0 0 18px;

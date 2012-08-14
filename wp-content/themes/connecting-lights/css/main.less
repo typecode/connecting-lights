@@ -980,7 +980,8 @@ textarea {
 
 			a.thumblink {
 				width: 164px;
-				height: 164px;
+				height: 108px; // FOR NON-SQUARE THUMBS
+				overflow: hidden; // FOR NON-SQUARE THUMBS
 				background: #eee;
 				display: block;
 				float: left;
@@ -989,6 +990,7 @@ textarea {
 			img {
 				float: left;
 				margin-right: 18px;
+				margin-top: -28px; // FOR NON-SQUARE THUMBS
 			}
 
 			> div {
@@ -1013,8 +1015,8 @@ textarea {
 
 	.partners {
 		float: left;
-		width: 274px;
-		margin-left: 82px;
+		width: 262px;
+		margin-left: 94px;
 
 		li {
 			padding: 18px 0 0 18px;
@@ -1031,7 +1033,7 @@ textarea {
 
 			&:hover {
 				border-color: @accent;
-				
+
 				img { 
 					opacity: 0.75; 
 				}

@@ -20,7 +20,8 @@ h1 {
   text-transform: uppercase;
 }
 h2 {
-  font-family: "brandon-grotesque", sans-serif;
+  font-family: "ff-dagny-web-pro", sans-serif;
+  font-weight: 400;
   color: #333333;
   font-size: 36px;
   line-height: 1em;
@@ -86,9 +87,9 @@ html,
   clear: both;
 }
 body {
-  font-family: "brandon-grotesque", sans-serif;
-  font-size: 21px;
-  line-height: 1.3em;
+  font-family: "ff-dagny-web-pro", sans-serif;
+  font-size: 18px;
+  line-height: 27px;
   color: #999999;
   background: #333333;
   -webkit-font-smoothing: antialiased;
@@ -196,7 +197,7 @@ nav > ul > li {
   color: #ffffff;
 }
 .actions a > div {
-  font-family: "brandon-grotesque", sans-serif;
+  font-family: "ff-dagny-web-pro", sans-serif;
   position: absolute;
   padding-top: 42px;
   top: 0;
@@ -204,9 +205,9 @@ nav > ul > li {
   right: 0;
   bottom: 0;
   text-align: center;
-  font-size: 42px;
-  line-height: 0.95;
-  font-weight: 600;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 900;
   -webkit-transition: background 250ms ease-in-out;
   -moz-transition: background 250ms ease-in-out;
   -o-transition: background 250ms ease-in-out;
@@ -372,11 +373,12 @@ nav > ul > li {
 .overlay .pane p {
   padding-top: 18px;
   font-family: "ff-dagny-web-pro", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 27px;
 }
 .overlay .pane .ca-button {
   margin-top: 36px;
+  color: #333333;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 .overlay .pane .ca-button:hover {
@@ -384,6 +386,9 @@ nav > ul > li {
 }
 .overlay .pane .ca-button:active {
   box-shadow: inset 1px 1px 12px rgba(0, 0, 0, 0.15);
+}
+.overlay .pane .ca-button:active span {
+  color: #333333;
 }
 .overlay.merlin-overlay .pane {
   padding: 0;
@@ -477,7 +482,7 @@ textarea {
   line-height: 1;
   width: 100%;
   display: inline-block;
-  padding: 10px 16px;
+  padding: 14px 16px;
   border: 1px solid #cccccc;
   color: #333333;
   outline: none;
@@ -526,6 +531,7 @@ textarea {
 .ca-button {
   font-family: "Garaje53UnicaseBlack", sans-serif;
   color: #ffffff;
+  font-size: 22px;
   line-height: 1;
   display: inline-block;
   padding: 15px 1.25em;
@@ -547,6 +553,24 @@ textarea {
   background: -o-linear-gradient(top, #a7dbc8 0%, #8accba 100%);
   background: -ms-linear-gradient(top, #a7dbc8 0%, #8accba 100%);
   background: linear-gradient(to bottom, #a7dbc8 0%, #8accba 100%);
+  /*&.alt { // used in modals
+		.brandon-grotesque;
+		font-size: 24px;
+		line-height: 1;
+		font-weight: 600;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: rgb(44,73,61);
+		color: rgba(44,73,61, 0.9);
+		text-shadow: 1px 1px 0 rgba(255,255,255,0.35);
+		padding: 1em 1.25em;
+
+		&:hover span,
+		&:active span {
+			color: rgba(44,73,61, 1);
+		}
+	}*/
+
 }
 .ca-button:hover {
   text-decoration: none;
@@ -590,22 +614,6 @@ textarea {
   box-shadow: 0 0 8px #fb553a;
   color: #fb553a;
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.75);
-}
-.ca-button.alt {
-  font-family: "brandon-grotesque", sans-serif;
-  font-size: 24px;
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #2c493d;
-  color: rgba(44, 73, 61, 0.9);
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.35);
-  padding: 1em 1.25em;
-}
-.ca-button.alt:hover span,
-.ca-button.alt:active span {
-  color: #2c493d;
 }
 .ca-button.ca-trans {
   background: rgba(255, 255, 255, 0.5);
@@ -702,12 +710,13 @@ textarea {
   letter-spacing: 3px;
 }
 #main > header .schedule .date span.day {
+  margin-top: 6px;
   font-size: 56px;
   font-weight: 900;
-  letter-spacing: -1px;
+  letter-spacing: -3px;
 }
 #main > header .schedule .sep {
-  font-size: 40px;
+  font-size: 36px;
   line-height: 2.5em;
   margin-left: .25em;
 }
@@ -1118,8 +1127,9 @@ article .content {
   margin-top: 36px;
 }
 .send-message h2 {
-  font-size: 32px;
-  line-height: 1.4;
+  font-size: 27px;
+  line-height: 36px;
+  font-weight: bold;
 }
 .send-message .load-prompt {
   float: left;
@@ -1159,8 +1169,9 @@ article .content {
 }
 .send-message .thank-you h2 {
   text-align: center;
-  font-weight: 600px;
+  font-weight: 600;
   font-size: 72px;
+  margin-top: 36px;
 }
 .send-message .thank-you p {
   text-align: center;
@@ -1217,7 +1228,7 @@ footer p {
 }
 footer .signup {
   margin-top: 36px;
-  font-size: 22px;
+  font-size: 19px;
   min-height: 54px;
 }
 footer .signup .signup-email {
@@ -1228,6 +1239,10 @@ footer .signup .signup-email {
 }
 footer .signup .signup-email .tc-field-hint {
   margin: 18px 16px;
+  font-size: 19px;
+}
+footer .signup .signup-email input {
+  font-size: 19px;
 }
 footer .signup .signup-email + div {
   float: left;

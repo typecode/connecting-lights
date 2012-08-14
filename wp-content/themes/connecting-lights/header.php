@@ -44,9 +44,6 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	<!-- TypeKit -->
 	<script src="//use.typekit.net/lla2izs.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
-	
-	<!-- Facebook -->
-	<script src='http://connect.facebook.net/en_US/all.js'></script>
 
 	<link rel="stylesheet" href="<?php bloginfo("stylesheet_url"); ?>" type="text/css"/>
 	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/webfonts/ss-social.css" type="text/css"/>
@@ -69,25 +66,6 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	
 	<script>
 		page.features.push(function(app) {
-			/*FB.init({appId: "395149550542429", status: true, cookie: true});
-			
-			function postToFeed() {
-			
-				// calling the API ...
-			  	var obj = {
-			    	method: 'feed',
-			    	link: 'http://connectinglight.info/',
-			    	picture: 'http://connectinglight.info/wp-content/themes/connecting-lights/img/logo.png',
-			    	name: 'Connecting Light',
-			    	caption: 'Connecting Light',
-			    	description: 'Connecting Light - a 70-mile long digital art installation along Hadrian\'s Wall.'
-				};
-			
-			 	function callback(response) {
-			  	}
-			
-			  	FB.ui(obj, callback);
-			}*/
 			
 			<?php if (! CL_MOBILE ) { ?>
 		
@@ -146,20 +124,22 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 			
 			<div class="connect">
 			
-				<?php 	$share_description = urlencode("Connecting Light - a seventy-three mile long digital art installation along Hadrian's Wall World Heritage Site."); 
-						$share_image = urlencode("http://connectinglight.info/wp-content/uploads/2012/08/homePageIllustration-new.jpg");
+				<?php
+					$share_url = urlencode("http://connectinglight.info"); 	
+					$share_image = urlencode("http://connectinglight.info/wp-content/uploads/2012/08/homePageIllustration-new.jpg");
+					$share_description = urlencode("Connecting Light - a seventy-three mile long digital art installation along Hadrian's Wall World Heritage Site."); 
 					
 				?>
 
 				<a 	title="Share on Facebook"
 					href="https://www.facebook.com/dialog/feed?
 	  					app_id=395149550542429&
-	  					link=http://connectinglight.info&
+	  					link=<?php echo $share_url ?>&
 						picture=<?php echo $share_image ?>&
 	  					name=Connecting%20Light&
 	  					caption=&
 	  					description=<?php echo $share_description ?>&
-	  					redirect_uri=http://connectinglight.info" 
+	  					redirect_uri=<?php echo $share_url ?>" 
 					class="ss-icon" target="_blank"><span>Facebook</span></a>
 					
 				<a 	title="Share on Twitter" 
@@ -167,17 +147,19 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 					href="http://twitter.com/share?text=<?php echo $share_description ?>"
 					data-site-name="twitter" target="_blank"><span>Twitter</span></a>
 
-				<a title="Share on Tumblr" 
+				<a 	title="Share on Tumblr" 
 					href="http://www.tumblr.com/share/photo?
 						source=<?php echo $share_image ?>&
 						caption=<?php echo $share_description ?>&
-						click_thru=<?php echo urlencode("http://connectinglight.info") ?>"
+						click_thru=<?php echo $share_url ?>"
 					class="ss-icon" target="_blank"><span>Tumblr</span></a>
 						
-					
-				<a 	title="Share on Pinterest" 
-					href="javascript:void((function()%7Bvar%20e=document.createElement(&apos;script&apos;);e.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);e.setAttribute(&apos;charset&apos;,&apos;UTF-8&apos;);e.setAttribute(&apos;src&apos;,&apos;http://assets.pinterest.com/js/pinmarklet.js?r=&apos;+Math.random()*99999999);document.body.appendChild(e)%7D)());"
-					class="ss-icon" target="_blank"><span>Pinterest</span></a>
+				<a	title="Share on Pinterest"
+					href="http://pinterest.com/pin/create/button/?
+						url=<?php echo $share_url ?>&
+						media=<?php echo $share_image ?>
+						&description=<?php echo $share_description ?>" 
+					class="ss-icon"><span>Pinterest</span></a>
 					
 			</div>
 	

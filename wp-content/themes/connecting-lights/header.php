@@ -132,6 +132,13 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 				<?php wp_nav_menu( array("menu" => "header_nav", "container" => false )); ?>
 			</nav>
 			
+			<?php if ( CL_MOBILE ) { ?>
+			<ul class='mobile-nav'>
+				<li><a href=''>About</a></li>
+				<li><a href=''>Participate</a></li>
+			</ul>
+			<?php } ?>
+			
 			<div class="schedule">
 				<div class="date">
 					<span class="month">Aug</span>

@@ -96,9 +96,11 @@ get_header();
 			<div class="partners">
 				<h2 class="lighter">Official Partners</h2>
 				<ul>
-				<?php foreach ($partners as $post) : setup_postdata($post); ?>
-					<li><?php the_post_thumbnail("partner"); ?></li>
-				<?php endforeach; wp_reset_query(); ?>
+					<?php foreach ($partners as $post) : setup_postdata($post); ?>
+						<li><?php the_post_thumbnail("partner"); ?></li>
+					<?php endforeach; wp_reset_query(); ?>
+					<li><img src="<?php bloginfo("template_url"); ?>/img/logos/culturelab.png" style="width: 200px" /></li>
+					<li><img src="<?php bloginfo("template_url"); ?>/img/logos/newcastle.png" style="width: 175px" /></li>
 				</ul>
 			</div>
 

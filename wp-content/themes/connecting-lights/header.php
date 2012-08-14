@@ -127,10 +127,13 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 			</nav>
 			
 			<?php if ( CL_MOBILE ) { ?>
-			<ul class='mobile-nav'>
-				<li><a href=''>About</a></li>
-				<li><a href=''>Participate</a></li>
-			</ul>
+			<div class="mobile-nav">
+				<div class="small-toggle"></div>
+				<ul>
+					<li><a href=''>About</a></li>
+					<li><a href=''>Participate</a></li>
+				</ul>
+			</div>
 			<?php } ?>
 			
 			<div class="schedule">

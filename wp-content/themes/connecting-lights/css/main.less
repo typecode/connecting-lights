@@ -572,6 +572,36 @@ textarea {
 	resize: none;
 }
 
+.small-button {
+	padding: 6px 9px;
+	background: rgb(93,93,93);
+	background: -moz-linear-gradient(top, rgb(93,93,93) 0%, rgb(80,80,80) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(93,93,93)), color-stop(100%,rgb(80,80,80)));
+	background: linear-gradient(to bottom, rgb(93,93,93) 0%, rgb(80,80,80) 100%);
+	border-bottom: 1px solid rgb(124,124,124);
+	
+	-webkit-box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, .1), -1px 2px 0px rgba(0, 0, 0, .2);
+	box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, .1), -1px 2px 0px rgba(0, 0, 0, .2);
+	
+	a {
+		color: #000;		
+		text-shadow: 0px 1px 0px rgba(255,255,255,.25);
+	}
+
+}
+.small-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 30px;
+	height: 100%;
+	background: url("../img/small-button_toggle.png") no-repeat center center;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: rgb(85,85,85);
+	border-left-color: rgba(0,0,0,.1);
+}
+
 .ca-button {
 	.garaje;
 	color: @white;
@@ -593,7 +623,6 @@ textarea {
 	background: -o-linear-gradient(top,  #a7dbc8 0%,#8accba 100%);
 	background: -ms-linear-gradient(top,  #a7dbc8 0%,#8accba 100%);
 	background: linear-gradient(to bottom,  #a7dbc8 0%,#8accba 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7dbc8', endColorstr='#8accba',GradientType=0 );
 
 	&:hover {
 		text-decoration: none;
@@ -1398,28 +1427,20 @@ body.mobile {
 		nav { display: none; }
 	
 		.mobile-nav {
-			display: block;
+			position: relative;
 			float: left;
 			width: 124px;
-			height: 27px;
+			height: 28px;
 			font-size: 15px;
 			line-height: 1em;
-			border-bottom: 1px solid rgb(124,124,124);
 			overflow: hidden;
 			
-			> li {
-				padding: 6px 9px;
-				background: rgb(93,93,93);
-				background: -moz-linear-gradient(top,  rgb(93,93,93) 0%, rgb(80,80,80) 100%);
-				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(93,93,93)), color-stop(100%,rgb(80,80,80)));
-				background: linear-gradient(to bottom,  rgb(93,93,93) 0%,rgb(80,80,80) 100%);
+			ul {
 				
-				a {
-					color: #000;
-					
-					text-shadow: 1px 1px 0px rgba(255,255,255,.25);
+				> li {
+					.small-button;
 				}
-				
+			
 			}
 				
 		}
@@ -1448,10 +1469,11 @@ body.mobile {
 		}
 	
 		.toggle {
-			.y(.5);
+			.y(0);
 			color: @accent;
 			font-weight: bold;
 			margin-right: 0;
+			margin-bottom: 10px;
 	
 			&:hover { > span span:first-child { color: @accent; } }
 	
@@ -1464,14 +1486,21 @@ body.mobile {
 	.actions { display: none; }
 	
 	footer {
-		text-align: center;
 		margin-top: -58px;
-		height: 58px;
-		padding: 12px 0 9px;
+		height: 34px;
+		padding: 12px 0;
 		background: @base;
 	
 		-webkit-box-shadow:  0px 0px 6px 1px rgba(0, 0, 0, .4);
 		box-shadow:  0px 0px 6px 1px rgba(0, 0, 0, .4);
+		
+		.ca-button {
+			display: block;
+			text-align: center;
+			margin: 0 14px;
+			padding: .4em 0;
+		}
+		
 	}
 	
 }

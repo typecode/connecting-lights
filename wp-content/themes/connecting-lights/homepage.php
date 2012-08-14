@@ -99,8 +99,23 @@ get_header();
 					<?php foreach ($partners as $post) : setup_postdata($post); ?>
 						<li><?php the_post_thumbnail("partner"); ?></li>
 					<?php endforeach; wp_reset_query(); ?>
-					<li><img src="<?php bloginfo("template_url"); ?>/img/logos/culturelab.png" style="width: 200px" /></li>
-					<li><img src="<?php bloginfo("template_url"); ?>/img/logos/newcastle.png" style="width: 175px" /></li>
+					
+					<li>
+						<a href="http://www.ncl.ac.uk/culturelab/" target="_blank">
+							<img src="<?php bloginfo("template_url"); ?>/img/logos/culturelab.png" />
+						</a>
+					</li>
+					<li>
+						<a href="hadrians-wall.org" target="_blank">
+							<img src="<?php bloginfo("template_url"); ?>/img/logos/hadrian-un-combined.png" />
+						</a>
+					</li>
+					<li>
+						<a href="http://www.artscouncil.org.uk/" target="_blank">
+							<img src="<?php bloginfo("template_url"); ?>/img/logos/artscouncil.png" />
+						</a>
+					</li>
+
 				</ul>
 			</div>
 

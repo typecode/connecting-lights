@@ -1016,13 +1016,25 @@ textarea {
 		width: 274px;
 		margin-left: 82px;
 
-		img {
-			display: block;
-			opacity: 0.5;
-			margin: 0 0 36px 0;
-			// margin: 0 auto;
+		li {
+			padding: 18px 0 0 18px;
+			margin: 0 0 18px 0;
+			border: 1px solid #eee;
+			border-bottom: none;
+			border-right: none;
+			
+			img {
+				display: block;
+				height: 42px;
+				opacity: 0.5;
+			}
+
 			&:hover {
-				opacity: 0.75;
+				border-color: @accent;
+				
+				img { 
+					opacity: 0.75; 
+				}
 			}
 		}
 

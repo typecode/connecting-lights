@@ -922,12 +922,22 @@ textarea {
   width: 274px;
   margin-left: 82px;
 }
-.home .inverted .partners img {
-  display: block;
-  opacity: 0.5;
-  margin: 0 0 36px 0;
+.home .inverted .partners li {
+  padding: 18px 0 0 18px;
+  margin: 0 0 18px 0;
+  border: 1px solid #eee;
+  border-bottom: none;
+  border-right: none;
 }
-.home .inverted .partners img:hover {
+.home .inverted .partners li img {
+  display: block;
+  height: 42px;
+  opacity: 0.5;
+}
+.home .inverted .partners li:hover {
+  border-color: #8accb1;
+}
+.home .inverted .partners li:hover img {
   opacity: 0.75;
 }
 /*  Article

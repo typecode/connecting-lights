@@ -49,13 +49,17 @@ h2 {
 }
 h3 {
 	//.brandon-grotesque;
-	.garaje; text-transform: uppercase;
-	font-size: 27px;
-	line-height: 1em;
+	.dagny;
+	font-weight: 900;
+	font-size: 23px;
+	line-height: 27px;
 }
 h4 {
-	font-size: 65px;
-	color: black;
+	.dagny;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 1;
+	color: @accent;
 }
 
 a {
@@ -957,11 +961,12 @@ textarea {
 			p {
 				font-size: 12px; 
 				line-height: 18px;
+				margin-top: 9px;
 			}
 
 			h3 {
 				margin-top: 0;
-				font-size: 22px;
+				font-size: 20px;
 				line-height: 1.2;
 			}
 
@@ -1054,13 +1059,9 @@ article {
 	padding-bottom: 60px;
 
 	h3 {
-		.garaje;
 		.x-first(6);
 		.xpr(1);
-		line-height: 1.2em;
-		font-size: 27px;
-		/* text-transform: uppercase; */
-		font-weight: 600;
+		font-weight: 900;
 		color: @accent;
 
 		.meta {
@@ -1074,13 +1075,25 @@ article {
 		}
 	}
 
+	h4 {
+		padding: 16px 18px 18px 0;
+		margin-top: 27px;
+		margin-right: 27px;
+		line-height: 27px;
+		display: inline-block;
+		float: left;
+		font-style:italic;
+		width: 160px;
+		border-top: 1px solid rgba(138,204,177,0.5);
+	}
+
 	&.no-rules {
 		border-top: none;
 	}
 
 	.details {
 		.x(14);
-		margin-top: 25px;
+		margin-top: 20px;
 
 		p {
 			.dagny;

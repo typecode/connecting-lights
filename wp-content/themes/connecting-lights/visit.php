@@ -15,7 +15,7 @@ get_header();
 			</header>
 
 			<div class="detail-block">
-				<h3>View Locations &amp; Tickets</h3>
+				<h3>Viewing Locations and Directions</h3>
 				<div class="details">
 					<p>Connecting Light is a public and free art installation consisting
 						of several viewing locations along Britain’s greatest Roman
@@ -26,7 +26,7 @@ get_header();
 
 					<div style="width: 550px; height: 250px; background-color: whitesmoke; margin: 10px 0" ></div>
 
-					<p><strong>A note about viewing locations &mdash;</strong></p>
+					<h4>A note about viewing locations</h4>
 
 					<p>Please be aware that visitors that travel off-site of designated
 						viewing areas do so at their own risk. As such, we urge people to
@@ -51,7 +51,7 @@ get_header();
 						surprisingly easy. Just board the Hadrian’s Wall Country AD122 Bus
 						and off you go. Please <a href="#">click here</a> for further details.</p>
 
-					<p><strong>Where to stay &mdash;</strong></p>
+					<h4>Where to stay</h4>
 
 					<p>As you may imagine, there’s a wide range of accommodation available
 						in Hadrian’s Wall Country. Planning for your break will be a lot less
@@ -63,23 +63,13 @@ get_header();
 						weekend by visiting <a href="http://www.ntopsearch.com/HadriansWall/">
 						Hadrian’s Wall Trust</a> destination page.</p>
 
-					<p><strong>What to see and do &mdash;</strong></p>
+					<h4>What to see and do</h4>
 
-					<div id="small-image"></div>
-
-					<div class="text-shift">
-						<p>Experience Britain’s greatest Roman monument – Hadrian’s Wall Country
-							takes in the living, breathtaking story of the Wall along with its coast,
-							countryside, towns and villages.</p>
-
-						<p>For ideas and further information on the Roman sites along the Wall, and
-						 	what to see and do whilst in Hadrian’s Wall Country <a href="#">click here.
-						  </a></p>
-					</div>
-
-					<div class="clear"></div>
-
-					<p>To order a Hadrian’s Wall Country Essential Visitor Pack to help plan your
+					<p>Experience Britain’s greatest Roman monument – Hadrian’s Wall Country
+						takes in the living, breathtaking story of the Wall along with its coast,
+						countryside, towns and villages. For ideas and further information on the Roman sites along the Wall, and
+					 	what to see and do whilst in Hadrian’s Wall Country <a href="#">click here.
+					  </a> To order a Hadrian’s Wall Country Essential Visitor Pack to help plan your
 						trip, <a href="#">click here.</a></p>
 				</div>
 			</div>

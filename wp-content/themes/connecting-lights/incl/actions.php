@@ -86,6 +86,7 @@
 	</div>
 </div>
 
+<?php if (! CL_MOBILE ) { ?>
 <div class="actions">
 	<a href="#" id="send-message-trigger">
 		<img src="<?php bloginfo("template_url"); ?>/img/biglink_1.png" alt="Send a Message" />
@@ -116,3 +117,4 @@
 		</div>
 	</a>
 </div>
+<?php } ?>

@@ -1,10 +1,9 @@
-<?php if (! CL_MOBILE ) { ?>
 
 		</div>
 	</div>
 
-	<footer>
-
+	<footer>	
+		<?php if (! CL_MOBILE ) { ?>
 		<div>
 
 			<script>
@@ -15,6 +14,7 @@
 					});
 				});
 			</script>
+
 			<div id="signup" class="signup clear">
 				<div class="step form">
 					<div class="tc-field signup-email">
@@ -55,11 +55,15 @@
 		
 		</div>
 		
-		<a href="http://festival.london2012.com/" class="banner"></a>
+		<a href="http://festival.london2012.com/" class="banner"></a>		
+		<?php } else { ?>
 		
+		<a href="#" id="send-message-trigger" class="ca-button alt">
+			<span>Send a Message</span>
+		</a>
+		
+		<?php } ?>		
 	</footer>
-
-<?php } ?>
 
 	<?php wp_footer(); ?>
 

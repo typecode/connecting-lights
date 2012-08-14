@@ -1,10 +1,9 @@
-<?php if (! CL_MOBILE ) { ?>
 
 		</div>
 	</div>
 
-	<footer>
-
+	<footer>	
+		<?php if (! CL_MOBILE ) { ?>
 		<div>
 
 			<script>
@@ -15,6 +14,7 @@
 					});
 				});
 			</script>
+
 			<div id="signup" class="signup clear">
 				<div class="step form">
 					<div class="tc-field signup-email">
@@ -51,15 +51,19 @@
 				</ul>
 			</nav>
 
-		<p>Connecting Light is created by YesYesNo and commissioned by the London 2012 Festival and Hadrian's Wall Trust with support from Arts Council England. The Hadrian's Wall Trust is the delivery partner for the installation. For more information contact <a href="">username@domain.com</a>.</p>
+			<p>Connecting Light is created by YesYesNo and commissioned by the London 2012 Festival and Hadrian's Wall Trust with support from Arts Council England. The Hadrian's Wall Trust is the delivery partner for the installation. For more information contact <a href="">username@domain.com</a>.</p>
 		
 		</div>
 		
-		<a href="http://festival.london2012.com/" class="banner"></a>
+		<a href="http://festival.london2012.com/" class="banner"></a>		
+		<?php } else { ?>
 		
+		<a href="#" class="ca-button alt" id="send-message-trigger">
+			<span>Send a Message</span>
+		</a>
+		
+		<?php } ?>		
 	</footer>
-
-<?php } ?>
 
 	<?php wp_footer(); ?>
 

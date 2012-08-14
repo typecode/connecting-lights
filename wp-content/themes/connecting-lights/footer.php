@@ -51,7 +51,7 @@
 				</ul>
 			</nav>
 
-			<p>Connecting Light is created by YesYesNo and commissioned by the London 2012 Festival and Hadrian's Wall Trust with support from Arts Council England. The Hadrian's Wall Trust is the delivery partner for the installation. For more information contact <a href="">username@domain.com</a>.</p>
+		<p>Connecting Light is created by YesYesNo and commissioned by the London 2012 Festival and Hadrian's Wall Trust with support from Arts Council England. The Hadrian's Wall Trust is the delivery partner for the installation. For more information contact <a href="mailto:zach@yesyesno.com">zach@yesyesno.com</a>.</p>
 		
 		</div>
 		

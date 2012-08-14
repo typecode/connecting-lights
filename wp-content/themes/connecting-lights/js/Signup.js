@@ -43,10 +43,10 @@
 								extensions: {
 									Hint: {
 										content: "Enter your email address to get updates"
-									},
-									Validator: {
-										validators: ["required", "email"]
 									}
+								//	Validator: {
+								//		validators: ["required", "email"]
+								//	}
 								}
 							}
 						}

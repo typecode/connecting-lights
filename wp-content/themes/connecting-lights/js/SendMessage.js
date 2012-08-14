@@ -135,9 +135,9 @@
 							selector: "textarea[name=m]",
 							options: {
 								extensions: {
-									Validator: {
-										validators: ["required", "maxlen=100"]
-									},
+								//	Validator: {
+								//		validators: ["required", "maxlen=100"]
+								//	},
 									Counter: {
 										max: 100
 									}

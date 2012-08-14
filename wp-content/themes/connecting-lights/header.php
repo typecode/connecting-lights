@@ -47,7 +47,8 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 
 	<link rel="stylesheet" href="<?php bloginfo("stylesheet_url"); ?>" type="text/css"/>
 	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/webfonts/ss-social.css" type="text/css"/>
-	<link rel="stylesheet/less" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.less" />
+	<!-- <link rel="stylesheet/less" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.less" /> -->
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.css" />
 
 	<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -55,7 +56,7 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 
 	<?php wp_head(); ?>
 
-	<script src="<?php bloginfo("template_url"); ?>/js/mods/less-1.3.0.min.js"></script>
+	<!--<script src="<?php bloginfo("template_url"); ?>/js/mods/less-1.3.0.min.js"></script> -->
 
 	<script>
 		this.page = {

@@ -45,9 +45,9 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	<script>try{Typekit.load();}catch(e){}</script>
 
 	<link rel="stylesheet" href="<?php bloginfo("stylesheet_url"); ?>" type="text/css"/>
+	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/webfonts/ss-standard.css" type="text/css"/>
 	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/webfonts/ss-social.css" type="text/css"/>
-	<!-- <link rel="stylesheet/less" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.less" /> -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.css" />
+	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/main.css" type="text/css"/>
 
 
 	<script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/excanvas_r3/excanvas.compiled.js"></script>
@@ -168,7 +168,7 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 						url=<?php echo $share_url ?>&
 						media=<?php echo $share_image ?>
 						&description=<?php echo $share_description ?>" 
-					class="ss-icon"><span>Pinterest</span></a>
+					class="ss-icon ss-social"><span>Pinterest</span></a>
 					
 			</div>
 	

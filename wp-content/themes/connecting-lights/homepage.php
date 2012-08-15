@@ -63,8 +63,8 @@ get_header();
 			</div>
 
 			<a href="#" class="toggle">
-				<span class="expand"><span>Learn more</span> <span>&#9662;</span></span>
-				<span class="collapse"><span>Less</span> <span>&#9652;</span></span>
+				<span class="expand"><span>Learn more</span> <span class="ss-standard ss-navigatedown"></span></span>
+				<span class="collapse"><span>Less</span> <span class="ss-standard ss-navigateup"></span></span>
 			</a>
 	
 		</div><!-- end overview -->

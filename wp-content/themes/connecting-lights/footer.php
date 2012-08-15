@@ -105,6 +105,7 @@
 	
 	<!-- symbolset -->
 	<script src="<?php bloginfo("template_url"); ?>/css/webfonts/ss-social.js"></script>
+	<script src="<?php bloginfo("template_url"); ?>/css/webfonts/ss-standard.js"></script>
 
 </body>
 </html>

@@ -857,13 +857,17 @@ textarea {
 }
 .overview .toggle:hover {
   text-decoration: none;
-}
-.overview .toggle:hover > span span:first-child {
-  text-decoration: none;
   color: #ffffff;
 }
 .overview .toggle .collapse {
   display: none;
+}
+.overview .toggle [class^="ss-"]:before,
+.overview .toggle [class*=" ss-"]:before {
+  position: relative;
+  top: 2px;
+  font-size: .75em;
+  padding-left: 0.25em;
 }
 .home .inverted > .inner {
   padding-bottom: 36px;
@@ -1145,16 +1149,22 @@ article .content {
 }
 .send-message .load-prompt {
   float: left;
+  padding-top: 5px;
   font-size: 18px;
 }
 .send-message .load-prompt a {
-  display: block;
-  padding: 5px 0 5px 25px;
-  background-repeat: no-repeat;
-  background-image: url("../img/refresh.png");
-  background-size: 16px 16px;
-  background-position: left 50%;
   color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+}
+.send-message .load-prompt a:hover {
+  color: #ffffff;
+}
+.send-message .load-prompt [class^="ss-"]:before,
+.send-message .load-prompt [class*=" ss-"]:before {
+  position: relative;
+  top: 2px;
+  font-size: .9em;
+  padding-right: 0.5em;
 }
 .send-message .send-message-compose .tc-field {
   float: none;
@@ -1502,12 +1512,6 @@ body.mobile .send-message .load-prompt {
   font-size: 18px;
 }
 body.mobile .send-message .load-prompt a {
-  display: block;
-  padding: 5px 0 5px 25px;
-  background-repeat: no-repeat;
-  background-image: url("../img/refresh.png");
-  background-size: 16px 16px;
-  background-position: left 50%;
   color: rgba(255, 255, 255, 0.55);
 }
 body.mobile .send-message .send-message-compose .tc-field {

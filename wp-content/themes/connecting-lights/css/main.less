@@ -949,16 +949,23 @@ textarea {
 
 		&:hover {
 			text-decoration: none;
-
-			> span span:first-child {
-				text-decoration: none;
-				color: @white;
-			}
+			color: @white;
 		}
 
 		.collapse {
 			display: none;
 		}
+		
+		[class^="ss-"],
+		[class*=" ss-"] {
+			&:before {
+				position: relative;
+				top: 2px;
+				font-size: .75em;
+				padding-left: 0.25em;
+			}
+		}
+		
 	}
 
 }
@@ -1242,17 +1249,25 @@ article {
 
 	.load-prompt {
 		float: left;
+		padding-top: 5px;
 		font-size: 18px;
 
 		a {
-			display: block;
-			padding: 5px 0 5px 25px;
-			background-repeat: no-repeat;
-			background-image: url("../img/refresh.png");
-			background-size: 16px 16px;
-			background-position: left 50%;
 			color: @white-trans;
+			text-decoration: none;
+			&:hover { color: @white; }
 		}
+
+		[class^="ss-"],
+		[class*=" ss-"] {
+			&:before {
+				position: relative;
+				top: 2px;
+				font-size: .9em;
+				padding-right: 0.5em;
+			}
+		}
+
 	}
 
 	.send-message-compose {
@@ -1624,12 +1639,6 @@ body.mobile {
 			font-size: 18px;
 	
 			a {
-				display: block;
-				padding: 5px 0 5px 25px;
-				background-repeat: no-repeat;
-				background-image: url("../img/refresh.png");
-				background-size: 16px 16px;
-				background-position: left 50%;
 				color: @white-trans;
 			}
 		}

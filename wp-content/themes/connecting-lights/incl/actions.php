@@ -30,7 +30,7 @@
 		<div class="tier">
 			<div class="tc-field">
 				<textarea name="m"></textarea>
-				<div class="load-prompt"><a href="#">load a different prompt</a></div>
+				<div class="load-prompt"><a class="ss-standard ss-replay" href="#">load a different prompt</a></div>
 				<span class="count"></span>
 			</div>
 		</div>

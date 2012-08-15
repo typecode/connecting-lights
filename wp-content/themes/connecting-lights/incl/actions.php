@@ -22,7 +22,7 @@
 		<p>You can send any message you want, but we ask that you please think about making a message that you'd like to send across the country and for everyone of all ages to read and enjoy.</p>
 
 		<div class="center">
-			<a class="ca-button alt next"><span>Send a Message</span></a>
+			<a class="ca-button next"><span>Send a Message</span></a>
 		</div>
 	</div>
 	<div class="step send-message-compose">
@@ -38,12 +38,12 @@
 		<?php if (CL_MOBILE) { ?>
 
 			<div class="tier control-bar">
-				<a class="ca-button alt ca-trans cancel"><span>Cancel</span></a>
+				<a class="ca-button ca-trans cancel"><span>Cancel</span></a>
 				<div class="color-picker">
 					<div class="handle"></div>
 					<canvas></canvas>
 				</div>
-				<a class="ca-button alt ca-trans next"><span>Next</span></a>
+				<a class="ca-button ca-trans next"><span>Next</span></a>
 			</div>
 
 		<?php } else { ?>
@@ -53,7 +53,7 @@
 					<div class="handle"></div>
 					<canvas></canvas>
 				</div>
-				<a class="ca-button alt ca-trans next"><span>Send Your Message</span></a>
+				<a class="ca-button ca-trans next"><span>Send Your Message</span></a>
 			</div>
 
 		<?php } ?>
@@ -69,8 +69,8 @@
 			</div>
 
 			<div class="control-bar">
-				<a class="ca-button alt ca-trans prev"><span>Back</span></a>
-				<a class="ca-button alt ca-trans next"><span>Send</span></a>
+				<a class="ca-button ca-trans prev"><span>Back</span></a>
+				<a class="ca-button ca-trans next"><span>Send</span></a>
 			</div>
 		</div>
 	<?php } ?>

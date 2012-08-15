@@ -55,6 +55,7 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	<!--[if lt IE 9]>
 		<script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/excanvas_r3/excanvas.compiled.js"></script>
 		<script type="text/javascript" src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/excanvas.js"></script>
 	<![endif]-->
 
 	<?php wp_head(); ?>

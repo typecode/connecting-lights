@@ -1094,6 +1094,8 @@ article .content {
 /*  Color picker
 =============================================================================== */
 .color-picker {
+/* colorpicker pause */
+  display: none;
   float: left;
   position: relative;
   -webkit-tap-highlight-color: transparent;
@@ -1172,6 +1174,11 @@ article .content {
 }
 .send-message .send-message-compose .ca-button {
   margin: 40px 0 0 35px;
+  /* colorpicker pause */
+  margin: 40px auto 0;
+  display: block;
+  width: 182px;
+  text-align: center;
 }
 .send-message .send-message-geo {
   position: relative;

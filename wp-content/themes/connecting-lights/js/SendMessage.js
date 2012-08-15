@@ -160,17 +160,21 @@
 
 						me.extensions.data.init(me);
 
+						/* colorpicker pause
 						$colorpicker.on("color:picked", {container: current_step.$e}, handlers.color_picked);
 
 						internal.colorpicker = new page.classes.ColorPicker({
 							$e: $colorpicker,
 							src: o.color_picker_src
 						});
+						*/
 
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
 					},
 					visible: function(me) {
+						/* colorpicker pause
 						internal.colorpicker.reset();
+						*/
 						fn.set_random_prompt();
 					},
 					finish: function(me) {

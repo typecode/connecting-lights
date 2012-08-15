@@ -39,9 +39,6 @@
 					closeBtn: true,
 					isTouchDevice: internal.is_touch,
 					onOpen: function() {
-						if (internal.is_touch) {
-							window.scroll(0, 0);
-						}
 						o.app.events.trigger("overlay:opened");
 					},
 					onClose: function() {
@@ -78,7 +75,9 @@
 		handlers = {
 			trigger_click: function(e, d) {
 				e.preventDefault();
-				internal.overlay.open();
+				if (! internal.is_touch ) {
+					internal.overlay.open();
+				}
 			},
 			load_prompt_click: function(e, d) {
 				e.preventDefault();
@@ -161,17 +160,21 @@
 
 						me.extensions.data.init(me);
 
+						/* colorpicker pause
 						$colorpicker.on("color:picked", {container: current_step.$e}, handlers.color_picked);
 
 						internal.colorpicker = new page.classes.ColorPicker({
 							$e: $colorpicker,
 							src: o.color_picker_src
 						});
+						*/
 
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
 					},
 					visible: function(me) {
+						/* colorpicker pause
 						internal.colorpicker.reset();
+						*/
 						fn.set_random_prompt();
 					},
 					finish: function(me) {

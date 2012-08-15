@@ -83,8 +83,10 @@
 
 	<!-- app-specific -->
 	<script src="<?php bloginfo("template_url"); ?>/js/Signup.js"></script>
+	<!--
 	<script src="<?php bloginfo("template_url"); ?>/js/colorutil.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/ColorPicker.js"></script>
+	-->
 	<script src="<?php bloginfo("template_url"); ?>/js/prompts.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/SendMessage.js"></script>
 	<script src="<?php bloginfo("template_url"); ?>/js/Carousel.js"></script>
@@ -92,6 +94,8 @@
 
 	<!-- initialization -->
 	<script>
+		this.console = NI.app.getConsole();
+		
 		jQuery(function() {
 			var app = new NI.App({
 				page: page

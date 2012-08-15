@@ -9,6 +9,7 @@
 @article-copy: rgb(102,102,102);
 @offset: rgb(81,81,81);
 @accent: rgb(138,204,177);
+@med-accent: rgb(100,155,131);
 @dark-accent: rgb(79,100,91);
 @white: rgb(255,255,255);
 @white-trans: rgba(255, 255, 255, .55);
@@ -25,8 +26,6 @@
 /*  Type
 =============================================================================== */
 
-.brandon-grotesque { font-family: "brandon-grotesque", sans-serif; }
-//.museo-slab { font-family: "museo-slab", serif; }
 .dagny { font-family: "ff-dagny-web-pro", sans-serif; }
 .garaje { font-family: "Garaje53UnicaseBlack", sans-serif; }
 
@@ -39,7 +38,8 @@ h1 {
 	text-transform: uppercase;
 }
 h2 {
-	.brandon-grotesque;
+	.dagny;
+	font-weight: 400;
 	color: @base;
 	font-size: 36px;
 	line-height: 1em;
@@ -48,7 +48,6 @@ h2 {
 	}
 }
 h3 {
-	//.brandon-grotesque;
 	.dagny;
 	font-weight: 900;
 	font-size: 23px;
@@ -92,9 +91,9 @@ body, html, #wrap { height: 100%; }
 
 
 body {
-	.brandon-grotesque;
-	font-size: 21px;
-	line-height: 1.3em;
+	.dagny;
+	font-size: 18px;
+	line-height: 27px;
 	color: @copy-color;
 	background: @base;
 	-webkit-font-smoothing: antialiased;
@@ -230,7 +229,7 @@ nav {
 		}
 
 		> div {
-			.brandon-grotesque;
+			.dagny;
 			position: absolute;
 			padding-top: 42px;
 			top: 0;
@@ -238,9 +237,9 @@ nav {
 			right: 0;
 			bottom: 0;
 			text-align: center;
-			font-size: 42px;
-			line-height: 0.95;
-			font-weight: 600;
+			font-size: 36px;
+			line-height: 1;
+			font-weight: 900;
 			-webkit-transition: background 250ms ease-in-out; 
 			-moz-transition: background 250ms ease-in-out;
 			-o-transition: background 250ms ease-in-out;
@@ -438,12 +437,13 @@ nav {
 		p {
 			.yp(1);
 			.dagny;
-			font-size: 16px;
+			font-size: 18px;
 			line-height: 27px;
 		}
 
 		.ca-button {
 			.y(2);
+			color: @base;
 			box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
 
 			&:hover {
@@ -451,6 +451,9 @@ nav {
 			}
 			&:active {
 				box-shadow: inset 1px 1px 12px rgba(0,0,0,0.15);
+			}
+			&:active span {
+				color: @base;
 			}
 		}
 	}
@@ -552,7 +555,7 @@ textarea {
 	line-height: 1;
 	width: 100%;
 	display: inline-block;
-	padding: 10px 16px;
+	padding: 14px 16px;
 	border: 1px solid @gray1;
 	color: @base;
 	outline: none;
@@ -607,6 +610,7 @@ textarea {
 .ca-button {
 	.garaje;
 	color: @white;
+	font-size: 22px;
 	line-height: 1;
 
 	display: inline-block;
@@ -666,8 +670,8 @@ textarea {
 		text-shadow: 0 0 1px rgba(255,255,255,0.75);
 	}
 
-	&.alt { // used in modals
-		.brandon-grotesque;
+	/*&.alt { // used in modals
+		.dagny;
 		font-size: 24px;
 		line-height: 1;
 		font-weight: 600;
@@ -682,7 +686,7 @@ textarea {
 		&:active span {
 			color: rgba(44,73,61, 1);
 		}
-	}
+	}*/
 
 	&.ca-trans {
 		background: rgba(255, 255, 255, .5);
@@ -771,9 +775,10 @@ textarea {
 				}
 
 				&.day {
+					margin-top: 6px;
 					font-size: 56px;
 					font-weight: 900;
-					letter-spacing: -1px;
+					letter-spacing: -3px;
 				}
 
 			}
@@ -781,7 +786,7 @@ textarea {
 		}
 
 		.sep {
-			font-size: 40px;
+			font-size: 36px;
 			line-height: 2.5em;
 			margin-left: .25em;
 		}
@@ -975,7 +980,8 @@ textarea {
 
 			a.thumblink {
 				width: 164px;
-				height: 164px;
+				height: 108px; // FOR NON-SQUARE THUMBS
+				overflow: hidden; // FOR NON-SQUARE THUMBS
 				background: #eee;
 				display: block;
 				float: left;
@@ -984,6 +990,7 @@ textarea {
 			img {
 				float: left;
 				margin-right: 18px;
+				margin-top: -28px; // FOR NON-SQUARE THUMBS
 			}
 
 			> div {
@@ -1008,12 +1015,30 @@ textarea {
 
 	.partners {
 		float: left;
-		width: 274px;
-		margin-left: 82px;
+		width: 262px;
+		margin-left: 94px;
 
-		img {
-			display: block;
-			margin: 0 auto;
+		li {
+			padding: 18px 0 0 18px;
+			margin: 0 0 18px 0;
+			border: 1px solid #eee;
+			border-bottom: none;
+			border-right: none;
+			width:295px;
+
+			img {
+				display: block;
+				height: 42px;
+				opacity: 0.5;
+			}
+
+			&:hover {
+				border-color: @accent;
+
+				img { 
+					opacity: 0.75; 
+				}
+			}
 		}
 
 	}
@@ -1139,16 +1164,6 @@ article {
 			}
 		}
 
-		strong {
-			.brandon-grotesque;
-			font-weight: 500;
-			color: @base;
-			font-size: 24px;
-			line-height: 27px;
-			margin-top: 1em;
-			display: block;
-		}
-
 		a {
 			color: @accent;
 			&:hover {
@@ -1173,6 +1188,11 @@ article {
 
 	}
 
+}
+
+.pagination {
+	font-size: 14px;
+	line-height: 1.2;
 }
 
 
@@ -1214,8 +1234,9 @@ article {
 	}
 		
 	h2 {
-		font-size: 32px;
-		line-height: 1.4;
+		font-size: 27px;
+		line-height: 36px;
+		font-weight: bold;
 	}
 
 	.load-prompt {
@@ -1268,8 +1289,9 @@ article {
 	.thank-you {
 		h2 {
 			text-align: center; 
-			font-weight: 600px; 
+			font-weight: 600; 
 			font-size: 72px;
+			margin-top: 36px;
 		}
 
 		p { 
@@ -1313,7 +1335,7 @@ footer {
 
 	.signup {
 		.y(2);
-		font-size: 22px;
+		font-size: 19px;
 		min-height: 54px;
 
 		.signup-email {
@@ -1322,6 +1344,11 @@ footer {
 
 			.tc-field-hint {
 				margin: 18px 16px;
+				font-size: 19px;
+			}
+
+			input {
+				font-size: 19px;
 			}
 
 			+ div {
@@ -1370,6 +1397,29 @@ footer {
 
 .ngg-galleryoverview {
 	margin-top: 0 !important;
+	.ngg-gallery-thumbnail {
+		height: 100px !important;
+		overflow: hidden;
+		padding: 0;
+		margin: 0 9px 9px 0;
+		width: auto;
+		position:relative;
+		img {
+			margin: 0;
+			padding: 0;
+			border: 1px solid white;
+			&:hover {
+				border-color: @accent;
+			}
+		}
+		a:hover:before {
+			content: " ";
+			position: absolute;
+			top: 0; left: 0; right: 0; bottom: 0;
+			background: rgba(255,255,255,0.35);
+			z-index: 100;
+		}
+	}
 }
 #ngg-slideshow-26-403-1 {
 	height: 225px !important;
@@ -1379,8 +1429,11 @@ footer {
 	font-family: "ff-dagny-web-pro";
 	font-weight: bold;
 	line-height: 27px;
+	margin-bottom: 9px;
 }
-
+p + .ngg-galleryoverview .slideshowlink {
+	margin-top: 18px;
+}
 
 /*  Mobile
 =============================================================================== */
@@ -1406,7 +1459,7 @@ body.mobile {
 	}
 
 	header,
-	footer { z-index: 999; }
+	footer { z-index: 1001; }
 
 	#main > header {
 		.y(0);
@@ -1495,6 +1548,132 @@ body.mobile {
 	}
 
 	.actions { display: none; }
+	
+	/* Send Message */
+	
+	.overlay {
+	
+		.btn-close { display: none; }
+	 
+		.pane {
+			padding: 0;
+			width: auto;
+			background-color: #333333;
+			box-shadow: none;
+	 
+			p {
+				.yp(1);
+				font-size: 14px;
+				line-height: 18px;
+			}
+	
+			.ca-button {
+				.y(2);
+				box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+	
+				&:hover {
+					box-shadow: 2px 2px 14px rgba(0,0,0,0.3);
+				}
+				&:active {
+					box-shadow: inset 1px 1px 12px rgba(0,0,0,0.15);
+				}
+			}
+		}
+	
+		&.merlin-overlay {
+			.pane {
+				padding: 0;
+	
+				> .bd > .merlin > .step {
+					padding: 20px 12px 40px;
+				}
+			}
+	
+			.spinner {
+				text-align: center;
+			}
+		}
+	}
+	
+	.mask {
+		z-index: 1000;
+		background-color: inherit;
+		background: none;
+		opacity: 1;
+	}
+	
+	.send-message {
+		width: 100%;
+	
+		.tier {
+			.y(2);
+		}
+			
+		h2 {
+			font-size: 19px;
+			line-height: 28px;
+		}
+	
+		.load-prompt {
+			float: left;
+			font-size: 18px;
+	
+			a {
+				display: block;
+				padding: 5px 0 5px 25px;
+				background-repeat: no-repeat;
+				background-image: url("../img/refresh.png");
+				background-size: 16px 16px;
+				background-position: left 50%;
+				color: @white-trans;
+			}
+		}
+	
+		.send-message-compose {
+	
+			.tc-field {
+				float: none;
+	
+				textarea {
+					height: 200px;
+					.dagny;
+					background-color: rgba(255, 255, 255, 0.3);
+					border: 0;
+					border-radius: 5px;
+				}
+	
+				.count {
+					display: block;
+					float: right;
+					padding: 5px 0 0;
+					font-size: 18px;
+					color: @white-trans;
+				}
+			}
+	
+			.ca-button {
+				margin: 40px 0 0 35px;
+			}
+		}
+	
+		.send-message-geo {
+			position: relative;
+			
+		}
+	
+		.thank-you {
+			h2 {
+				text-align: center; 
+				font-weight: 600px; 
+				font-size: 72px;
+			}
+	
+			p { 
+				text-align: center;
+			}
+		}
+	}
+
 	
 	footer {
 		margin-top: -58px;

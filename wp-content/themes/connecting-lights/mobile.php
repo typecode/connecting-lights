@@ -9,8 +9,6 @@ get_header();
 
 ?>
 
-		<img src="<?php bloginfo("template_url") ?>/img/mobile/splash.png" alt="Connecting Light" class="splash" />
-
 		<script>
 			page.features.push(function(app) {
 				var $e = $("#overview"),
@@ -18,9 +16,11 @@ get_header();
 					$toggle = $e.find(".toggle"),
 					$expand = $toggle.find(".expand"),
 					$collapse = $toggle.find(".collapse"),
+					$cont = $(".mobile-content > .inner")
 					$splash = $(".splash"),
 					$footer = $("footer"),
 					$modal = $("#send-message"),
+					$cancel = $(".cancel"),
 					$msgtrigger = $("#send-message-trigger");
 
 				$toggle.click(function(e) {
@@ -41,14 +41,23 @@ get_header();
 					// $("html, body").animate({ scrollTop: 0 }, "slow");
 					$splash.fadeOut();
 					$footer.fadeOut();
-					$e.fadeOut("slow", function() {
+					$cont.fadeOut("slow", function() {
 						$(this).empty().html($modal)	
 					}).fadeIn("slow", function() {
 						$("html, body").animate({ scrollTop: 0 }, "slow");
 					});
 				});
+				
+				$cancel.click(function(e) {
+					e.preventDefault();
+					location.reload();
+				});
 			});
 		</script>
+		
+		<div class="splash">
+			<img src="<?php bloginfo("template_url") ?>/img/mobile/splash.png" alt="Connecting Light" />
+		</div>
 
 		<div class="xFull mobile-content">
 			<div class="inner">

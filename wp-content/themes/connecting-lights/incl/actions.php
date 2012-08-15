@@ -38,12 +38,14 @@
 		<?php if (CL_MOBILE) { ?>
 
 			<div class="tier control-bar">
-				<a class="ca-button ca-trans cancel"><span>Cancel</span></a>
-				<div class="color-picker">
-					<div class="handle"></div>
-					<canvas></canvas>
+				<div class="inner">
+					<span class="small-button cancel"><span href="#">Cancel</span></span>
+					<div class="color-picker">
+						<div class="handle"></div>
+						<canvas></canvas>
+					</div>
+					<span class="small-button next"><span href="#">Next</span></span>
 				</div>
-				<a class="ca-button ca-trans next"><span>Next</span></a>
 			</div>
 
 		<?php } else { ?>
@@ -69,8 +71,10 @@
 			</div>
 
 			<div class="control-bar">
-				<a class="ca-button ca-trans prev"><span>Back</span></a>
-				<a class="ca-button ca-trans next"><span>Send</span></a>
+				<div class="inner">
+					<a class="small-button prev"><span>Back</span></a>
+					<a class="small-button next"><span>Send</span></a>
+				</div>
 			</div>
 		</div>
 	<?php } ?>
@@ -81,8 +85,9 @@
 	</div>
 	<div class="step thank-you">
 		<h2>Thank you!</h2>
-
+		<?php if (! CL_MOBILE ) { ?>
 		<p>You may now close this window.</p>
+		<?php } ?>
 	</div>
 </div>
 

@@ -172,10 +172,17 @@
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
 					},
 					visible: function(me) {
+
 						/* colorpicker pause
 						internal.colorpicker.reset();
 						*/
+
 						fn.set_random_prompt();
+
+						if (internal.is_touch) {
+							$("html, body").animate({ scrollTop: 0 }, "slow");
+						}
+
 					},
 					finish: function(me) {
 						me.extensions.data.collect_fields(me);
@@ -202,7 +209,11 @@
 					visible: function(me) {
 						window.setTimeout(function() {
 							internal.overlay.close();
-							me.show_step("compose");
+							if (internal.is_touch) {
+								location.reload();
+							} else {
+								me.show_step("compose");
+							}
 						}, 3000);
 					}
 				}

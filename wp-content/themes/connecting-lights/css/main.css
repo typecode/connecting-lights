@@ -930,6 +930,7 @@ textarea {
   border: 1px solid #eee;
   border-bottom: none;
   border-right: none;
+  width: 295px;
 }
 .home .inverted .partners li img {
   display: block;
@@ -1085,6 +1086,10 @@ article .content {
 }
 .detail-block .details .text-shift p:first-child {
   margin-top: 0;
+}
+.pagination {
+  font-size: 14px;
+  line-height: 1.2;
 }
 /*  Color picker
 =============================================================================== */
@@ -1287,6 +1292,32 @@ footer .banner {
 .ngg-galleryoverview {
   margin-top: 0 !important;
 }
+.ngg-galleryoverview .ngg-gallery-thumbnail {
+  height: 100px !important;
+  overflow: hidden;
+  padding: 0;
+  margin: 0 9px 9px 0;
+  width: auto;
+  position: relative;
+}
+.ngg-galleryoverview .ngg-gallery-thumbnail img {
+  margin: 0;
+  padding: 0;
+  border: 1px solid white;
+}
+.ngg-galleryoverview .ngg-gallery-thumbnail img:hover {
+  border-color: #8accb1;
+}
+.ngg-galleryoverview .ngg-gallery-thumbnail a:hover:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.35);
+  z-index: 100;
+}
 #ngg-slideshow-26-403-1 {
   height: 225px !important;
 }
@@ -1295,6 +1326,10 @@ footer .banner {
   font-family: "ff-dagny-web-pro";
   font-weight: bold;
   line-height: 27px;
+  margin-bottom: 9px;
+}
+p + .ngg-galleryoverview .slideshowlink {
+  margin-top: 18px;
 }
 /*  Mobile
 =============================================================================== */

@@ -581,19 +581,29 @@ textarea {
 .small-button {
 	padding: 6px 9px;
 	background: rgb(93,93,93);
-	background: -moz-linear-gradient(top, rgb(93,93,93) 0%, rgb(80,80,80) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(93,93,93)), color-stop(100%,rgb(80,80,80)));
-	background: linear-gradient(to bottom, rgb(93,93,93) 0%, rgb(80,80,80) 100%);
+	background: -moz-linear-gradient(top, @gray2 0%, @gray3 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @gray2), color-stop(100%, @gray3));
+	background: linear-gradient(to bottom, @gray2 0%, @gray3 100%);
 	border-bottom: 1px solid rgb(124,124,124);
-	
-	-webkit-box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, .1), -1px 2px 0px rgba(0, 0, 0, .2);
-	box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, .1), -1px 2px 0px rgba(0, 0, 0, .2);
+
+	-webkit-box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, .1), 0px -1px 3px 0px rgba(0, 0, 0, .25);
+	box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, .1), 0px -1px 3px 0px rgba(0, 0, 0, .25);
 	
 	> a,
 	> span {
 		color: #000;
 		text-decoration: none;
-		text-shadow: 0px 1px 0px rgba(255,255,255,.25);
+		text-shadow: 0px -1px 0px rgba(193,193,193,.5);
+	}
+	
+	&:active {
+		background: rgb(106,186,150);
+		background: -moz-linear-gradient(top,  rgb(106,186,150) 0%, rgb(102,170,138) 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(106,186,150)), color-stop(100%,rgb(102,170,138)));
+		background: -webkit-linear-gradient(top,  rgb(106,186,150) 0%,rgb(102,170,138) 100%);
+		background: -o-linear-gradient(top,  rgb(106,186,150) 0%,rgb(102,170,138) 100%);
+		background: -ms-linear-gradient(top,  rgb(106,186,150) 0%,rgb(102,170,138) 100%);
+		background: linear-gradient(to bottom,  rgb(106,186,150) 0%,rgb(102,170,138) 100%);
 	}
 
 }
@@ -1478,7 +1488,7 @@ body.mobile {
 	}
 	
 	#main { 
-		padding: 51px 0 58px;
+		padding: 51px 0 74px;
 	}
 
 	header,
@@ -1500,7 +1510,7 @@ body.mobile {
 		h1 {
 			width: 151px;
 			float: left;
-			margin: 8px 20px 0 14px;
+			margin: 8px 0 0 14px;
 			
 			img {
 				display: block;
@@ -1515,7 +1525,8 @@ body.mobile {
 	
 		.mobile-nav {
 			position: relative;
-			float: left;
+			float: right;
+			margin-right: 14px;
 			width: 124px;
 			height: 28px;
 			font-size: 15px;
@@ -1536,7 +1547,10 @@ body.mobile {
 	
 	.splash { 
 		
-		img { border-bottom: 1px solid rgb(0,0,0); }
+		img { 
+			width: 100%;
+			border-bottom: 1px solid rgb(0,0,0);
+		}
 	
 	}
 	
@@ -1560,11 +1574,11 @@ body.mobile {
 		}
 	
 		.toggle {
-			.y(1);
+			.y(.5);
 			color: @accent;
 			font-weight: bold;
 			margin-right: 0;
-			margin-bottom: 10px;
+			margin-bottom: 6px;
 	
 			&:hover { > span span:first-child { color: @accent; } }
 	
@@ -1594,8 +1608,6 @@ body.mobile {
 		p {
 			.yp(1);
 			.dagny;
-			font-size: 14px;
-			line-height: 19px;
 		}
 	
 		.tier {
@@ -1634,36 +1646,64 @@ body.mobile {
 			}
 			
 			.cancel, .prev { float: left; }
-			.next { float: right; }
+			.next { float: right; text-decoration: none; }
 			
 		}
 		
+		.tip {
+			position: relative;
+			left: -4px;
+			background: url("../img/tip-bg.png") no-repeat 0 0;
+			width: 302px;
+			height: 168px;
+			margin: 0 auto;
+			
+			> .inner {
+				padding: 18px;
+			}
+			
+			p {
+				.yp(0);
+				font-size: 16px;
+				line-height: 25px;
+				color: @accent;
+			}
+			
+		}
+		
+		/* steps */
+		
 		.send-message-info {
-			
-			.ca-button { .y(2); }
-			
+
+			.ca-button { 
+				.y(2); 
+				margin-bottom: 20px;
+			}	
+
 		}
 	
 		.send-message-compose {
 			text-shadow: 0px -1px 0px rgba(0,0,0,.75);
+			height: 100%;
 	
 			.tc-field {
 				float: none;
+				
+				-webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, .5);
+				box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, .5);
 	
 				textarea {
-					height: 125px;
-					.dagny;
-					background-color: rgba(255, 255, 255, 0.3);
-					border: 0;
-					border-radius: 5px;
-					text-shadow: none;
+					height: 134px;
+					font-size: 16px;
+					line-height: 26px;
+					color: rgb(0,0,0);
 				}
 	
 				.count {
 					display: block;
 					float: right;
 					padding: 5px 0 0;
-					font-size: 18px;
+					font-size: 15px;
 					color: @white-trans;
 				}
 			}
@@ -1687,8 +1727,8 @@ body.mobile {
 
 	
 	footer {
-		margin-top: -58px;
-		height: 34px;
+		margin-top: -74px;
+		height: 50px;
 		padding: 12px 0;
 		background: @base;
 	
@@ -1699,7 +1739,6 @@ body.mobile {
 			display: block;
 			text-align: center;
 			margin: 0 14px;
-			padding: .4em 0;
 		}
 		
 	}

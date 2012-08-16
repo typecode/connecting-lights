@@ -124,7 +124,7 @@
 			steps: {
 				"info": {
 					selector: ".send-message-info",
-					next: "compose"
+					next: "compose",
 				},
 				"compose": {
 					selector: ".send-message-compose",
@@ -180,7 +180,9 @@
 						fn.set_random_prompt();
 
 						if (internal.is_touch) {
-							$("html, body").animate({ scrollTop: 0 }, "slow");
+							$("html, body").animate({ scrollTop: 0 }, "slow", function() {
+								$(".send-message-compose").css("padding-bottom", "0");
+							});
 						}
 
 					},

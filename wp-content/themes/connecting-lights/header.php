@@ -10,8 +10,10 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 		
 		$mobile_id = get_page_by_title("mobile")->ID;
 		$visit_id = get_page_by_title("visit")->ID;
+		$about_id = get_page_by_title("about")->ID;
+		$blog_id = get_page_by_title("blog")->ID;
 		
-		if (! ( is_page($mobile_id) || is_page($visit_id) ) ) {
+		if (! ( is_page($mobile_id) || is_page($visit_id) || is_page($about_id) ) ) {
 
 			header("Location: ". get_permalink( $mobile_id ));
 		
@@ -114,10 +116,15 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 			<div class="mobile-nav">
 				<div class="small-toggle"></div>
 				<ul>
-					<li><a href=''>About</a></li>
 					<li><a href=''>Participate</a></li>
 				</ul>
 			</div>
+			<select class="mobile-select" onchange='document.location.href=this.options[this.selectedIndex].value;'> 
+				<option value="<?php echo get_page_link( $mobile_id ) ?>">Participate</option>
+				<option value="<?php echo get_page_link( $visit_id ) ?>">Visit</option>
+				<option value="<?php echo get_page_link( $about_id ) ?>">About</option>
+				<option value="<?php echo get_page_link( $blog_id ) ?>">Blog</option>
+			</select>
 			<?php } ?>
 			
 			<div class="schedule">

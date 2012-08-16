@@ -21,6 +21,8 @@ get_header();
 					$footer = $("footer"),
 					$modal = $("#send-message"),
 					$cancel = $(".cancel"),
+					$nav = $(".mobile-nav"),
+					$select = $(".mobile-select"),
 					$msgtrigger = $("#send-message-trigger");
 
 				$toggle.click(function(e) {
@@ -52,6 +54,12 @@ get_header();
 					e.preventDefault();
 					location.reload();
 				});
+				
+				$nav.click(function(e) {
+					e.preventDefault();
+					$select.focus();
+				});
+				
 			});
 		</script>
 		

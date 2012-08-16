@@ -8,60 +8,6 @@ Template Name: Mobile Site
 get_header();
 
 ?>
-
-		<script>
-			page.features.push(function(app) {
-				var $e = $("#overview"),
-					$more = $e.find(".more"),
-					$toggle = $e.find(".toggle"),
-					$expand = $toggle.find(".expand"),
-					$collapse = $toggle.find(".collapse"),
-					$cont = $(".mobile-content > .inner")
-					$splash = $(".splash"),
-					$footer = $("footer"),
-					$modal = $("#send-message"),
-					$cancel = $(".cancel"),
-					$nav = $(".mobile-nav"),
-					$select = $(".mobile-select"),
-					$msgtrigger = $("#send-message-trigger");
-
-				$toggle.click(function(e) {
-					e.preventDefault();
-					if ($more.is(":visible")) {
-						$more.slideUp(300);
-						$expand.show();
-						$collapse.hide();
-					} else {
-						$more.slideDown(300);
-						$expand.hide();
-						$collapse.show();
-					}
-				});
-				
-				$msgtrigger.click(function(e) {
-					e.preventDefault();
-					// $("html, body").animate({ scrollTop: 0 }, "slow");
-					$splash.fadeOut();
-					$footer.fadeOut();
-					$cont.fadeOut("slow", function() {
-						$(this).empty().html($modal)	
-					}).fadeIn("slow", function() {
-						$("html, body").animate({ scrollTop: 0 }, "slow");
-					});
-				});
-				
-				$cancel.click(function(e) {
-					e.preventDefault();
-					location.reload();
-				});
-				
-				$nav.click(function(e) {
-					e.preventDefault();
-					$select.focus();
-				});
-				
-			});
-		</script>
 		
 		<div class="splash">
 			<img src="<?php bloginfo("template_url") ?>/img/mobile-splash.png" alt="Connecting Light" />

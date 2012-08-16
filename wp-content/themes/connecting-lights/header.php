@@ -11,9 +11,8 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 		$mobile_id = get_page_by_title("mobile")->ID;
 		$visit_id = get_page_by_title("visit")->ID;
 		$about_id = get_page_by_title("about")->ID;
-		$blog_id = get_page_by_title("blog")->ID;
 		
-		if (! ( is_page($mobile_id) || is_page($visit_id) || is_page($about_id) ) ) {
+		if (!(is_page($mobile_id) || is_page($visit_id)) ) {
 
 			header("Location: ". get_permalink( $mobile_id ));
 		

@@ -128,7 +128,8 @@
 				},
 				"compose": {
 					selector: ".send-message-compose",
-					next: internal.is_mobile ? "geo" : "dispatch",
+					// next: internal.is_mobile ? "geo" : "dispatch",
+					next: "dispatch",
 					fields: {
 						"m": {
 							selector: "textarea[name=m]",
@@ -186,6 +187,11 @@
 					},
 					finish: function(me) {
 						me.extensions.data.collect_fields(me);
+						
+						if (internal.is_touch) {
+							$("body").css('background','rgb(34,34,34)')
+						}
+						
 					}
 				},
 				"geo": {

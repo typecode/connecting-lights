@@ -106,7 +106,7 @@ get_header();
 						</a>
 					</li>
 					<li>
-						<a href="hadrians-wall.org" target="_blank">
+						<a href="http://www.hadrians-wall.org/" target="_blank">
 							<img src="<?php bloginfo("template_url"); ?>/img/logos/hadrian-un-combined.png" />
 						</a>
 					</li>

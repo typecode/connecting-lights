@@ -1,5 +1,9 @@
 <?php
 
+global $post;
+
+$current_id = $post->ID;
+
 $mobile_id = get_page_by_title("mobile")->ID;
 $visit_id = get_page_by_title("visit")->ID;
 $about_id = get_page_by_title("about")->ID;
@@ -117,16 +121,48 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 				<?php wp_nav_menu( array("menu" => "header_nav", "container" => false )); ?>
 			</nav>
 			
-			<?php if ( CL_MOBILE ) { ?>
+			<?php if ( CL_MOBILE ) { 
+			
+				function mobile_title() {
+					$title = get_the_title();
+					
+					if ($title == 'Mobile') {
+						$title = 'Participate';
+					}
+					
+					return $title;
+					
+				}
+			
+				$mobile_pages_args = array(
+					'numberposts'     => -1,
+					'include'         => array($mobile_id, $visit_id, $about_id),
+				); 
+			
+				$mobile_pages = get_pages( $mobile_pages_args );
+			
+			?>
 			<div class="mobile-nav small-button">
 				<div class="small-toggle"></div>
-				<span>Navigate</span>
+				<span><?php echo mobile_title(); ?></span>
 			</div>
 			<select class="mobile-select" onchange='document.location.href=this.options[this.selectedIndex].value;'>
-				<option value="">Navigate</option>
-				<option value="<?php echo get_page_link( $mobile_id ) ?>">Participate</option>
-				<option value="<?php echo get_page_link( $visit_id ) ?>">Visit</option>
-				<option value="<?php echo get_page_link( $about_id ) ?>">About</option>
+				<option value=""><?php echo mobile_title(); ?></option>
+			<?php
+				$options = '';
+				foreach ( $mobile_pages as $page ) {
+					if ( $page->ID != $current_id ) {
+						$options .= '<option value="' . get_page_link( $page->ID ) . '">';
+						if ($page->ID != $mobile_id ) {
+							$options .= $page->post_title;
+						} else {
+							$options .= 'Participate';
+						}
+						$options .= '</option>';
+					}
+				}
+				echo $options;
+			?>
 			</select>
 			<?php } ?>
 			

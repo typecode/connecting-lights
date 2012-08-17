@@ -1109,6 +1109,7 @@ article .content {
 /*  Color picker
 =============================================================================== */
 .color-picker {
+  display: none;
   position: relative;
   float: left;
   -webkit-tap-highlight-color: transparent;
@@ -1192,7 +1193,10 @@ article .content {
   color: rgba(255, 255, 255, 0.55);
 }
 .send-message .send-message-compose .ca-button {
-  margin: 40px 0 0 35px;
+  display: block;
+  width: 180px;
+  text-align: center;
+  margin: 40px auto 0;
 }
 .send-message .send-message-geo {
   position: relative;
@@ -1482,6 +1486,7 @@ body.mobile .actions {
   display: none;
 }
 body.mobile .color-picker {
+  display: block;
   position: absolute;
   width: 135px;
   height: 135px;
@@ -1603,6 +1608,11 @@ body.mobile #send-message .send-message-compose .tc-field .count {
   padding: 5px 0 0;
   font-size: 15px;
   color: rgba(255, 255, 255, 0.55);
+}
+body.mobile #send-message .send-message-compose .ca-button {
+  margin: 40px 0 0 35px;
+  display: inline-block;
+  width: auto;
 }
 body.mobile #send-message .send-message-geo {
   position: relative;

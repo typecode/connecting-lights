@@ -1223,6 +1223,7 @@ article {
 =============================================================================== */
 
 .color-picker {
+	display: none;
 	position: relative;
 	float: left;
 	.noselect;
@@ -1307,7 +1308,10 @@ article {
 		}
 
 		.ca-button {
-			margin: 40px 0 0 35px;
+			display: block;
+			width: 180px;
+			text-align: center;
+			margin: 40px auto 0;
 		}
 	}
 
@@ -1624,6 +1628,7 @@ body.mobile {
 	.actions { display: none; }
 	
 	.color-picker {
+		display: block;
 		position: absolute;
 		width: 135px;
 		height: 135px;
@@ -1748,6 +1753,12 @@ body.mobile {
 					font-size: 15px;
 					color: @white-trans;
 				}
+			}
+			
+			.ca-button {
+				margin: 40px 0 0 35px;
+				display: inline-block;
+				width: auto;
 			}
 			
 		}

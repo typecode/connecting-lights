@@ -26,12 +26,6 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 		
 		define("CL_MOBILE", false);
 		
-		if ( is_page($mobile_id) ) {
-
-			header("Location: ". get_bloginfo( 'url' ));
-		
-		}
-		
 	}
 
 }

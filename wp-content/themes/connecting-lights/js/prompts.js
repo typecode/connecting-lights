@@ -1,14 +1,20 @@
 this.page.classes.prompts = [
 	
-	"Cities I have been to...",
+	"Cities I have been to:   ",
 
-	"Names of people I am connected to...",
+	"People I'm connected to:   ",
 
-	"Borders I have crossed are...",
+	"Borders I've crossed:   ",
 
-	"Things that feel like home are...",
+	"Things that feel like home:   ",
 
-	"I feel connected to...",
+	"",
+
+	"I feel connected to:   ",
+
+	"I communicate via:   ",
+
+	"Places I've lived:   ",
 
 	""
 

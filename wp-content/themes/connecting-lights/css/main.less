@@ -1478,7 +1478,42 @@ p + .ngg-galleryoverview .slideshowlink {
 body.mobile {
 	font-size: 17px;
 	line-height: 21px;
-	background: @alt-base;
+	background: @white;
+	
+	&.page-template-mobile-php {
+		background: @alt-base;
+	}
+	
+	.inverted {
+		padding: 18px 0;
+		margin-top: 0;
+		width: 100%;
+		
+		> .inner {
+			padding: 0 14px;
+		}
+		
+	}
+	
+	.detail-block {
+		padding-bottom: 32px;
+		
+		h3, h4,
+		.details {
+			float: none;
+			width: auto;
+			padding-left: 0;
+			padding-right: 0;
+			padding-bottom: 0;
+			margin-left: 0;
+		}
+		
+		h4 { 
+			width: 100%;
+			padding-top: 6px;
+		}
+		
+	}
 	
 	.xFull {
 		width: 100%;
@@ -1531,20 +1566,10 @@ body.mobile {
 			position: relative;
 			float: right;
 			margin-right: 14px;
-			width: 124px;
-			height: 28px;
+			width: 104px;
 			font-size: 15px;
 			line-height: 1em;
 			overflow: hidden;
-			
-			ul {
-				
-				> li {
-					.small-button;
-				}
-			
-			}
-				
 		}
 		
 		.mobile-select {

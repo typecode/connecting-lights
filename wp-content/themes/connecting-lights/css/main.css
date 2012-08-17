@@ -1365,9 +1365,37 @@ p + .ngg-galleryoverview .slideshowlink {
 body.mobile {
   font-size: 17px;
   line-height: 21px;
-  background: #222222;
+  background: #ffffff;
   /* Send Message */
 
+}
+body.mobile.page-template-mobile-php {
+  background: #222222;
+}
+body.mobile .inverted {
+  padding: 18px 0;
+  margin-top: 0;
+  width: 100%;
+}
+body.mobile .inverted > .inner {
+  padding: 0 14px;
+}
+body.mobile .detail-block {
+  padding-bottom: 32px;
+}
+body.mobile .detail-block h3,
+body.mobile .detail-block h4,
+body.mobile .detail-block .details {
+  float: none;
+  width: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  margin-left: 0;
+}
+body.mobile .detail-block h4 {
+  width: 100%;
+  padding-top: 6px;
 }
 body.mobile .xFull {
   width: 100%;
@@ -1415,36 +1443,10 @@ body.mobile #main > header .mobile-nav {
   position: relative;
   float: right;
   margin-right: 14px;
-  width: 124px;
-  height: 28px;
+  width: 104px;
   font-size: 15px;
   line-height: 1em;
   overflow: hidden;
-}
-body.mobile #main > header .mobile-nav ul > li {
-  padding: 6px 9px;
-  background: #5d5d5d;
-  background: -moz-linear-gradient(top, #939393 0%, #858585 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #939393), color-stop(100%, #858585));
-  background: linear-gradient(to bottom, #939393 0%, #858585 100%);
-  border-bottom: 1px solid #7c7c7c;
-  -webkit-box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, 0.1), 0px -1px 3px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, 0.1), 0px -1px 3px 0px rgba(0, 0, 0, 0.25);
-}
-body.mobile #main > header .mobile-nav ul > li > a,
-body.mobile #main > header .mobile-nav ul > li > span {
-  color: #000;
-  text-decoration: none;
-  text-shadow: 0px -1px 0px rgba(193, 193, 193, 0.5);
-}
-body.mobile #main > header .mobile-nav ul > li:active {
-  background: #6aba96;
-  background: -moz-linear-gradient(top, #6aba96 0%, #66aa8a 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6aba96), color-stop(100%, #66aa8a));
-  background: -webkit-linear-gradient(top, #6aba96 0%, #66aa8a 100%);
-  background: -o-linear-gradient(top, #6aba96 0%, #66aa8a 100%);
-  background: -ms-linear-gradient(top, #6aba96 0%, #66aa8a 100%);
-  background: linear-gradient(to bottom, #6aba96 0%, #66aa8a 100%);
 }
 body.mobile #main > header .mobile-select {
   display: block;

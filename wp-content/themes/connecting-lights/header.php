@@ -1,5 +1,9 @@
 <?php
 
+$mobile_id = get_page_by_title("mobile")->ID;
+$visit_id = get_page_by_title("visit")->ID;
+$about_id = get_page_by_title("about")->ID;
+
 if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 
 	$mobile_agents = '!(phone|ipod|android)!i';
@@ -8,11 +12,7 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	
 		define("CL_MOBILE", true);
 		
-		$mobile_id = get_page_by_title("mobile")->ID;
-		$visit_id = get_page_by_title("visit")->ID;
-		$about_id = get_page_by_title("about")->ID;
-		
-		if (!(is_page($mobile_id) || is_page($visit_id)) ) {
+		if (!( is_page( array($mobile_id, $visit_id, $about_id) ) )) {
 
 			header("Location: ". get_permalink( $mobile_id ));
 		
@@ -21,6 +21,12 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	} else {
 		
 		define("CL_MOBILE", false);
+		
+		if ( is_page($mobile_id) ) {
+
+			header("Location: ". get_bloginfo( 'url' ));
+		
+		}
 		
 	}
 
@@ -35,8 +41,8 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	<title><?php wp_title("&laquo;", true, "right"); ?> <?php bloginfo("name"); ?></title>
 
 	<meta charset="<?php bloginfo("charset"); ?>" />
-	<?php if (CL_MOBILE ) { ?>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<?php if ( CL_MOBILE ) { ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<?php } ?>
 
 	<link rel="icon" type="image/x-icon" href="<?php bloginfo("template_url"); ?>/img/favicon.ico" />
@@ -112,17 +118,15 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 			</nav>
 			
 			<?php if ( CL_MOBILE ) { ?>
-			<div class="mobile-nav">
+			<div class="mobile-nav small-button">
 				<div class="small-toggle"></div>
-				<ul>
-					<li><a href=''>Participate</a></li>
-				</ul>
+				<span>Navigate</span>
 			</div>
-			<select class="mobile-select" onchange='document.location.href=this.options[this.selectedIndex].value;'> 
+			<select class="mobile-select" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+				<option value="">Navigate</option>
 				<option value="<?php echo get_page_link( $mobile_id ) ?>">Participate</option>
 				<option value="<?php echo get_page_link( $visit_id ) ?>">Visit</option>
 				<option value="<?php echo get_page_link( $about_id ) ?>">About</option>
-				<option value="<?php echo get_page_link( $blog_id ) ?>">Blog</option>
 			</select>
 			<?php } ?>
 			

@@ -160,29 +160,27 @@
 
 						me.extensions.data.init(me);
 
-						/* colorpicker pause
-						$colorpicker.on("color:picked", {container: current_step.$e}, handlers.color_picked);
+						if (internal.is_touch) {
+							$colorpicker.on("color:picked", {container: $("body")}, handlers.color_picked);
+						} else {
+							$colorpicker.on("color:picked", {container: current_step.$e}, handlers.color_picked);
+						}
 
 						internal.colorpicker = new page.classes.ColorPicker({
 							$e: $colorpicker,
 							src: o.color_picker_src
 						});
-						*/
 
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
 					},
 					visible: function(me) {
 
-						/* colorpicker pause
 						internal.colorpicker.reset();
-						*/
 
 						fn.set_random_prompt();
 
 						if (internal.is_touch) {
-							$("html, body").animate({ scrollTop: 0 }, "slow", function() {
-								$(".send-message-compose").css("padding-bottom", "0");
-							});
+							$("html, body").animate({ scrollTop: 0 }, "slow");
 						}
 
 					},

@@ -8,8 +8,6 @@ this.page.classes.prompts = [
 
 	"Things that feel like home are...",
 
-	"I feel connected to...",
-
-	""
+	"I feel connected to..."
 
 ];

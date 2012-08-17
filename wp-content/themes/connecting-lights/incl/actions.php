@@ -96,18 +96,27 @@
 	</a>
 
 	<?php
-		$visit_page = get_page_by_title("Visit");
+		$visit_page = get_page_by_title("visiting");
 		$visit_url;
 		if ($visit_page) {
 			$visit_url = get_permalink($visit_page->ID);
 		} else {
 			$visit_url = "#";
 		}
+		
+		$connector_page = get_page_by_title("connector");
+		$connector_url;
+		if ($connector_page) {
+			$connector_url = get_permalink($connector_page->ID);
+		} else {
+			$connector_url = "#";
+		}
+
 	?>
-	<a href="<?php echo $visit_url; ?>">
+	<a href="<?php echo $connector_url; ?>">
 		<img src="<?php bloginfo("template_url"); ?>/img/biglink_2.png" alt="Purchase Tickets" />
 		<div>
-			<small>help</small> volunteer
+			<small>become a</small> connector
 		</div>
 	</a>
 	<a href="<?php echo $visit_url; ?>">

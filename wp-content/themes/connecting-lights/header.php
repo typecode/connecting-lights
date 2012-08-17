@@ -1,16 +1,22 @@
 <?php
 
+global $post;
+
+$current_id = $post->ID;
+
+$mobile_id = get_page_by_title("mobile")->ID;
+$visit_id = get_page_by_title("visit")->ID;
+$about_id = get_page_by_title("about")->ID;
+
 if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 
-	$mobile_agents = '!(phone|ipod)!i';
+	$mobile_agents = '!(phone|ipod|android)!i';
 
 	if ( preg_match($mobile_agents, $_SERVER['HTTP_USER_AGENT']) ) {
 	
 		define("CL_MOBILE", true);
 		
-		$mobile_id = get_page_by_title("mobile")->ID;
-		
-		if (! is_page($mobile_id) ) {
+		if (!( is_page( array($mobile_id, $visit_id, $about_id) ) )) {
 
 			header("Location: ". get_permalink( $mobile_id ));
 		
@@ -33,8 +39,8 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	<title><?php wp_title("&laquo;", true, "right"); ?> <?php bloginfo("name"); ?></title>
 
 	<meta charset="<?php bloginfo("charset"); ?>" />
-	<?php if (CL_MOBILE ) { ?>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<?php if ( CL_MOBILE ) { ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<?php } ?>
 
 	<link rel="icon" type="image/x-icon" href="<?php bloginfo("template_url"); ?>/img/favicon.ico" />
@@ -45,9 +51,9 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 	<script>try{Typekit.load();}catch(e){}</script>
 
 	<link rel="stylesheet" href="<?php bloginfo("stylesheet_url"); ?>" type="text/css"/>
+	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/webfonts/ss-standard.css" type="text/css"/>
 	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/webfonts/ss-social.css" type="text/css"/>
-	<!-- <link rel="stylesheet/less" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.less" /> -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo("template_url"); ?>/css/main.css" />
+	<link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/main.css" type="text/css"/>
 
 
 	<script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/excanvas_r3/excanvas.compiled.js"></script>
@@ -109,14 +115,49 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 				<?php wp_nav_menu( array("menu" => "header_nav", "container" => false )); ?>
 			</nav>
 			
-			<?php if ( CL_MOBILE ) { ?>
-			<div class="mobile-nav">
+			<?php if ( CL_MOBILE ) { 
+			
+				function mobile_title() {
+					$title = get_the_title();
+					
+					if ($title == 'Mobile') {
+						$title = 'Participate';
+					}
+					
+					return $title;
+					
+				}
+			
+				$mobile_pages_args = array(
+					'numberposts'     => -1,
+					'include'         => array($mobile_id, $visit_id, $about_id),
+				); 
+			
+				$mobile_pages = get_pages( $mobile_pages_args );
+			
+			?>
+			<div class="mobile-nav small-button">
 				<div class="small-toggle"></div>
-				<ul>
-					<li><a href=''>About</a></li>
-					<li><a href=''>Participate</a></li>
-				</ul>
+				<span><?php echo mobile_title(); ?></span>
 			</div>
+			<select class="mobile-select" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+				<option value=""><?php echo mobile_title(); ?></option>
+			<?php
+				$options = '';
+				foreach ( $mobile_pages as $page ) {
+					if ( $page->ID != $current_id ) {
+						$options .= '<option value="' . get_page_link( $page->ID ) . '">';
+						if ($page->ID != $mobile_id ) {
+							$options .= $page->post_title;
+						} else {
+							$options .= 'Participate';
+						}
+						$options .= '</option>';
+					}
+				}
+				echo $options;
+			?>
+			</select>
 			<?php } ?>
 			
 			<div class="schedule">
@@ -168,7 +209,7 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 						url=<?php echo $share_url ?>&
 						media=<?php echo $share_image ?>
 						&description=<?php echo $share_description ?>" 
-					class="ss-icon"><span>Pinterest</span></a>
+					class="ss-icon ss-social"><span>Pinterest</span></a>
 					
 			</div>
 	

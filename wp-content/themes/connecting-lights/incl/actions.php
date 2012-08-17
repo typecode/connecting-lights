@@ -22,7 +22,7 @@
 		<p>You can send any message you want, but we ask that you please think about making a message that you'd like to send across the country and for everyone of all ages to read and enjoy.</p>
 
 		<div class="center">
-			<a class="ca-button next"><span>Send a Message</span></a>
+			<a class="ca-button alt next"><span>Send a Message</span></a>
 		</div>
 	</div>
 	<div class="step send-message-compose">
@@ -30,7 +30,7 @@
 		<div class="tier">
 			<div class="tc-field">
 				<textarea name="m"></textarea>
-				<div class="load-prompt"><a href="#">load a different prompt</a></div>
+				<div class="load-prompt"><a class="ss-standard ss-replay" href="#">load a different prompt</a></div>
 				<span class="count"></span>
 			</div>
 		</div>
@@ -38,12 +38,14 @@
 		<?php if (CL_MOBILE) { ?>
 
 			<div class="tier control-bar">
-				<a class="ca-button ca-trans cancel"><span>Cancel</span></a>
-				<div class="color-picker">
-					<div class="handle"></div>
-					<canvas></canvas>
+				<div class="inner">
+					<span class="small-button cancel"><span href="#">Cancel</span></span>
+					<div class="color-picker">
+						<div class="handle"></div>
+						<canvas></canvas>
+					</div>
+					<span class="small-button next"><span href="#">Next</span></span>
 				</div>
-				<a class="ca-button ca-trans next"><span>Next</span></a>
 			</div>
 
 		<?php } else { ?>
@@ -65,12 +67,16 @@
 			</div>
 
 			<div class="tip">
-				You can specify where on Hadrian's Wall you would like your message to start. It will then travel as pulses of light along the wall, to one of the coasts.
+				<div class="inner">
+					<p>You can specify where on Hadrian's Wall you would like your message to start. It will then travel as pulses of light along the wall, to one of the coasts.</p>
+				</div>
 			</div>
 
 			<div class="control-bar">
-				<a class="ca-button ca-trans prev"><span>Back</span></a>
-				<a class="ca-button ca-trans next"><span>Send</span></a>
+				<div class="inner">
+					<a class="small-button prev"><span>Back</span></a>
+					<a class="small-button next"><span>Send</span></a>
+				</div>
 			</div>
 		</div>
 	<?php } ?>
@@ -81,8 +87,9 @@
 	</div>
 	<div class="step thank-you">
 		<h2>Thank you!</h2>
-
+		<?php if (! CL_MOBILE ) { ?>
 		<p>You may now close this window.</p>
+		<?php } ?>
 	</div>
 </div>
 

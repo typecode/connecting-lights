@@ -124,11 +124,12 @@
 			steps: {
 				"info": {
 					selector: ".send-message-info",
-					next: "compose"
+					next: "compose",
 				},
 				"compose": {
 					selector: ".send-message-compose",
-					next: internal.is_mobile ? "geo" : "dispatch",
+					// next: internal.is_mobile ? "geo" : "dispatch",
+					next: "dispatch",
 					fields: {
 						"m": {
 							selector: "textarea[name=m]",
@@ -160,25 +161,37 @@
 
 						me.extensions.data.init(me);
 
-						/* colorpicker pause
-						$colorpicker.on("color:picked", {container: current_step.$e}, handlers.color_picked);
+						if (internal.is_touch) {
+							$colorpicker.on("color:picked", {container: $("body")}, handlers.color_picked);
+						} else {
+							$colorpicker.on("color:picked", {container: current_step.$e}, handlers.color_picked);
+						}
 
 						internal.colorpicker = new page.classes.ColorPicker({
 							$e: $colorpicker,
 							src: o.color_picker_src
 						});
-						*/
 
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
 					},
 					visible: function(me) {
-						/* colorpicker pause
+
 						internal.colorpicker.reset();
-						*/
+
 						fn.set_random_prompt();
+
+						if (internal.is_touch) {
+							$("html, body").animate({ scrollTop: 0 }, "slow");
+						}
+
 					},
 					finish: function(me) {
 						me.extensions.data.collect_fields(me);
+						
+						if (internal.is_touch) {
+							$("body").css('background','rgb(34,34,34)')
+						}
+						
 					}
 				},
 				"geo": {
@@ -202,7 +215,11 @@
 					visible: function(me) {
 						window.setTimeout(function() {
 							internal.overlay.close();
-							me.show_step("compose");
+							if (internal.is_touch) {
+								location.reload();
+							} else {
+								me.show_step("compose");
+							}
 						}, 3000);
 					}
 				}

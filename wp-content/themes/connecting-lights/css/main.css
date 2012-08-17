@@ -504,16 +504,27 @@ textarea {
 .small-button {
   padding: 6px 9px;
   background: #5d5d5d;
-  background: -moz-linear-gradient(top, #5d5d5d 0%, #505050 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5d5d5d), color-stop(100%, #505050));
-  background: linear-gradient(to bottom, #5d5d5d 0%, #505050 100%);
+  background: -moz-linear-gradient(top, rgba(147, 147, 147, 0.6) 0%, rgba(133, 133, 133, 0.6) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(147, 147, 147, 0.6)), color-stop(100%, rgba(133, 133, 133, 0.6)));
+  background: linear-gradient(to bottom, rgba(147, 147, 147, 0.6) 0%, rgba(133, 133, 133, 0.6) 100%);
   border-bottom: 1px solid #7c7c7c;
-  -webkit-box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, 0.1), -1px 2px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, 0.1), -1px 2px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, 0.1), 0px -1px 3px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, 0.1), 0px -1px 3px 0px rgba(0, 0, 0, 0.25);
 }
-.small-button a {
+.small-button > a,
+.small-button > span {
   color: #000;
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  text-shadow: 0px -1px 0px rgba(193, 193, 193, 0.5);
+}
+.small-button:active {
+  background: #6aba96;
+  background: -moz-linear-gradient(top, #6aba96 0%, #66aa8a 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6aba96), color-stop(100%, #66aa8a));
+  background: -webkit-linear-gradient(top, #6aba96 0%, #66aa8a 100%);
+  background: -o-linear-gradient(top, #6aba96 0%, #66aa8a 100%);
+  background: -ms-linear-gradient(top, #6aba96 0%, #66aa8a 100%);
+  background: linear-gradient(to bottom, #6aba96 0%, #66aa8a 100%);
 }
 .small-toggle {
   position: absolute;
@@ -859,13 +870,17 @@ textarea {
 }
 .overview .toggle:hover {
   text-decoration: none;
-}
-.overview .toggle:hover > span span:first-child {
-  text-decoration: none;
   color: #ffffff;
 }
 .overview .toggle .collapse {
   display: none;
+}
+.overview .toggle [class^="ss-"]:before,
+.overview .toggle [class*=" ss-"]:before {
+  position: relative;
+  top: 2px;
+  font-size: .75em;
+  padding-left: 0.25em;
 }
 .home .inverted > .inner {
   padding-bottom: 36px;
@@ -1096,10 +1111,9 @@ article .content {
 /*  Color picker
 =============================================================================== */
 .color-picker {
-/* colorpicker pause */
   display: none;
-  float: left;
   position: relative;
+  float: left;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -1146,16 +1160,22 @@ article .content {
 }
 .send-message .load-prompt {
   float: left;
+  padding-top: 5px;
   font-size: 18px;
 }
 .send-message .load-prompt a {
-  display: block;
-  padding: 5px 0 5px 25px;
-  background-repeat: no-repeat;
-  background-image: url("../img/refresh.png");
-  background-size: 16px 16px;
-  background-position: left 50%;
   color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+}
+.send-message .load-prompt a:hover {
+  color: #ffffff;
+}
+.send-message .load-prompt [class^="ss-"]:before,
+.send-message .load-prompt [class*=" ss-"]:before {
+  position: relative;
+  top: 2px;
+  font-size: .9em;
+  padding-right: 0.5em;
 }
 .send-message .send-message-compose .tc-field {
   float: none;
@@ -1175,12 +1195,10 @@ article .content {
   color: rgba(255, 255, 255, 0.55);
 }
 .send-message .send-message-compose .ca-button {
-  margin: 40px 0 0 35px;
-  /* colorpicker pause */
-  margin: 40px auto 0;
   display: block;
-  width: 182px;
+  width: 180px;
   text-align: center;
+  margin: 40px auto 0;
 }
 .send-message .send-message-geo {
   position: relative;
@@ -1345,9 +1363,37 @@ p + .ngg-galleryoverview .slideshowlink {
 body.mobile {
   font-size: 17px;
   line-height: 21px;
-  background: #222222;
+  background: #ffffff;
   /* Send Message */
 
+}
+body.mobile.page-template-mobile-php {
+  background: #222222;
+}
+body.mobile .inverted {
+  padding: 18px 0;
+  margin-top: 0;
+  width: 100%;
+}
+body.mobile .inverted > .inner {
+  padding: 0 14px;
+}
+body.mobile .detail-block {
+  padding-bottom: 32px;
+}
+body.mobile .detail-block h3,
+body.mobile .detail-block h4,
+body.mobile .detail-block .details {
+  float: none;
+  width: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  margin-left: 0;
+}
+body.mobile .detail-block h4 {
+  width: 100%;
+  padding-top: 6px;
 }
 body.mobile .xFull {
   width: 100%;
@@ -1359,7 +1405,7 @@ body.mobile .ca-button.alt {
   font-size: 18px;
 }
 body.mobile #main {
-  padding: 51px 0 58px;
+  padding: 51px 0 74px;
 }
 body.mobile header,
 body.mobile footer {
@@ -1380,7 +1426,7 @@ body.mobile #main > header {
 body.mobile #main > header h1 {
   width: 151px;
   float: left;
-  margin: 8px 20px 0 14px;
+  margin: 8px 0 0 14px;
 }
 body.mobile #main > header h1 img {
   display: block;
@@ -1393,28 +1439,20 @@ body.mobile #main > header nav {
 }
 body.mobile #main > header .mobile-nav {
   position: relative;
-  float: left;
-  width: 124px;
-  height: 28px;
+  float: right;
+  margin-right: 14px;
+  width: 104px;
   font-size: 15px;
   line-height: 1em;
   overflow: hidden;
 }
-body.mobile #main > header .mobile-nav ul > li {
-  padding: 6px 9px;
-  background: #5d5d5d;
-  background: -moz-linear-gradient(top, #5d5d5d 0%, #505050 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5d5d5d), color-stop(100%, #505050));
-  background: linear-gradient(to bottom, #5d5d5d 0%, #505050 100%);
-  border-bottom: 1px solid #7c7c7c;
-  -webkit-box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, 0.1), -1px 2px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, 0.1), -1px 2px 0px rgba(0, 0, 0, 0.2);
+body.mobile #main > header .mobile-select {
+  display: block;
+  position: absolute;
+  left: -9999px;
 }
-body.mobile #main > header .mobile-nav ul > li a {
-  color: #000;
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
-}
-body.mobile .splash {
+body.mobile .splash img {
+  width: 100%;
   border-bottom: 1px solid #000000;
 }
 body.mobile #overview {
@@ -1434,11 +1472,11 @@ body.mobile #overview p .lighter {
   color: #cccccc;
 }
 body.mobile #overview .toggle {
-  margin-top: 0px;
+  margin-top: 18px;
   color: #8accb1;
   font-weight: bold;
   margin-right: 0;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 body.mobile #overview .toggle:hover > span span:first-child {
   color: #8accb1;
@@ -1449,102 +1487,147 @@ body.mobile #overview .toggle .collapse {
 body.mobile .actions {
   display: none;
 }
-body.mobile .overlay .btn-close {
-  display: none;
-}
-body.mobile .overlay .pane {
-  padding: 0;
-  width: auto;
-  background-color: #333333;
-  box-shadow: none;
-}
-body.mobile .overlay .pane p {
-  padding-top: 18px;
-  font-size: 14px;
-  line-height: 18px;
-}
-body.mobile .overlay .pane .ca-button {
-  margin-top: 36px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
-body.mobile .overlay .pane .ca-button:hover {
-  box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.3);
-}
-body.mobile .overlay .pane .ca-button:active {
-  box-shadow: inset 1px 1px 12px rgba(0, 0, 0, 0.15);
-}
-body.mobile .overlay.merlin-overlay .pane {
-  padding: 0;
-}
-body.mobile .overlay.merlin-overlay .pane > .bd > .merlin > .step {
-  padding: 20px 12px 40px;
-}
-body.mobile .overlay.merlin-overlay .spinner {
-  text-align: center;
-}
-body.mobile .mask {
-  z-index: 1000;
-  background-color: inherit;
-  background: none;
-  opacity: 1;
-}
-body.mobile .send-message {
-  width: 100%;
-}
-body.mobile .send-message .tier {
-  margin-top: 36px;
-}
-body.mobile .send-message h2 {
-  font-size: 19px;
-  line-height: 28px;
-}
-body.mobile .send-message .load-prompt {
-  float: left;
-  font-size: 18px;
-}
-body.mobile .send-message .load-prompt a {
+body.mobile .color-picker {
   display: block;
-  padding: 5px 0 5px 25px;
-  background-repeat: no-repeat;
-  background-image: url("../img/refresh.png");
-  background-size: 16px 16px;
-  background-position: left 50%;
-  color: rgba(255, 255, 255, 0.55);
-}
-body.mobile .send-message .send-message-compose .tc-field {
+  position: absolute;
+  width: 135px;
+  height: 135px;
+  top: -84px;
+  left: 50%;
+  margin-left: -68px;
   float: none;
 }
-body.mobile .send-message .send-message-compose .tc-field textarea {
-  height: 200px;
-  font-family: "ff-dagny-web-pro", sans-serif;
-  background-color: rgba(255, 255, 255, 0.3);
-  border: 0;
-  border-radius: 5px;
+body.mobile #send-message {
+  width: 100%;
+  color: #c1c1c1;
+  /* steps */
+
 }
-body.mobile .send-message .send-message-compose .tc-field .count {
+body.mobile #send-message:before {
+  content: '';
+  display: table;
+}
+body.mobile #send-message:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+body.mobile #send-message h2 {
+  padding-top: 9px;
+  color: #8accb1;
+  font-size: 18px;
+  line-height: 28px;
+}
+body.mobile #send-message p {
+  padding-top: 18px;
+  font-family: "ff-dagny-web-pro", sans-serif;
+}
+body.mobile #send-message .tier {
+  margin-top: 9px;
+}
+body.mobile #send-message .small-button {
+  display: block;
+  font-size: 14px;
+  line-height: 1em;
+  padding: 7px 0 6px;
+  width: 66px;
+  text-align: center;
+}
+body.mobile #send-message .load-prompt {
+  float: left;
+  padding-left: 4px;
+  font-size: 15px;
+}
+body.mobile #send-message .load-prompt a {
+  color: rgba(255, 255, 255, 0.55);
+}
+body.mobile #send-message .control-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+body.mobile #send-message .control-bar > .inner {
+  padding: 18px 14px;
+}
+body.mobile #send-message .control-bar > .inner:before {
+  content: '';
+  display: table;
+}
+body.mobile #send-message .control-bar > .inner:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+body.mobile #send-message .control-bar .cancel,
+body.mobile #send-message .control-bar .prev {
+  float: left;
+}
+body.mobile #send-message .control-bar .next {
+  float: right;
+  text-decoration: none;
+}
+body.mobile #send-message .tip {
+  position: relative;
+  left: -4px;
+  background: url("../img/tip-bg.png") no-repeat 0 0;
+  width: 302px;
+  height: 168px;
+  margin: 0 auto;
+}
+body.mobile #send-message .tip > .inner {
+  padding: 18px;
+}
+body.mobile #send-message .tip p {
+  padding-top: 0px;
+  font-size: 16px;
+  line-height: 25px;
+  color: #8accb1;
+}
+body.mobile #send-message .send-message-info .ca-button {
+  margin-top: 36px;
+  margin-bottom: 20px;
+}
+body.mobile #send-message .send-message-compose {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.75);
+  height: 100%;
+  padding-bottom: 120px;
+}
+body.mobile #send-message .send-message-compose .tc-field {
+  float: none;
+}
+body.mobile #send-message .send-message-compose .tc-field textarea {
+  height: 134px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #000000;
+  -webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+}
+body.mobile #send-message .send-message-compose .tc-field .count {
   display: block;
   float: right;
   padding: 5px 0 0;
-  font-size: 18px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.55);
 }
-body.mobile .send-message .send-message-compose .ca-button {
+body.mobile #send-message .send-message-compose .ca-button {
   margin: 40px 0 0 35px;
+  display: inline-block;
+  width: auto;
 }
-body.mobile .send-message .send-message-geo {
+body.mobile #send-message .send-message-geo {
   position: relative;
 }
-body.mobile .send-message .thank-you h2 {
+body.mobile #send-message .thank-you h2 {
   text-align: center;
   font-weight: 600px;
   font-size: 72px;
-}
-body.mobile .send-message .thank-you p {
-  text-align: center;
+  line-height: 72px;
 }
 body.mobile footer {
-  margin-top: -58px;
-  height: 34px;
+  margin-top: -74px;
+  height: 50px;
   padding: 12px 0;
   background: #333333;
   -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.4);
@@ -1554,5 +1637,9 @@ body.mobile footer .ca-button {
   display: block;
   text-align: center;
   margin: 0 14px;
-  padding: .4em 0;
+}
+/*  Queries
+=============================================================================== */
+@media screen and (max-width: 480px) {
+  
 }

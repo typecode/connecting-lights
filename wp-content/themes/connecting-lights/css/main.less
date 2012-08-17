@@ -14,10 +14,13 @@
 @white: rgb(255,255,255);
 @white-trans: rgba(255, 255, 255, .55);
 @off-white: rgb(243,243,243);
+@steel: rgb(193,193,193);
 @shadow: rgb(178,178,178);
 @gray1: rgb(204,204,204);
 @gray2: rgb(147,147,147);
+@gray2-trans: rgba(147,147,147,.6);
 @gray3: rgb(133,133,133);
+@gray3-trans: rgba(133,133,133,.6);
 @gray4: @shadow;
 @error: rgb(251,85,58);
 
@@ -580,17 +583,29 @@ textarea {
 .small-button {
 	padding: 6px 9px;
 	background: rgb(93,93,93);
-	background: -moz-linear-gradient(top, rgb(93,93,93) 0%, rgb(80,80,80) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgb(93,93,93)), color-stop(100%,rgb(80,80,80)));
-	background: linear-gradient(to bottom, rgb(93,93,93) 0%, rgb(80,80,80) 100%);
+	background: -moz-linear-gradient(top, @gray2-trans 0%, @gray3-trans 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @gray2-trans), color-stop(100%, @gray3-trans));
+	background: linear-gradient(to bottom, @gray2-trans 0%, @gray3-trans 100%);
 	border-bottom: 1px solid rgb(124,124,124);
+
+	-webkit-box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, .1), 0px -1px 3px 0px rgba(0, 0, 0, .25);
+	box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, .1), 0px -1px 3px 0px rgba(0, 0, 0, .25);
 	
-	-webkit-box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, .1), -1px 2px 0px rgba(0, 0, 0, .2);
-	box-shadow: inset -1px 1px 2px 0px rgba(255, 255, 255, .1), -1px 2px 0px rgba(0, 0, 0, .2);
+	> a,
+	> span {
+		color: #000;
+		text-decoration: none;
+		text-shadow: 0px -1px 0px rgba(193,193,193,.5);
+	}
 	
-	a {
-		color: #000;		
-		text-shadow: 0px 1px 0px rgba(255,255,255,.25);
+	&:active {
+		background: rgb(106,186,150);
+		background: -moz-linear-gradient(top,  rgb(106,186,150) 0%, rgb(102,170,138) 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(106,186,150)), color-stop(100%,rgb(102,170,138)));
+		background: -webkit-linear-gradient(top,  rgb(106,186,150) 0%,rgb(102,170,138) 100%);
+		background: -o-linear-gradient(top,  rgb(106,186,150) 0%,rgb(102,170,138) 100%);
+		background: -ms-linear-gradient(top,  rgb(106,186,150) 0%,rgb(102,170,138) 100%);
+		background: linear-gradient(to bottom,  rgb(106,186,150) 0%,rgb(102,170,138) 100%);
 	}
 
 }
@@ -949,16 +964,23 @@ textarea {
 
 		&:hover {
 			text-decoration: none;
-
-			> span span:first-child {
-				text-decoration: none;
-				color: @white;
-			}
+			color: @white;
 		}
 
 		.collapse {
 			display: none;
 		}
+		
+		[class^="ss-"],
+		[class*=" ss-"] {
+			&:before {
+				position: relative;
+				top: 2px;
+				font-size: .75em;
+				padding-left: 0.25em;
+			}
+		}
+		
 	}
 
 }
@@ -1011,7 +1033,7 @@ textarea {
 
 		}
 
-	}
+	} 
 
 	.partners {
 		float: left;
@@ -1201,8 +1223,9 @@ article {
 =============================================================================== */
 
 .color-picker {
-	float: left;
+	display: none;
 	position: relative;
+	float: left;
 	.noselect;
 	cursor: crosshair;
 
@@ -1241,17 +1264,25 @@ article {
 
 	.load-prompt {
 		float: left;
+		padding-top: 5px;
 		font-size: 18px;
 
 		a {
-			display: block;
-			padding: 5px 0 5px 25px;
-			background-repeat: no-repeat;
-			background-image: url("../img/refresh.png");
-			background-size: 16px 16px;
-			background-position: left 50%;
 			color: @white-trans;
+			text-decoration: none;
+			&:hover { color: @white; }
 		}
+
+		[class^="ss-"],
+		[class*=" ss-"] {
+			&:before {
+				position: relative;
+				top: 2px;
+				font-size: .9em;
+				padding-right: 0.5em;
+			}
+		}
+
 	}
 
 	.send-message-compose {
@@ -1277,7 +1308,10 @@ article {
 		}
 
 		.ca-button {
-			margin: 40px 0 0 35px;
+			display: block;
+			width: 180px;
+			text-align: center;
+			margin: 40px auto 0;
 		}
 	}
 
@@ -1299,6 +1333,7 @@ article {
 		}
 	}
 }
+
 
 
 /*  Footer
@@ -1392,6 +1427,7 @@ footer {
 }
 
 
+
 /*  Style overrides for WP Plugin defaults
 =============================================================================== */
 
@@ -1435,13 +1471,50 @@ p + .ngg-galleryoverview .slideshowlink {
 	margin-top: 18px;
 }
 
+
+
 /*  Mobile
 =============================================================================== */
 
 body.mobile {
 	font-size: 17px;
 	line-height: 21px;
-	background: @alt-base;
+	background: @white;
+	
+	&.page-template-mobile-php {
+		background: @alt-base;
+	}
+	
+	.inverted {
+		padding: 18px 0;
+		margin-top: 0;
+		width: 100%;
+		
+		> .inner {
+			padding: 0 14px;
+		}
+		
+	}
+	
+	.detail-block {
+		padding-bottom: 32px;
+		
+		h3, h4,
+		.details {
+			float: none;
+			width: auto;
+			padding-left: 0;
+			padding-right: 0;
+			padding-bottom: 0;
+			margin-left: 0;
+		}
+		
+		h4 { 
+			width: 100%;
+			padding-top: 6px;
+		}
+		
+	}
 	
 	.xFull {
 		width: 100%;
@@ -1455,7 +1528,7 @@ body.mobile {
 	}
 	
 	#main { 
-		padding: 51px 0 58px;
+		padding: 51px 0 74px;
 	}
 
 	header,
@@ -1477,7 +1550,7 @@ body.mobile {
 		h1 {
 			width: 151px;
 			float: left;
-			margin: 8px 20px 0 14px;
+			margin: 8px 0 0 14px;
 			
 			img {
 				display: block;
@@ -1492,26 +1565,30 @@ body.mobile {
 	
 		.mobile-nav {
 			position: relative;
-			float: left;
-			width: 124px;
-			height: 28px;
+			float: right;
+			margin-right: 14px;
+			width: 104px;
 			font-size: 15px;
 			line-height: 1em;
 			overflow: hidden;
-			
-			ul {
-				
-				> li {
-					.small-button;
-				}
-			
-			}
-				
+		}
+		
+		.mobile-select {
+			display: block;
+			position: absolute;
+			left: -9999px;
 		}
 	
 	}
 	
-	.splash { border-bottom: 1px solid rgb(0,0,0); }
+	.splash { 
+		
+		img { 
+			width: 100%;
+			border-bottom: 1px solid rgb(0,0,0);
+		}
+	
+	}
 	
 	#overview {
 		.y(0);
@@ -1533,11 +1610,11 @@ body.mobile {
 		}
 	
 		.toggle {
-			.y(0);
+			.y(1);
 			color: @accent;
 			font-weight: bold;
 			margin-right: 0;
-			margin-bottom: 10px;
+			margin-bottom: 6px;
 	
 			&:hover { > span span:first-child { color: @accent; } }
 	
@@ -1545,115 +1622,145 @@ body.mobile {
 				display: none;
 			}
 		}
+		
 	}
 
 	.actions { display: none; }
 	
+	.color-picker {
+		display: block;
+		position: absolute;
+		width: 135px;
+		height: 135px;
+		top: -84px;
+		left: 50%;
+		margin-left: -68px;
+		float: none;
+	}
+	
 	/* Send Message */
 	
-	.overlay {
-	
-		.btn-close { display: none; }
-	 
-		.pane {
-			padding: 0;
-			width: auto;
-			background-color: #333333;
-			box-shadow: none;
-	 
-			p {
-				.yp(1);
-				font-size: 14px;
-				line-height: 18px;
-			}
-	
-			.ca-button {
-				.y(2);
-				box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-	
-				&:hover {
-					box-shadow: 2px 2px 14px rgba(0,0,0,0.3);
-				}
-				&:active {
-					box-shadow: inset 1px 1px 12px rgba(0,0,0,0.15);
-				}
-			}
-		}
-	
-		&.merlin-overlay {
-			.pane {
-				padding: 0;
-	
-				> .bd > .merlin > .step {
-					padding: 20px 12px 40px;
-				}
-			}
-	
-			.spinner {
-				text-align: center;
-			}
-		}
-	}
-	
-	.mask {
-		z-index: 1000;
-		background-color: inherit;
-		background: none;
-		opacity: 1;
-	}
-	
-	.send-message {
+	#send-message {
 		width: 100%;
+		.clear;
+		color: @steel;
+		
+		h2 {
+			.yp(.5);
+			color: @accent;
+			font-size: 18px;
+			line-height: 28px;
+		}
+ 
+		p {
+			.yp(1);
+			.dagny;
+		}
 	
 		.tier {
-			.y(2);
+			.y(.5);
 		}
-			
-		h2 {
-			font-size: 19px;
-			line-height: 28px;
+		
+		.small-button {
+			display: block;
+			font-size: 14px;
+			line-height: 1em;
+			padding: 7px 0 6px;
+			width: 66px;
+			text-align: center;
 		}
 	
 		.load-prompt {
 			float: left;
-			font-size: 18px;
+			padding-left: 4px;
+			font-size: 15px;
 	
 			a {
-				display: block;
-				padding: 5px 0 5px 25px;
-				background-repeat: no-repeat;
-				background-image: url("../img/refresh.png");
-				background-size: 16px 16px;
-				background-position: left 50%;
 				color: @white-trans;
 			}
 		}
+		
+		.control-bar {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			
+			> .inner {
+				.clear;
+				padding: 18px 14px;
+			}
+			
+			.cancel, .prev { float: left; }
+			.next { float: right; text-decoration: none; }
+			
+		}
+		
+		.tip {
+			position: relative;
+			left: -4px;
+			background: url("../img/tip-bg.png") no-repeat 0 0;
+			width: 302px;
+			height: 168px;
+			margin: 0 auto;
+			
+			> .inner {
+				padding: 18px;
+			}
+			
+			p {
+				.yp(0);
+				font-size: 16px;
+				line-height: 25px;
+				color: @accent;
+			}
+			
+		}
+		
+		/* steps */
+		
+		.send-message-info {
+
+			.ca-button { 
+				.y(2); 
+				margin-bottom: 20px;
+			}	
+
+		}
 	
 		.send-message-compose {
+			text-shadow: 0px -1px 0px rgba(0,0,0,.75);
+			height: 100%;
+			padding-bottom: 120px;
 	
 			.tc-field {
 				float: none;
 	
 				textarea {
-					height: 200px;
-					.dagny;
-					background-color: rgba(255, 255, 255, 0.3);
-					border: 0;
-					border-radius: 5px;
+					height: 134px;
+					font-size: 16px;
+					line-height: 26px;
+					color: rgb(0,0,0);
+					
+					-webkit-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, .5);
+					box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, .5);
 				}
 	
 				.count {
 					display: block;
 					float: right;
 					padding: 5px 0 0;
-					font-size: 18px;
+					font-size: 15px;
 					color: @white-trans;
 				}
 			}
-	
+			
 			.ca-button {
 				margin: 40px 0 0 35px;
+				display: inline-block;
+				width: auto;
 			}
+			
 		}
 	
 		.send-message-geo {
@@ -1666,18 +1773,15 @@ body.mobile {
 				text-align: center; 
 				font-weight: 600px; 
 				font-size: 72px;
-			}
-	
-			p { 
-				text-align: center;
+				line-height: 72px;
 			}
 		}
 	}
 
 	
 	footer {
-		margin-top: -58px;
-		height: 34px;
+		margin-top: -74px;
+		height: 50px;
 		padding: 12px 0;
 		background: @base;
 	
@@ -1688,9 +1792,18 @@ body.mobile {
 			display: block;
 			text-align: center;
 			margin: 0 14px;
-			padding: .4em 0;
 		}
 		
 	}
 	
+}
+
+
+
+/*  Queries
+=============================================================================== */
+
+@media screen and (max-width: 480px) {
+
+
 }

@@ -115,6 +115,11 @@ get_header();
 							<img src="<?php bloginfo("template_url"); ?>/img/logos/artscouncil.png" />
 						</a>
 					</li>
+					<li>
+						<a href="http://www.digi.com/" target="_blank">
+							<img src="<?php bloginfo("template_url"); ?>/img/logos/digi.png" />
+						</a>
+					</li>
 
 				</ul>
 			</div>

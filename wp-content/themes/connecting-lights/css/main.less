@@ -1561,22 +1561,16 @@ body.mobile {
 	
 		.connect,
 		.schedule,
-		nav { display: none; }
-	
-		.mobile-nav {
+		nav,
+		.mobile-nav { display: none; }
+		
+		.mobile-select {
 			position: relative;
 			float: right;
 			margin-right: 14px;
 			width: 104px;
-			font-size: 15px;
+			font-size: 14px;
 			line-height: 1em;
-			overflow: hidden;
-		}
-		
-		.mobile-select {
-			display: block;
-			position: absolute;
-			left: -9999px;
 		}
 	
 	}
@@ -1729,9 +1723,8 @@ body.mobile {
 		}
 	
 		.send-message-compose {
+			padding-bottom: 155px;
 			text-shadow: 0px -1px 0px rgba(0,0,0,.75);
-			height: 100%;
-			padding-bottom: 120px;
 	
 			.tc-field {
 				float: none;

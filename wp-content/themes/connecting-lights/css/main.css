@@ -1432,22 +1432,17 @@ body.mobile #main > header h1 img {
 }
 body.mobile #main > header .connect,
 body.mobile #main > header .schedule,
-body.mobile #main > header nav {
+body.mobile #main > header nav,
+body.mobile #main > header .mobile-nav {
   display: none;
 }
-body.mobile #main > header .mobile-nav {
+body.mobile #main > header .mobile-select {
   position: relative;
   float: right;
   margin-right: 14px;
   width: 104px;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1em;
-  overflow: hidden;
-}
-body.mobile #main > header .mobile-select {
-  display: block;
-  position: absolute;
-  left: -9999px;
 }
 body.mobile .splash img {
   width: 100%;
@@ -1587,9 +1582,8 @@ body.mobile #send-message .send-message-info .ca-button {
   margin-bottom: 20px;
 }
 body.mobile #send-message .send-message-compose {
+  padding-bottom: 155px;
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.75);
-  height: 100%;
-  padding-bottom: 120px;
 }
 body.mobile #send-message .send-message-compose .tc-field {
   float: none;

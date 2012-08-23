@@ -4,29 +4,27 @@ global $post;
 
 $current_id = $post->ID;
 
+include(TEMPLATEPATH . "/incl/mobile-detect.php");
+
+$detect = new Mobile_Detect();
+
 $mobile_id = get_page_by_title("mobile")->ID;
 $visit_id = get_page_by_title("visit")->ID;
 $about_id = get_page_by_title("about")->ID;
 
-if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
+if ($detect->isMobile()) {
 
-	$mobile_agents = '!(phone|ipod|android)!i';
+	define("CL_MOBILE", true);
 
-	if ( preg_match($mobile_agents, $_SERVER['HTTP_USER_AGENT']) ) {
+	if (is_front_page()) {
+
+		header("Location: ". get_permalink( $mobile_id ));
 	
-		define("CL_MOBILE", true);
-		
-		if (!( is_page( array($mobile_id, $visit_id, $about_id) ) )) {
-
-			header("Location: ". get_permalink( $mobile_id ));
-		
-		}
-
-	} else {
-		
-		define("CL_MOBILE", false);
-		
 	}
+
+} else {
+
+	define("CL_MOBILE", false);
 
 }
 
@@ -129,8 +127,7 @@ if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
 				}
 			
 				$mobile_pages_args = array(
-					'numberposts'     => -1,
-					'include'         => array($mobile_id, $visit_id, $about_id),
+					'numberposts'     => -1
 				); 
 			
 				$mobile_pages = get_pages( $mobile_pages_args );

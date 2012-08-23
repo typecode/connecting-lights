@@ -150,6 +150,10 @@
 										if (val.substring(val.length - 3) === "...") {
 											field.set_val(val.substring(0, val.length - 3) + " ");
 										}
+										$('.control-bar').css('position','absolute');
+									},
+									blur: function(e) {
+										$('.control-bar').css('position','fixed');
 									}
 								}
 							}

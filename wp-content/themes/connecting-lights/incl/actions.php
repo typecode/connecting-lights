@@ -15,7 +15,11 @@
 	<div class="step send-message-info">
 		<h2>Your message will travel across Hadrian's Wall in the form of pulses of light.</h2>
 
+		<?php if (! CL_MOBILE) { ?>
+
 		<p>Prior to the event, we're collecting messages which will pre-populate the messaging system and be some of the first ones to be seen by the public.</p>
+
+		<?php } ?>
 
 		<p>We've come up with some sentences about connection we'd love for you to fill out, or feel free to make the message your own.</p>
 

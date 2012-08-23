@@ -1,0 +1,24 @@
+this.page.classes.prompts = [
+	
+	"Cities I have been to:   ",
+
+	"People I'm connected to:   ",
+
+	"Borders I've crossed:   ",
+
+	"Things that feel like home:   ",
+
+<<<<<<< HEAD
+
+	"I feel connected to:   ",
+
+	"I communicate via:   ",
+
+	"Places I've lived:   ",
+
+	""
+=======
+	"I feel connected to..."
+>>>>>>> dfae8a24015f50e69e1f8cd379f02d2b58fe5e04
+
+];

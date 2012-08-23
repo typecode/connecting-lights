@@ -1,0 +1,1 @@
+jQuery(function(a){"undefined"!==typeof K2&&new function(){this.updateImageList=function(){a.Lightbox.relify()}};a(".gallery a:has(img)").lightbox();a("a:not([title]):has(img)").attr("title",function(){return a(this).children("img:first").attr("title")})});

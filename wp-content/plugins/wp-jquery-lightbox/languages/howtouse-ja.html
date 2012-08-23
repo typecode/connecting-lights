@@ -1,0 +1,50 @@
+	<h2>使い方：</h2> 	
+	<ol> 
+	<li>WordPressイメージギャラリーを用いて、画像をグループ化し、自動的にLightbox効果を有効にする場合の記述法： <a href="http://codex.wordpress.org/Gallery_Shortcode"><code>[gallery link="file"]</code></a></li> 	
+	<li><code>rel="lightbox"</code>手作業で属性をリンクタグに追加してLightbox効果を有効にすることも可能です。例えば：
+	<pre><code>	&lt;a href=&quot;images/image-1.jpg&quot; rel=&quot;lightbox&quot; title=&quot;my caption&quot;&gt;image #1&lt;/a&gt;</code></pre> 
+	<em>オプション:</em> キャプション（説明文）を表示させたいならば、<code>title</code>属性を追加します。
+	</li> 
+	<li>複数の画像をグループ化したいならば、rel属性にグループ名を含めます。例えば：
+	<pre><code>	&lt;a href=&quot;images/image-1.jpg&quot; rel=&quot;lightbox[roadtrip]&quot;&gt;image #1&lt;/a&gt;
+	&lt;a href=&quot;images/image-2.jpg&quot; rel=&quot;lightbox[roadtrip]&quot;&gt;image #2&lt;/a&gt;
+	&lt;a href=&quot;images/image-3.jpg&quot; rel=&quot;lightbox[roadtrip]&quot;&gt;image #3&lt;/a&gt;</code></pre> 
+	1ページあたりイメージセットの数とイメージセット毎に許される画像の数に制限はありません。お好きなだけどうぞ！</li> 	
+	</ol>	
+	<h2>開発者の方へ：</h2> 	
+	<ol> 
+	<li>テーマの&lt;/body&gt;タグの直前に<code>wp_footer();</code>を常に配置して下さい。<br />
+	さもないと、このフックを利用してJavaスクリプトを参照している多くのプラグインの処理を中断させる事になるでしょう。</li> 
+	<li>コンテンツにLightbox効果を適応するため、<code>jqlb_apply_lightbox($your_content, "any ID");</code>を実行します。<br />
+	この関数は、Lightbox効果が適応され、"any id"によってグループ化されたすべてのイメージリンクを含む文字列を返します。</li> 
+	<li>多くのJavaスクリプト最適化ツール、結合ツール、縮小化ツールなどは、このプラグインや他の多くのプラグインが設定のために用いている<a href="http://codex.wordpress.org/Function_Reference/wp_localize_script2"><code>wp_localize_script()</code></a>と競合します。
+		<ul style="list-style-type: circle;margin-left: 24px;"> 
+		<li>もし、jQuery Lightboxで問題が発生したら、Javaスクリプトを最適化する全てのプラグインを無効にして下さい。（Optimize Scripts、W3 Total Cache、WP Minifyなど）</li>
+		<li>もし、WordPress用にJavaスクリプト最適化ツールを開発するなら、デフォルトのAPIと仲良く共存させて下さい。</li>
+		<li><a href="http://wordpress.org/support/topic/122-worked-13-does-not-work-for-me?replies=19">この問題についての情報をもっと見る</a></li>
+		</ul> 
+	</li>
+	</ol>	
+	<h2>謝辞</h2><ul style="list-style-type: circle;margin-left: 24px;">
+	<li>wp-jquery-lightboxは、<a href="http://www.ulfben.com">Ulf Benjaminsson</a>氏によって開発されました。（<a href="http://amzn.com/w/2QB6SQ5XX2U0N">作者が高く評価する本</a>）. :)</li>		
+	<li>wp-jquery-lightboxは、手作業ではなく、自動的にrel属性を追加し、画像にLightbox効果を適応するために<a href="http://stimuli.ca/lightbox/">Rupert Morris氏のLightBox-2</a>から正規表現を拝借しました。</li>		
+	<li>wp-jquery-lightboxは、<a href="http://warren.mesozen.com/jquery-lightbox/">Warren Krewenki</a>氏の<a href="http://github.com/krewenki/jquery-lightbox/">jQuery Lightbox</a>を改造して使っています。（下記参照）</li>		
+	<li><a href="http://github.com/krewenki/jquery-lightbox/">jQuery Lightbox</a>は、<a href="http://www.huddletogether.com/projects/lightbox2/">Lokesh Dhakar氏のLightbox 2</a>がベースになっています。</li>		
+	<li>多言語のサポート（およびドイツ語の言語ファイル）は、<a href="http://sukimashita.com/">Martin S</a>氏によって付け加えられました。</li>
+	<li>設定画面の多言語化（およびロシア語とチェコ語の言語ファイル）は、Denis N. Voituk氏によって付け加えられました。</li>
+	<li>ポーランド語への翻訳は、<a href="http://wordpress.org/support/topic/plugin-wp-jquery-lightbox-polish-localization?replies=1">Fisiu</a>氏によるものです。</li>
+	</ul>
+	
+	<h2>Lightboxスクリプトの変更点：</h2><p style="margin-left: 24px;">	
+	リサイズのためのコードは、高さと幅の <strong>両方</strong>を操作し、かつ、アスペクト比を維持します。<br />
+	拡大・縮小ルーチンは、キャプションを考慮した上で、画像を最大化します。<br />
+	ブラウザでのリサイズと向きの変更に対応させました。 － 最適なサイズと中心位置は、そのまま<em>保持</em>します。<br />
+	過去にリリースされた同等のスクリプトすべてがrelを使っているので、WP jQuery Lightboxも、<code>class="lightbox"</code>の代わりに、<code>rel="lightbox"</code>によって有効化されるようにしています。<br />
+	明示的なイメージURLは、CSSでレイアウトされたdivで置換されます。（<code>jqlb_loading</code>と<code>jqlb_closelabel</code>のdivタグを参照のこと。）<br />
+	WordPressのメディアギャラリーの出力からタイトルと説明文を取得出来ます。（<a href="http://codex.wordpress.org/Gallery_Shortcode">[gallery]</a>、"insert attachments" など。）<br />
+	リンクにタイトルがないなら、画像のタイトルを取得します。<br />
+	タイトルがない場合もそのまま処理します。<br />
+	すべてのアニメーション効果を無効に出来ます。（アニメーションの継続時間を0にして下さい。）<br />
+	スクリプトの多言語化のためにWordPressのAPIを使用しています。（安全な代替と共に。）<br />	
+	</p>
+	

@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<quiz>
+    <title><![CDATA[Trivia Game]]></title>
+    <questions>
+        <question1>
+            <line1><![CDATA[Which art movement were]]></line1>
+            <line2><![CDATA[Dali, Magritte, and]]></line2>
+            <line3><![CDATA[Breton associated with?]]></line3>
+        </question1>
+    </questions>
+    <answersets>
+        <answerset1>
+            <answer1><![CDATA[Surrealism]]></answer1>
+            <answer2><![CDATA[Dadaism]]></answer2>
+            <answer3><![CDATA[Post-Impressionism]]></answer3>
+            <answer4><![CDATA[Outsider]]></answer4>
+        </answerset1>
+    </answersets>
+</quiz>

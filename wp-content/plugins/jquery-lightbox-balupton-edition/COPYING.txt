@@ -1,0 +1,15 @@
+jQuery Lightbox Balupton Edition (Wordpress Plugin)
+Copyright (C) 2008-2010 Pedro Lamas, Benjamin Arthur Lupton
+
+jQuery Lightbox Balupton Edition (Wordpress Plugin) is free software; You can redistribute it and/or modify it under the terms of either:
+- the GNU Affero General Public License version 3 as published by the Free Software Foundation.
+- the GNU General Public License version 2 as published by the Free Software Foundation.
+
+You don't have to do anything special to choose one license or the other and you don’t have to notify anyone which license you are using.
+
+jQuery Lightbox Balupton Edition (Wordpress Plugin) is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See your chosen license for more details.
+
+You should have received a copy of both licenses along with jQuery Lightbox Balupton Edition (Wordpress Plugin).
+If not, see <http://www.gnu.org/licenses/>.

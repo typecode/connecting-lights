@@ -1,0 +1,763 @@
+# Translation of the WordPress plugin   by .
+# Copyright (C) 2010 
+# This file is distributed under the same license as the  package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/lightbox-plus\n"
+"POT-Creation-Date: 2010-07-12 21:29+0000\n"
+"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: admin/lightbox.admin.php:5 admin/lightbox.admin.php:683
+msgid "About Lightbox Plus for WordPress"
+msgstr ""
+
+#: admin/lightbox.admin.php:29 admin/lightbox.admin.php:699
+msgid ""
+"Thank you for downloading and installing Lightbox Plus for WordPress<br /"
+"><br /><a href=\"http://www.23systems.net/plugins/lightbox-plus/\">Visit "
+"plugin site</a> | <a href=\"http://www.23systems.net/plugins/lightbox-plus/"
+"frequently-asked-questions/\">FAQ</a> | <a href=\"http://www.23systems.net/"
+"bbpress/forum/lightbox-plus\">Support</a> | <a href=\"http://twitter."
+"com/23systems\">Follow on Twitter</a> | <a href=\"http://www.facebook.com/"
+"pages/Austin-TX/23Systems-Web-Devsign/94195762502\">Add Facebook Page</a>"
+msgstr ""
+
+#: admin/lightbox.admin.php:32 admin/lightbox.admin.php:702
+msgid ""
+"Lightbox Plus implements ColorBox as a lightbox image overlay tool for "
+"WordPress.  ColorBox was created by Jack Moore of <a href=\"http://"
+"colorpowered.com/colorbox/\">Color Powered</a> and is licensed under the MIT "
+"License. Lightbox Plus allows you to easily integrate and customize a "
+"powerful and light-weight lightbox plugin for jQuery into your WordPress "
+"site.  You can easily create additional styles by adding a new folder to the "
+"css directory under <code>wp-content/plugins/lighbox-plus/css/</code> by "
+"duplicating and modifying any of the existing themes or using them as "
+"examples to create your own.  See the <a href=\"http://www.23systems.net/"
+"plugins/lightbox-plus/\">changelog</a> for important details on this upgrade."
+msgstr ""
+
+#: admin/lightbox.admin.php:35 admin/lightbox.admin.php:705
+msgid ""
+"Like many developers I spend a lot of my spare time working on WordPress "
+"plugins and themes and any donation to the cause is appreciated.  I know a "
+"lot of other developers do the same and I try to donate to them whenever I "
+"can.  As a developer I greatly appreciate any donation you can make to help "
+"support further development of quality plugins and themes for WordPress. "
+"<em>You have my sincere thanks and appreciation for using Lightbox Plus</em>."
+msgstr ""
+
+#: admin/lightbox.admin.php:45
+msgid "Lightbox Plus - General Settings"
+msgstr ""
+
+#: admin/lightbox.admin.php:50
+msgid "Lightbox Plus Style"
+msgstr ""
+
+#: admin/lightbox.admin.php:63 admin/lightbox.admin.php:74
+#: admin/lightbox.admin.php:85 admin/lightbox.admin.php:119
+#: admin/lightbox.admin.php:162 admin/lightbox.admin.php:173
+#: admin/lightbox.admin.php:184 admin/lightbox.admin.php:195
+#: admin/lightbox.admin.php:206 admin/lightbox.admin.php:217
+#: admin/lightbox.admin.php:228 admin/lightbox.admin.php:239
+#: admin/lightbox.admin.php:250 admin/lightbox.admin.php:261
+#: admin/lightbox.admin.php:294 admin/lightbox.admin.php:305
+#: admin/lightbox.admin.php:318 admin/lightbox.admin.php:329
+#: admin/lightbox.admin.php:340 admin/lightbox.admin.php:351
+#: admin/lightbox.admin.php:362 admin/lightbox.admin.php:384
+#: admin/lightbox.admin.php:395 admin/lightbox.admin.php:433
+#: admin/lightbox.admin.php:444 admin/lightbox.admin.php:455
+#: admin/lightbox.admin.php:477 admin/lightbox.admin.php:488
+#: admin/lightbox.admin.php:499 admin/lightbox.admin.php:512
+#: admin/lightbox.admin.php:524 admin/lightbox.admin.php:535
+#: admin/lightbox.admin.php:546 admin/lightbox.admin.php:598
+#: admin/lightbox.admin.php:632 admin/lightbox.admin.php:656
+#: admin/lightbox.inline.php:12 admin/lightbox.secondary.php:12
+#: admin/lightbox.secondary.php:21 admin/lightbox.secondary.php:30
+#: admin/lightbox.secondary.php:53 admin/lightbox.secondary.php:96
+#: admin/lightbox.secondary.php:107 admin/lightbox.secondary.php:118
+#: admin/lightbox.secondary.php:129 admin/lightbox.secondary.php:140
+#: admin/lightbox.secondary.php:151 admin/lightbox.secondary.php:162
+#: admin/lightbox.secondary.php:173 admin/lightbox.secondary.php:184
+#: admin/lightbox.secondary.php:195 admin/lightbox.secondary.php:228
+#: admin/lightbox.secondary.php:239 admin/lightbox.secondary.php:252
+#: admin/lightbox.secondary.php:263 admin/lightbox.secondary.php:274
+#: admin/lightbox.secondary.php:285 admin/lightbox.secondary.php:296
+#: admin/lightbox.secondary.php:319 admin/lightbox.secondary.php:330
+#: admin/lightbox.secondary.php:368 admin/lightbox.secondary.php:379
+#: admin/lightbox.secondary.php:390 admin/lightbox.secondary.php:413
+#: admin/lightbox.secondary.php:427 admin/lightbox.secondary.php:439
+msgid "Click for Help!"
+msgstr ""
+
+#: admin/lightbox.admin.php:65
+msgid ""
+"Select Lightbox Plus theme/style here. <strong><em>Default: Shadowed</em></"
+"strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:71
+msgid "Use Custom Styles"
+msgstr ""
+
+#: admin/lightbox.admin.php:76
+msgid ""
+"If checked, the built in stylsheets for Lightbox Plus will be located at "
+"<code>wp-content/lbp-css</code>.  Lightbox Plus will attempt to create this "
+"directory and copy default styles to it.  This will allow you to create "
+"custom styles in that directory with fear of the styles being deleted when "
+"you upgrade he plugin. <strong><em>Default: Unchecked</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:82
+msgid "Disable Lightbox CSS"
+msgstr ""
+
+#: admin/lightbox.admin.php:87
+msgid ""
+"If checked, the built in stylsheets for Lightbox Plus will be disabled.  "
+"This will allow you to include customized Lightbox Plus styles in your theme "
+"stylesheets which can reduce files loaded, and making editing easier. Note, "
+"that if you do not have the Lightbox styles set in your stylesheet your "
+"Lightboxed images will appear at the top of your page. <strong><em>Default: "
+"Unchecked</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:93 admin/lightbox.admin.php:584
+#: admin/lightbox.admin.php:640 admin/lightbox.inline.php:100
+#: admin/lightbox.secondary.php:472
+msgid "Save all Lightbox Plus settings"
+msgstr ""
+
+#: admin/lightbox.admin.php:93 admin/lightbox.admin.php:584
+#: admin/lightbox.admin.php:640 admin/lightbox.inline.php:100
+#: admin/lightbox.secondary.php:472
+msgid "Save settings"
+msgstr ""
+
+#: admin/lightbox.admin.php:102
+msgid "Lightbox Plus - Primary Lightbox Settings"
+msgstr ""
+
+#: admin/lightbox.admin.php:107
+msgid "Primary Lightbox - Base Settings"
+msgstr ""
+
+#: admin/lightbox.admin.php:112 admin/lightbox.secondary.php:46
+msgid "Transition Type"
+msgstr ""
+
+#: admin/lightbox.admin.php:121 admin/lightbox.secondary.php:55
+msgid ""
+"Specifies the transition type. Can be set to \"elastic\", \"fade\", or \"none"
+"\". <strong><em>Default: Elastic</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:127 admin/lightbox.secondary.php:61
+msgid "Resize Speed"
+msgstr ""
+
+#: admin/lightbox.admin.php:164 admin/lightbox.secondary.php:98
+msgid ""
+"Controls the speed of the fade and elastic transitions, in milliseconds. "
+"<strong><em>Default: 350</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:170 admin/lightbox.secondary.php:104
+msgid "Width"
+msgstr ""
+
+#: admin/lightbox.admin.php:175 admin/lightbox.secondary.php:109
+msgid ""
+"Set a fixed total width. This includes borders and buttons. Example: \"100%"
+"\", \"500px\", or 500, or false for no defined width.  <strong><em>Default: "
+"false</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:181 admin/lightbox.secondary.php:115
+msgid "Height"
+msgstr ""
+
+#: admin/lightbox.admin.php:186 admin/lightbox.secondary.php:120
+msgid ""
+"Set a fixed total height. This includes borders and buttons. Example: \"100%"
+"\", \"500px\", or 500, or false for no defined height. <strong><em>Default: "
+"false</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:192 admin/lightbox.secondary.php:126
+msgid "Inner Width"
+msgstr ""
+
+#: admin/lightbox.admin.php:197 admin/lightbox.secondary.php:131
+msgid ""
+"This is an alternative to \"width\" used to set a fixed inner width. This "
+"excludes borders and buttons. Example: \"50%\", \"500px\", or 500, or false "
+"for no inner width.  <strong><em>Default: false</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:203 admin/lightbox.secondary.php:137
+msgid "Inner Height"
+msgstr ""
+
+#: admin/lightbox.admin.php:208 admin/lightbox.secondary.php:142
+msgid ""
+"This is an alternative to \"height\" used to set a fixed inner height. This "
+"excludes borders and buttons. Example: \"50%\", \"500px\", or 500 or false "
+"for no inner height. <strong><em>Default: false</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:214 admin/lightbox.secondary.php:148
+msgid "Initial Width"
+msgstr ""
+
+#: admin/lightbox.admin.php:219 admin/lightbox.secondary.php:153
+msgid ""
+"Set the initial width, prior to any content being loaded.  "
+"<strong><em>Default: 300</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:225 admin/lightbox.secondary.php:159
+msgid "Initial Height"
+msgstr ""
+
+#: admin/lightbox.admin.php:230 admin/lightbox.secondary.php:164
+msgid ""
+"Set the initial height, prior to any content being loaded. "
+"<strong><em>Default: 100</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:236 admin/lightbox.secondary.php:170
+msgid "Maximum Width"
+msgstr ""
+
+#: admin/lightbox.admin.php:241 admin/lightbox.secondary.php:175
+msgid ""
+"Set a maximum width for loaded content.  Example: \"75%\", \"500px\", 500, "
+"or false for no maximum width.  <strong><em>Default: false</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:247 admin/lightbox.secondary.php:181
+msgid "Maximum Height"
+msgstr ""
+
+#: admin/lightbox.admin.php:252 admin/lightbox.secondary.php:186
+msgid ""
+"Set a maximum height for loaded content.  Example: \"75%\", \"500px\", 500, "
+"or false for no maximum height. <strong><em>Default: false</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:258 admin/lightbox.secondary.php:192
+msgid "Resize"
+msgstr ""
+
+#: admin/lightbox.admin.php:263 admin/lightbox.secondary.php:197
+msgid ""
+"If checked and if Maximum Width or Maximum Height have been defined, Lightbx "
+"Plus will resize photos to fit within the those values. <strong><em>Default: "
+"Checked</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:269 admin/lightbox.secondary.php:203
+msgid "Overlay Opacity"
+msgstr ""
+
+#: admin/lightbox.admin.php:296 admin/lightbox.secondary.php:230
+msgid ""
+"Controls transparency of shadow overlay. Lower numbers are more transparent. "
+"<strong><em>Default: 80%</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:302 admin/lightbox.secondary.php:236
+msgid "Pre-load images"
+msgstr ""
+
+#: admin/lightbox.admin.php:307 admin/lightbox.secondary.php:241
+msgid ""
+"Allows for preloading of \"Next\" and \"Previous\" content in a shared "
+"relation group (same values for the \"rel\" attribute), after the current "
+"content has finished loading. Uncheck to disable. <strong><em>Default: "
+"Checked</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:313 admin/lightbox.secondary.php:247
+msgid "Grouping Labels"
+msgstr ""
+
+#: admin/lightbox.admin.php:320 admin/lightbox.secondary.php:254
+msgid ""
+"Text format for the content group / gallery count. {current} and {total} are "
+"detected and replaced with actual numbers while ColorBox runs."
+"<strong><em>Default: Image {current} of {total}</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:326 admin/lightbox.secondary.php:260
+msgid "Previous image text"
+msgstr ""
+
+#: admin/lightbox.admin.php:331 admin/lightbox.secondary.php:265
+msgid ""
+"Text for the previous button in a shared relation group (same values for "
+"\"rel\" attribute). <strong><em>Default: previous</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:337 admin/lightbox.secondary.php:271
+msgid "Next image text"
+msgstr ""
+
+#: admin/lightbox.admin.php:342 admin/lightbox.secondary.php:276
+msgid ""
+"Text for the next button in a shared relation group (same values for \"rel\" "
+"attribute).  <strong><em>Default: next</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:348 admin/lightbox.secondary.php:282
+msgid "Close image text"
+msgstr ""
+
+#: admin/lightbox.admin.php:353 admin/lightbox.secondary.php:287
+msgid ""
+"Text for the close button. The \"Esc\" key will also close Lightbox Plus. "
+"<strong><em>Default: close</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:359 admin/lightbox.secondary.php:293
+msgid "Overlay Close"
+msgstr ""
+
+#: admin/lightbox.admin.php:364 admin/lightbox.secondary.php:298
+msgid ""
+"If checked, enables closing Lightbox Plus by clicking on the background "
+"overlay. <strong><em>Default: Checked</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:375
+msgid "Primary Lightbox - Slideshow Settings:"
+msgstr ""
+
+#: admin/lightbox.admin.php:381 admin/lightbox.secondary.php:316
+msgid "Slideshow"
+msgstr ""
+
+#: admin/lightbox.admin.php:386 admin/lightbox.secondary.php:321
+msgid ""
+"If checked, adds slideshow capablity to a content group / gallery. "
+"<strong><em>Default: Unchecked</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:392 admin/lightbox.secondary.php:327
+msgid "Auto-Start Slideshow"
+msgstr ""
+
+#: admin/lightbox.admin.php:397 admin/lightbox.secondary.php:332
+msgid ""
+"If checked, the slideshows will automatically start to play when content "
+"grou opened. <strong><em>Default: Checked</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:403 admin/lightbox.secondary.php:338
+msgid "Slideshow Speed"
+msgstr ""
+
+#: admin/lightbox.admin.php:435 admin/lightbox.secondary.php:370
+msgid ""
+"Controls the speed of the slideshow, in milliseconds. <strong><em>Default: "
+"2500</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:441 admin/lightbox.secondary.php:376
+msgid "Slideshow start text"
+msgstr ""
+
+#: admin/lightbox.admin.php:446 admin/lightbox.secondary.php:381
+msgid ""
+"Text for the slideshow start button. <strong><em>Default: start</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:452 admin/lightbox.secondary.php:387
+msgid "Slideshow stop text"
+msgstr ""
+
+#: admin/lightbox.admin.php:457 admin/lightbox.secondary.php:392
+msgid ""
+"Text for the slideshow stop button.  <strong><em>Default: stop</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:468
+msgid "Primary Lightbox - Other Settings:"
+msgstr ""
+
+#: admin/lightbox.admin.php:474
+msgid "Use WP Caption for LBP Caption"
+msgstr ""
+
+#: admin/lightbox.admin.php:479
+msgid ""
+"If checked, Lightbox Plus will attempt to use the displayed caption for the "
+"image on the page as the caption for the image in the Lightbox Plus overlay. "
+"<strong><em>Default: Unchecked</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:485
+msgid "Use For WP Gallery"
+msgstr ""
+
+#: admin/lightbox.admin.php:490
+msgid ""
+"If checked, Lightbox Plus will add the Lightboxing feature to the WordPress "
+"built in gallery feature.  In order for this to work correcly you must set "
+"<strong>Link thumbnails to: Image File</strong> or use <code>[gallery link="
+"\"file\"</code> for the gallery options. <strong><em>Default: Unchecked</"
+"em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:497
+msgid "Seperate Galleries in Post?"
+msgstr ""
+
+#: admin/lightbox.admin.php:501
+msgid ""
+"If the option to separate multiple gallries in a single post is check "
+"Lightbox Plus will create separate sets of lightbox display for each gallery "
+"in the post. <strong><em>Default: Unchecked</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:507 admin/lightbox.secondary.php:422
+msgid "Use Class Method"
+msgstr ""
+
+#: admin/lightbox.admin.php:514 admin/lightbox.secondary.php:429
+msgid ""
+"If checked, Lightbox Plus will only lightbox images using a class instead of "
+"the <code>rel=lightbox[]</code> attribute.  Using this method you can "
+"manually control which images are affected by Lightbox Plus by adding the "
+"class to the Advanced Link Settings in the WordPress Edit Image tool or by "
+"adding it to the image link URL and checking the <strong>Do Not Auto-"
+"Lightbox Images</strong> option. You can also specify the name of the class "
+"instead of using the default. <strong><em>Default: Unchecked / Default "
+"cboxModal</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:521
+msgid "Auto-Lightbox Text Links"
+msgstr ""
+
+#: admin/lightbox.admin.php:526
+msgid ""
+"If checked, Lightbox Plus will lightbox images that are linked to images via "
+"text as well as those link by images.  Use with care as there is a small "
+"possibility that you will get double or triple images in the lightbox "
+"display if you have invalidly nested html. <strong><em>Default: Unchecked</"
+"em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:532
+msgid "<strong>Do Not</strong> Auto-Lightbox Images"
+msgstr ""
+
+#: admin/lightbox.admin.php:537
+msgid ""
+"If checked, Lightbox Plus <em>will not</em> automatically add appropriate "
+"attibutes (either <code>rel=\"lightbox[postID]\"</code> or <code>class: "
+"cboxModal</code>) to Image URL.  You will need to manually add the "
+"appropriate attribute for Lightbox Plus to work. <strong><em>Default: "
+"Unchecked</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:543 admin/lightbox.secondary.php:436
+msgid "<strong>Do Not</strong> Display Image Title"
+msgstr ""
+
+#: admin/lightbox.admin.php:548 admin/lightbox.secondary.php:441
+msgid ""
+"If checked, Lightbox Plus <em>will not</em> display image titles "
+"automatically.  This has no effect if the <strong>Do Not Auto-Lightbox "
+"Images</strong> option is checked. <strong><em>Default: Unchecked</em></"
+"strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:556
+msgid "Primary Lightbox - Demo"
+msgstr ""
+
+#: admin/lightbox.admin.php:561
+msgid ""
+"Here you can test your settings for Lightbox Plus using image and text "
+"links.  If they do not work please check your settings and ensure that you "
+"have transition type and resize speed set "
+msgstr ""
+
+#: admin/lightbox.admin.php:590
+msgid "Lightbox Plus - Enable Optional/Advanced Settings"
+msgstr ""
+
+#: admin/lightbox.admin.php:595
+msgid "Use Secondary Lightbox"
+msgstr ""
+
+#: admin/lightbox.admin.php:600
+msgid ""
+"If checked, Lightbox Plus will create a secondary lightbox with an "
+"additional set of controls.  This secondary lightbox can be used to create "
+"inline or iFramed content using a class to specify the content. "
+"<strong><em>Default: Unchecked</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:606
+msgid "Add Inline Lightboxes"
+msgstr ""
+
+#: admin/lightbox.admin.php:634
+msgid ""
+"If checked, Lightbox Plus will add the selected number of addtional "
+"lightboxes that you can use to manuall add inline lightboxed content to.  "
+"Additional controls will be available at the bottom of the Lightbox Plus "
+"admin page. <strong><em>Default: Unchecked / Default cboxModal</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:656 admin/lightbox.admin.php:670
+msgid "Reset/Re-initialize Lightbox Plus"
+msgstr ""
+
+#: admin/lightbox.admin.php:662
+msgid ""
+"This will immediately remove all existing settings and any files for "
+"versions of Lightbox Plus prior to version 1.5 and will also re-initialize "
+"the plugin with the new default options. Be absolutely certain you want to "
+"do this. <br /><strong><em>If you are upgrading from a version prior to 1.4 "
+"it is <strong><em>highly</em></strong> recommended that you reinitialize "
+"Lightbox Plus</em></strong>"
+msgstr ""
+
+#: admin/lightbox.admin.php:670
+msgid "Resets and re-initializes all Lightbox Plus settings"
+msgstr ""
+
+#: admin/lightbox.inline.php:5
+msgid "Lightbox Plus - Inline Lightbox Settings"
+msgstr ""
+
+#: admin/lightbox.inline.php:14
+msgid ""
+"In order to display inline content using Lightbox Plus and Colorbox you must "
+"at a minimum has the following items set: Inner Width, Inner Height, and Use "
+"Iframe must be checked.<br /><br />\n"
+"                                <code>\n"
+"                                &lt;a class=\"lbp-inline-link-1\" href=\"#"
+"\">Inline HTML Content&lt;/a><br />\n"
+"                                &lt;div style=\"display:none\"><br />\n"
+"                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id=\"lbp-"
+"inline-link-1\" style=\"padding: 10px;background: #fff\"><br />\n"
+"                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+"&nbsp;Inline Content Goes Here<br />\n"
+"                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div><br />\n"
+"                                &lt;/div></code>"
+msgstr ""
+
+#: admin/lightbox.inline.php:30
+msgid "Inline Lightbox - Individual Settings"
+msgstr ""
+
+#: admin/lightbox.inline.php:57
+msgid "Inline Lightbox #"
+msgstr ""
+
+#: admin/lightbox.inline.php:80
+msgid "Inline Lightbox - Demo"
+msgstr ""
+
+#: admin/lightbox.inline.php:85
+msgid ""
+"Here you can test you settings with various different implementation of "
+"Lightbox Plus using inline content.  If they do not work please check that "
+"you have the following items set: Inner Width, Inner Height, and Use Iframe "
+"must be checked.  You will not be able to display any of these without the "
+"minimum options set."
+msgstr ""
+
+#: admin/lightbox.secondary.php:5
+msgid "Lightbox Plus - Secondary Lightbox Settings"
+msgstr ""
+
+#: admin/lightbox.secondary.php:14
+msgid ""
+"In order to display video using Lightbox Plus and Colorbox you must at a "
+"minimum have the following items set: Inner Width, Inner Height, and Use "
+"Iframe must be checked.<br /><br />\n"
+"                                <code>&lt;a title=\"Projection Animation Test"
+"\" class=\"lbpModal\" href=\"http://www.youtube.com/v/pUPrCCP73Ws\">YouTube "
+"Flash / Video (Iframe/Direct Link To YouTube)&lt;/a></code><br />\n"
+"                                <code>&lt;a title=\"Projection Animation Test"
+"\" class=\"lbpModal\" href=\"http://vimeo.com/moogaloop.swf?"
+"clip_id=9730308&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;"
+"show_portrait=0&amp;color=&amp;fullscreen=1\">Vimeo Flash / Video (Iframe/"
+"Direct Link To Vimeo)&lt;/a></code>"
+msgstr ""
+
+#: admin/lightbox.secondary.php:23
+msgid ""
+"In order to display external content using Lightbox Plus and Colorbox you "
+"must at a minimum has the following items set: Inner Width, Inner Height, "
+"and Use Iframe must be checked.<br /><br />\n"
+"                                    <code>&lt;a class=\"lbpModal\" href="
+"\"http://wordpress.org/extend/plugins/lightbox-plus/\">External Content "
+"(Iframe/Direct Link To WordPress plugins)&lt;/a></code>"
+msgstr ""
+
+#: admin/lightbox.secondary.php:32
+msgid ""
+"In order to display other content, such as interactive flash, using Lightbox "
+"Plus and Colorbox you must at a minimum has the following items set: Inner "
+"Width, Inner Height, and Use Iframe must be checked.<br /><br />\n"
+"                                    <code>&lt;a href=\""
+msgstr ""
+
+#: admin/lightbox.secondary.php:40
+msgid "Secondary Lightbox - Base Settings"
+msgstr ""
+
+#: admin/lightbox.secondary.php:310
+msgid "Secondary Lightbox - Slideshow Settings:"
+msgstr ""
+
+#: admin/lightbox.secondary.php:404
+msgid "Secondary Lightbox - Other Settings:"
+msgstr ""
+
+#: admin/lightbox.secondary.php:410
+msgid "Use iFrame"
+msgstr ""
+
+#: admin/lightbox.secondary.php:415
+msgid ""
+"If checked, specifies that content should be displayed in an iFrame. Must be "
+"used when using Lightbox Plus to display content from another site.  Can be "
+"used to display external web pages, video and more. <strong><em>Default: "
+"Unchecked</em></strong>"
+msgstr ""
+
+#: admin/lightbox.secondary.php:449
+msgid "Secondary Lightbox - Demo"
+msgstr ""
+
+#: admin/lightbox.secondary.php:454
+msgid ""
+"Here you can test you settings with various different implementations of "
+"Lightbox Plus for Video, External Pages and Interactive Flash.  If they do "
+"not work please check that you have the following items set: Inner Width, "
+"Inner Height, and Use Iframe must be checked.  You will not be able to "
+"display any of these without the minimum options set."
+msgstr ""
+
+#: lightboxplus.php:189
+msgid "Settings"
+msgstr ""
+
+#: lightboxplus.php:190
+msgid "FAQ"
+msgstr ""
+
+#: lightboxplus.php:191
+msgid "Support"
+msgstr ""
+
+#: lightboxplus.php:192
+msgid "Donate"
+msgstr ""
+
+#: lightboxplus.php:193
+msgid "Follow on Twitter"
+msgstr ""
+
+#: lightboxplus.php:194
+msgid "Facebook Page"
+msgstr ""
+
+#: lightboxplus.php:256
+msgid "Primary lightbox settings updated."
+msgstr ""
+
+#: lightboxplus.php:291
+msgid "Secondary lightbox settings updated."
+msgstr ""
+
+#: lightboxplus.php:321
+msgid "Inline lightbox settings updated."
+msgstr ""
+
+#: lightboxplus.php:337
+msgid "Lightbox custom styles initialized."
+msgstr ""
+
+#: lightboxplus.php:340
+msgid ""
+"<strong style=\"color:#900;\">Lightbox custom styles initialization failed.</"
+"strong><br />Please create a directory called <code>lbp-css</code> in your "
+"<code>wp-content</code> directory and copy the styles located in <code>wp-"
+"content/plugins/lightbox-plus/css/</code> to <code>wp-content/lbp-css</code>"
+msgstr ""
+
+#: lightboxplus.php:349
+msgid "Secondary lightbox settings initialized."
+msgstr ""
+
+#: lightboxplus.php:356
+msgid "Inline lightbox settings initialized."
+msgstr ""
+
+#: lightboxplus.php:367
+msgid "Lightbox Plus has been reset to default settings."
+msgstr ""
+
+#: lightboxplus.php:376 lightboxplus.php:382 lightboxplus.php:391
+msgid "Deleting: "
+msgstr ""
+
+#: lightboxplus.php:376
+msgid "Removed old Lightbox Plus style images."
+msgstr ""
+
+#: lightboxplus.php:379
+msgid "No images deleted . . . "
+msgstr ""
+
+#: lightboxplus.php:379 lightboxplus.php:385
+msgid "already removed"
+msgstr ""
+
+#: lightboxplus.php:382
+msgid "Removed old Lightbox Plus JavaScript."
+msgstr ""
+
+#: lightboxplus.php:385
+msgid "No JavaScript deleted . . . "
+msgstr ""
+
+#: lightboxplus.php:395
+msgid "Removed old Lightbox Plus styles."
+msgstr ""
+
+#: lightboxplus.php:398
+msgid "No styles deleted . . . Old styles already removed"
+msgstr ""
+
+#: lightboxplus.php:408
+msgid "Please check and update your settings before continuing!"
+msgstr ""
+
+#: lightboxplus.php:441
+msgid "Lightbox Plus Options v2.5 (ColorBox v1.3.8)"
+msgstr ""
+
+#: lightboxplus.php:445
+msgid "Settings Saved"
+msgstr ""

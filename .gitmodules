@@ -1,6 +1,3 @@
 [submodule "wp-content/themes/connecting-lights/js/lib"]
 	path = wp-content/themes/connecting-lights/js/lib
 	url = https://github.com/typecode/typecode-js.git
-[submodule "hwBackend"]
-	path = hwBackend
-	url = git@github.com:ofZach/hwBackend.git

@@ -179,14 +179,19 @@ if (! isset($_COOKIE["cl_cookie"]) ) {
 			<?php } ?>
 			
 			<div class="schedule">
-				<div class="date">
-					<span class="month">Aug</span>
-					<span class="day">31</span>
+				<div class="clearfix">
+					<div class="date">
+						<span class="month">Aug</span>
+						<span class="day">31</span>
+					</div>
+					<div class="sep">+</div>
+					<div class="date">
+						<span class="month">Sept</span>
+						<span class="day">1</span>
+					</div>
 				</div>
-				<div class="sep">+</div>
-				<div class="date">
-					<span class="month">Sept</span>
-					<span class="day">1</span>
+				<div class="dusk-til-witchinghour">
+					<span class="light">&#124;</span> dusk until midnight <span class="light">&#124;</span>
 				</div>
 			</div>
 			

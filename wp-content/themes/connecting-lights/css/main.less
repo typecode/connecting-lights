@@ -773,7 +773,7 @@ textarea {
 		.date, .sep { float: left; }
 
 		.date {
-			line-height: 1.6em;
+			line-height: 1.5em;
 			font-weight: 500;
 
 			span {
@@ -800,10 +800,24 @@ textarea {
 
 		}
 
+		.dusk-til-witchinghour {
+			.dagny;
+			display: block;
+			width: 100%;
+			font-size: 14px;
+			padding-top: 5px;
+			font-weight: 500;
+			color: fadeOut(@copy-color, 25);
+
+			.light {
+				color: fadeOut(@copy-color, 75);
+			}
+		}
+
 		.sep {
 			font-size: 36px;
-			line-height: 2.5em;
-			margin-left: .25em;
+			margin-top: 0.9em;
+			margin-left: 0.25em;
 		}
 
 	}
@@ -1061,6 +1075,46 @@ textarea {
 					opacity: 0.75; 
 				}
 			}
+		}
+
+		h2.twitter {
+			margin-top: 90px;
+			margin-bottom: 30px;
+			margin-left: -3px;
+		}
+
+		.twtr-widget {
+			//margin-left: 18px;
+			width: 314px !important;
+		}
+
+		.twtr-hd { 
+			padding: 0 0 6px 0; 
+		}
+
+		.twtr-tweet-wrap {
+			padding-left: 0;
+			padding-right: 50px;
+		}
+
+		.twtr-widget .twtr-tweet {
+			border-bottom: 1px solid #eee;
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+
+		#twtr-widget-1 .twtr-tweet .twtr-tweet-text em a {
+			color: @gray1 !important;
+
+			&:hover {
+				color: @accent !important;
+			}
+		}
+
+		.twtr-ft {
+			display: none;
 		}
 
 	}

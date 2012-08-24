@@ -58,7 +58,7 @@
 		<a href="http://festival.london2012.com/" class="banner"></a>		
 		<?php } else { ?>
 		
-		<a href="#" id="send-message-trigger" class="ca-button alt">
+		<a href="/mobileapp" class="ca-button alt">
 			<span>Send a Message</span>
 		</a>
 		

@@ -1476,6 +1476,31 @@ p + .ngg-galleryoverview .slideshowlink {
 /*  Mobile
 =============================================================================== */
 
+body.mobile-redirect {
+	text-align: center;
+	background: black;
+
+	.ca-button {
+		margin: 1em auto 0;
+		display: block;
+	}
+
+	> .inner {
+		z-index: 2;
+		position: relative;
+		padding: 3em 1em 0;
+	}
+
+	.image {
+		z-index: 1;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+
+}
+
 body.mobile {
 	font-size: 17px;
 	line-height: 21px;

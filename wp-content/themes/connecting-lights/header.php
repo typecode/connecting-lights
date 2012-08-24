@@ -4,27 +4,48 @@ global $post;
 
 $current_id = $post->ID;
 
-include(TEMPLATEPATH . "/incl/mobile-detect.php");
-
-$detect = new Mobile_Detect();
-
 $mobile_id = get_page_by_title("mobile")->ID;
-$visit_id = get_page_by_title("visit")->ID;
-$about_id = get_page_by_title("about")->ID;
+$redirect_id = get_page_by_title("redirect")->ID;
 
-if ($detect->isMobile()) {
+if (! isset($_COOKIE["cl_cookie"]) ) {
 
-	define("CL_MOBILE", true);
+	include(TEMPLATEPATH . "/incl/mobile-detect.php");
 
-	if (is_front_page()) {
+	$detect = new Mobile_Detect();
 
-		header("Location: ". get_permalink( $mobile_id ));
-	
+	if ( $detect->isMobile() ) {
+
+		setcookie("cl_cookie", 1, time()+3600);
+
+		header("Location: ". get_permalink($redirect_id));
+
+		exit();
+
+	} else {
+
+		setcookie("cl_cookie", 0, time()+3600);
+
 	}
 
 } else {
 
-	define("CL_MOBILE", false);
+	define("CL_MOBILE", $_COOKIE["cl_cookie"]);
+
+	if ( CL_MOBILE && is_front_page() ) {
+
+		header("Location: ". get_permalink($mobile_id));
+
+		exit();
+
+	}
+
+	if ( is_page($mobile_id) && (! CL_MOBILE) ) {
+
+		header("Location: ". get_bloginfo('url'));
+
+		exit();
+
+	}
 
 }
 

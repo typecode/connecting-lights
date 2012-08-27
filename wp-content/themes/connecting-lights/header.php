@@ -7,6 +7,8 @@ $current_id = $post->ID;
 $mobile_id = get_page_by_title("mobile")->ID;
 $redirect_id = get_page_by_title("redirect")->ID;
 
+define("CL_MOBILE", $_COOKIE["cl_cookie"]);
+
 if (! isset($_COOKIE["cl_cookie"]) ) {
 
 	include(TEMPLATEPATH . "/incl/mobile-detect.php");
@@ -27,25 +29,21 @@ if (! isset($_COOKIE["cl_cookie"]) ) {
 
 	}
 
-} else {
+}
 
-	define("CL_MOBILE", $_COOKIE["cl_cookie"]);
+if ( CL_MOBILE && is_front_page() ) {
 
-	if ( CL_MOBILE && is_front_page() ) {
+	header("Location: ". get_permalink($mobile_id));
 
-		header("Location: ". get_permalink($mobile_id));
+	exit();
 
-		exit();
+}
 
-	}
+if ( is_page($mobile_id) && (! CL_MOBILE) ) {
 
-	if ( is_page($mobile_id) && (! CL_MOBILE) ) {
+	header("Location: ". get_bloginfo('url'));
 
-		header("Location: ". get_bloginfo('url'));
-
-		exit();
-
-	}
+	exit();
 
 }
 
@@ -148,7 +146,8 @@ if (! isset($_COOKIE["cl_cookie"]) ) {
 				}
 			
 				$mobile_pages_args = array(
-					'numberposts'     => -1
+					'numberposts' => -1,
+					'post_status' => 'publish'
 				); 
 			
 				$mobile_pages = get_pages( $mobile_pages_args );

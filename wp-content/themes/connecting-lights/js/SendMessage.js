@@ -27,7 +27,7 @@
 			$trigger: null,
 			color_picker_src: "",
 			bg_desaturation: 0.6,
-			prompts: $.isArray(page.classes.prompts) ? page.classes.prompts : [],
+			prompts: ($.isArray(page.classes.prompts) ? page.classes.prompts : []),
 			service_dir: ""
 		}, options);
 
@@ -100,7 +100,7 @@
 			},
 			load_prompt_click: function(e, d) {
 				e.preventDefault();
-				if (typeof internal.prompts_index === "number") {
+				if (typeof internal.prompts_index === "number" && internal.prompts.length) {
 					internal.prompts_index += 1;
 					if (internal.prompts_index > internal.prompts.length - 1) {
 						internal.prompts_index = 0;

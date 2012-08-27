@@ -196,16 +196,20 @@
 							$colorpicker.on("color:picked", {container: current_step.$e}, handlers.color_picked);
 						}
 
-						internal.colorpicker = new page.classes.ColorPicker({
-							$e: $colorpicker,
-							src: o.color_picker_src
-						});
+						if (internal.is_mobile) {
+							internal.colorpicker = new page.classes.ColorPicker({
+								$e: $colorpicker,
+								src: o.color_picker_src
+							});
+						}
 
 						current_step.$e.find(".load-prompt").on("click", handlers.load_prompt_click);
 					},
 					visible: function(me) {
 
-						internal.colorpicker.reset();
+						if (internal.colorpicker) {
+							internal.colorpicker.reset();
+						}
 
 						fn.set_prompt();
 

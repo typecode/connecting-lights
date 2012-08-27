@@ -33,7 +33,8 @@ add_action("init", "cl_js_init");
 
 register_nav_menus( 
 	array(
-		'header_nav' => 'Header Navigation'
+		'header_nav' => 'Header Navigation',
+		'mobile_nav' => 'Mobile Navigation'
 	)
 );
 

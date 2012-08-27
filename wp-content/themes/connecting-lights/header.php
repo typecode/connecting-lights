@@ -159,21 +159,37 @@ if ( is_page($mobile_id) && (! CL_MOBILE) ) {
 			</div>
 			<select class="mobile-select" onchange='document.location.href=this.options[this.selectedIndex].value;'>
 				<option value=""><?php echo mobile_title(); ?></option>
-			<?php
-				$options = '';
-				foreach ( $mobile_pages as $page ) {
-					if ( $page->ID != $current_id ) {
-						$options .= '<option value="' . get_page_link( $page->ID ) . '">';
-						if ($page->ID != $mobile_id ) {
-							$options .= $page->post_title;
-						} else {
-							$options .= 'Participate';
+				<?php 
+
+				    $menu_name = 'mobile_nav';
+
+				    if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
+
+						$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+
+						$menu_items = wp_get_nav_menu_items($menu->term_id);
+
+						foreach ( (array) $menu_items as $key => $menu_item ) {
+							$title = $menu_item->title;
+						    $url = $menu_item->url;
+						    $id = $menu_item->object_id;
+
+						    if ($id != $current_id) {
+
+								if ($title == 'Mobile') {
+									$title = 'Participate';
+								}
+							    
+							    $menu_list .= '<option value="'. $url .'">'. $title .'</option>';
+
+							}
 						}
-						$options .= '</option>';
-					}
-				}
-				echo $options;
-			?>
+
+						echo $menu_list;
+
+				    }
+
+				?>
 			</select>
 			<?php } ?>
 			

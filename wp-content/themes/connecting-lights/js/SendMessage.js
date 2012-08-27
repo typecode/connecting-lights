@@ -1,5 +1,20 @@
 (function(window, $, page) {
 
+	function shuffle(array) {
+		var i, j, tempi, tempj;
+		i = array.length;
+		if (i === 0) {
+			return false;
+		}
+		while (--i) {
+			j = Math.floor(Math.random() * (i + 1));
+			tempi = array[i];
+			tempj = array[j];
+			array[i] = tempj;
+			array[j] = tempi;
+		}
+	}
+
 	page.classes.SendMessage = function(options) {
 
 		var o, internal, fn, handlers, colorutil = page.classes.colorutil;
@@ -25,7 +40,8 @@
 			overlay: null,
 			merlin: null,
 			colorpicker: null,
-			prompts: o.prompts
+			prompts: o.prompts,
+			prompts_index: null
 		};
 
 		fn = {
@@ -50,12 +66,15 @@
 
 				internal.$trigger.click(handlers.trigger_click);
 
-				if (!$.isArray(internal.prompts)) {
+				if (!$.isArray(internal.prompts) || internal.prompts.length === 0) {
 					console.warn("Missing prompts for messages");
+				} else {
+					shuffle(internal.prompts);
+					internal.prompts_index = 0;
 				}
 			},
-			set_random_prompt: function() {
-				var prompt = NI.fn.randomElement(internal.prompts);
+			set_prompt: function() {
+				var prompt = internal.prompts[internal.prompts_index];
 				internal.merlin.internal.steps["compose"].fields["m"].component.set_val(prompt);
 			},
 			get_bg_css: function(r, g, b) {
@@ -81,7 +100,13 @@
 			},
 			load_prompt_click: function(e, d) {
 				e.preventDefault();
-				fn.set_random_prompt();
+				if (typeof internal.prompts_index === "number") {
+					internal.prompts_index += 1;
+					if (internal.prompts_index > internal.prompts.length - 1) {
+						internal.prompts_index = 0;
+					}
+					fn.set_prompt();
+				}
 			},
 			color_picked: function(e, d) {
 				var merlin, r, g, b;
@@ -124,7 +149,7 @@
 			steps: {
 				"info": {
 					selector: ".send-message-info",
-					next: "compose",
+					next: "compose"
 				},
 				"compose": {
 					selector: ".send-message-compose",
@@ -144,12 +169,12 @@
 								},
 								handlers: {
 									focus: function(e) {
-										var field, val;
+										/*var field, val;
 										field = e.data.me;
 										val = field.get_val();
 										if (val.substring(val.length - 3) === "...") {
 											field.set_val(val.substring(0, val.length - 3) + " ");
-										}
+										}*/
 										$('.control-bar').css('position','absolute');
 									},
 									blur: function(e) {
@@ -182,7 +207,7 @@
 
 						internal.colorpicker.reset();
 
-						fn.set_random_prompt();
+						fn.set_prompt();
 
 						if (internal.is_touch) {
 							$("html, body").animate({ scrollTop: 0 }, "slow");
@@ -193,7 +218,7 @@
 						me.extensions.data.collect_fields(me);
 						
 						if (internal.is_touch) {
-							$("body").css('background','rgb(34,34,34)')
+							$("body").css('background','rgb(34,34,34)');
 						}
 						
 					}
